@@ -1,0 +1,17 @@
+<h1><%= @folder.name %></h1>
+
+
+<ul>
+  <li>Name: <%= @folder.name %></li>
+   <% if @folder.resources.present? %>
+    <% @folder.resources.each do |l| %>
+    <li><%= l.title %></li>
+    <% end %>
+
+  <% end %>
+</ul>
+
+<div class="controls">
+  <%= link_to "Edit Folder", edit_folder_path(@folder) %>
+  <%= link_to "Delete Folder", @folder, :method => 'delete', :data => { :confirm => 'Are you sure?' } %>
+</div>

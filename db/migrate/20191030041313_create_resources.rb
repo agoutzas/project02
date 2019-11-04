@@ -1,10 +1,12 @@
 class CreateResources < ActiveRecord::Migration[6.0]
   def change
     create_table :resources do |t|
-      t.text :category
-      t.text :topic
-      t.integer :yr_level
+      t.text :title
       t.text :type
+      t.integer :subject_id
+      t.integer :teacher_id
+
+
 
       t.timestamps
     end

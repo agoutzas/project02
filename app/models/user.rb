@@ -1,5 +1,5 @@
 class User < ApplicationRecord
-  has_many :folders 
+  has_many :folders
   has_secure_password
 
 

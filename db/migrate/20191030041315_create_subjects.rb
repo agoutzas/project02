@@ -1,8 +1,7 @@
 class CreateSubjects < ActiveRecord::Migration[6.0]
   def change
-    create_table :Subjects do |t|
-      t.text :category
-
+    create_table :subjects do |t|
+      t.text :name
 
       t.timestamps
     end

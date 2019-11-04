@@ -3,6 +3,8 @@ class CreateResourcesTopics < ActiveRecord::Migration[6.0]
     create_table :resources_topics, :id => false do |t|
       t.integer :topic_id
       t.integer :resource_id
+
+      t.timestamps
     end
   end
 end

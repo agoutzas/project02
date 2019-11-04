@@ -1,0 +1,14 @@
+<h1><%= @resource.title %></h1>
+
+
+<ul>
+  <li>Name: <%= @resource.title %></li>
+  <% if @resource.folder.present? %>
+    <li>Resource: <%= link_to @resource.folder.name, @resource.folder %></li>
+  <% end %>
+</ul>
+
+<div class="controls">
+  <%= link_to "Edit Resources", edit_resource_path(@resource) %>
+  <%= link_to "Delete Resources", @resource, :method => 'delete', :data => { :confirm => 'Are you sure?' } %>
+</div>

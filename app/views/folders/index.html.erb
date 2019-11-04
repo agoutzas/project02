@@ -1,0 +1,14 @@
+
+
+<% if @current_user.present? %>
+<h2>Hello <%= @current_user.email %></h2>
+<% end %>
+
+<h1>Your Folders</h1>
+
+<p> <% @folders.each do |folder|%> </p>
+  <ul>
+     <li> Name: <%= link_to folder.name, folder %> </li>
+   </ul>
+
+<% end %>

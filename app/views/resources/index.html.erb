@@ -1,0 +1,8 @@
+<h1>All Resources</h1>
+
+<% @resources.each do |resource| %>
+   <ul>
+     <li>Title: <%= resource.title %> </li>
+     <li>Type : <%= resource.type %></li>
+   </ul>
+<% end %>

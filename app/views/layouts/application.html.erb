@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Tunr</title>
+    <title>MWNS Student Resources</title>
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
 
@@ -14,8 +14,8 @@
 
       <%= link_to "Home", root_path %>
       <% if @current_user.present? %>
-        <% if @current_user.admin? %>
-        <%= link_to "All users", user_path %>
+        <% if @current_user.teacher? %>
+        <%= link_to "Upload Resources", users_path %>
       <% end %>
       <%= link_to "New Folder", new_folder_path %>
       <%= link_to "logout",login_path, :method=> 'delete' %>
