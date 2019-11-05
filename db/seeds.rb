@@ -1,13 +1,15 @@
 User.destroy_all
 u1 = User.create :email => 'jonesy@ga.co', :password => 'chicken', :teacher => true
-u2 = User.create :email => 'craigsy@ga.co', :password => 'chicken'
+u2 = User.create :email => 'sia@ga.co', :password => 'chicken', :teacher => true
+u3 = User.create :email => 'craigsy@ga.co', :password => 'chicken'
+u4 = User.create :email => 'adony@ga.co', :password => 'chicken'
 puts "#{ User.count } users created"
 
 Resource.destroy_all
-r1 = Resource.create :title => 'Maths'
-r2 = Resource.create :title => 'Maths'
-r3 = Resource.create :title => 'English'
-r4 = Resource.create :title => 'English'
+r1 = Resource.create :title => 'Maths Sheet'
+r2 = Resource.create :title => 'English Essay'
+r3 = Resource.create :title => 'Maths Puzzle'
+r4 = Resource.create :title => 'English Poem'
 puts "#{ Resource.count } resources created"
 
 Subject.destroy_all
@@ -65,3 +67,5 @@ f4.resources << r4 << r3 << r2 << r2
 puts "Folders and Users"
 u1.folders << f1 << f2
 u2.folders << f3 << f4
+u3.folders << f2 << f4
+u4.folders << f1 << f3

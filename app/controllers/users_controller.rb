@@ -1,6 +1,6 @@
 class UsersController < ApplicationController
 
-  before_action :check_for_teacher, :only => [:index]
+  #before_action :check_for_teacher #, :only => [:index, :create, ]
 
   def index
     @users = User.all

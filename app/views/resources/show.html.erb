@@ -3,8 +3,10 @@
 
 <ul>
   <li>Name: <%= @resource.title %></li>
-  <% if @resource.folder.present? %>
-    <li>Resource: <%= link_to @resource.folder.name, @resource.folder %></li>
+  <% if @resource.folders.present? %>
+    <% @resource.folders.each do |l| %>
+    <li><%= l.name %></li>
+    <% end %>
   <% end %>
 </ul>
 

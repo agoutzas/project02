@@ -2,7 +2,10 @@
 
 <% @resources.each do |resource| %>
    <ul>
-     <li>Title: <%= resource.title %> </li>
-     <li>Type : <%= resource.type %></li>
+     <li>Title: <%= link_to resource.title, resource %> </li>
+     <li>Kind : <%= resource.kind %></li>
+     <li>Subject <%= resource.subject_id %></li>
    </ul>
+
+
 <% end %>

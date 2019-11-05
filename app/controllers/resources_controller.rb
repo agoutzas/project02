@@ -5,7 +5,7 @@ class ResourcesController < ApplicationController
 
 
   def index
-    @resource = Resource.all
+    @resources = Resource.all
   end
 
   def new
@@ -18,14 +18,14 @@ class ResourcesController < ApplicationController
 
   def update
     resource = Resource.find params[:id]
-    resources.update resource_params
+    resource.update resource_params
     redirect_to resource
   end
 
   def create
-    resource = Resource.create resource_params
-    @current_user.resources << resources
-    redirect_to root_path
+    @resource = Resource.create resource_params
+    raise "hell"
+    redirect_to resources_path
   end
 
   def show
@@ -35,7 +35,7 @@ class ResourcesController < ApplicationController
   def destroy
     resource = Resource.find params[:id]
     resource.destroy
-    redirect_to resource_path
+    redirect_to resources_path
   end
 
 
@@ -43,7 +43,7 @@ class ResourcesController < ApplicationController
   private
 
   def resource_params
-    params.require(:resource).permit(:title)
+    params.require(:resource).permit(:title, :kind)
   end
 
 end

@@ -6,7 +6,8 @@
 
 <h1>Your Folders</h1>
 
-<p> <% @folders.each do |folder|%> </p>
+
+  <p> <% @current_user.folders.each do |folder|%> </p>
   <ul>
      <li> Name: <%= link_to folder.name, folder %> </li>
    </ul>
