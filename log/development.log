@@ -25479,3 +25479,847 @@ Processing by ResourcesController#show as HTML
 Completed 200 OK in 50ms (Views: 34.1ms | ActiveRecord: 8.4ms | Allocations: 8032)
 
 
+Started GET "/" for ::1 at 2019-11-06 14:30:28 +1100
+Processing by PagesController#home as HTML
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 22], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:7:in `fetch_user'
+  Rendering pages/home.html.erb within layouts/application
+  Rendered pages/home.html.erb within layouts/application (Duration: 0.6ms | Allocations: 125)
+Completed 200 OK in 55ms (Views: 48.0ms | ActiveRecord: 1.0ms | Allocations: 6293)
+
+
+Started DELETE "/login" for ::1 at 2019-11-06 14:30:29 +1100
+Processing by SessionController#destroy as HTML
+  Parameters: {"authenticity_token"=>"0rSlPYbQWKlkZmet0Q4IF/iheQ4J6Pgwd+28KqaWdsAfXSoYUSCuWofHnrqrJAWzjD1B/AnlHjKAqysWmnmn2A=="}
+  [1m[36mUser Load (1.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 22], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:7:in `fetch_user'
+Redirected to http://localhost:3000/login
+Completed 302 Found in 9ms (ActiveRecord: 1.4ms | Allocations: 1268)
+
+
+Started GET "/login" for ::1 at 2019-11-06 14:30:29 +1100
+Processing by SessionController#new as HTML
+  Rendering session/new.html.erb within layouts/application
+  Rendered session/new.html.erb within layouts/application (Duration: 1.5ms | Allocations: 522)
+Completed 200 OK in 18ms (Views: 15.9ms | ActiveRecord: 0.0ms | Allocations: 5940)
+
+
+Started GET "/" for ::1 at 2019-11-06 14:30:31 +1100
+Processing by PagesController#home as HTML
+  Rendering pages/home.html.erb within layouts/application
+  Rendered pages/home.html.erb within layouts/application (Duration: 0.1ms | Allocations: 4)
+Completed 200 OK in 39ms (Views: 37.8ms | ActiveRecord: 0.0ms | Allocations: 5078)
+
+
+  [1m[35m (3.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1[0m  [["key", "environment"]]
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1[0m  [["key", "environment"]]
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1[0m  [["key", "environment"]]
+  [1m[35m (7978.4ms)[0m  [1m[35mDROP DATABASE IF EXISTS "tunr_development"[0m
+  [1m[35m (1.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1[0m  [["key", "environment"]]
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1[0m  [["key", "environment"]]
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1[0m  [["key", "environment"]]
+  [1m[35m (53.4ms)[0m  [1m[35mDROP DATABASE IF EXISTS "tunr_development"[0m
+  [1m[35m (37.4ms)[0m  [1m[35mDROP DATABASE IF EXISTS "tunr_test"[0m
+  [1m[35m (143.5ms)[0m  [1m[35mCREATE DATABASE "tunr_development" ENCODING = 'unicode'[0m
+  [1m[35m (114.6ms)[0m  [1m[35mCREATE DATABASE "tunr_test" ENCODING = 'unicode'[0m
+  [1m[35m (7.8ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" character varying NOT NULL PRIMARY KEY)[0m
+  [1m[35m (4.4ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" character varying NOT NULL PRIMARY KEY, "value" character varying, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT pg_try_advisory_lock(5870676503668667565)[0m
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to CreateFolders (20191030041312)
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (9.1ms)[0m  [1m[35mCREATE TABLE "folders" ("id" bigserial primary key, "name" text, "user_id" integer, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[36mprimary::SchemaMigration Create (1.5ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20191030041312"]]
+  [1m[35m (0.8ms)[0m  [1m[35mCOMMIT[0m
+Migrating to CreateResources (20191030041313)
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (5.4ms)[0m  [1m[35mCREATE TABLE "resources" ("id" bigserial primary key, "title" text, "kind" text, "image" character varying, "subject_id" integer, "teacher_id" integer, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[36mprimary::SchemaMigration Create (0.5ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20191030041313"]]
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+Migrating to CreateSubjects (20191030041315)
+  [1m[35m (0.4ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (4.9ms)[0m  [1m[35mCREATE TABLE "subjects" ("id" bigserial primary key, "name" text, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[36mprimary::SchemaMigration Create (0.4ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20191030041315"]]
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+Migrating to CreateResourcesTopics (20191030041316)
+  [1m[35m (0.4ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (1.5ms)[0m  [1m[35mCREATE TABLE "resources_topics" ("topic_id" integer, "resource_id" integer, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[36mprimary::SchemaMigration Create (0.3ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20191030041316"]]
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+Migrating to CreateTeachers (20191030041318)
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (7.3ms)[0m  [1m[35mCREATE TABLE "teachers" ("id" bigserial primary key, "name" text, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[36mprimary::SchemaMigration Create (0.4ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20191030041318"]]
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+Migrating to CreateFoldersResources (20191030041319)
+  [1m[35m (0.7ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (12.4ms)[0m  [1m[35mCREATE TABLE "folders_resources" ("folder_id" integer, "resource_id" integer)[0m
+  [1m[36mprimary::SchemaMigration Create (34.1ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20191030041319"]]
+  [1m[35m (0.8ms)[0m  [1m[35mCOMMIT[0m
+Migrating to CreateTopics (20191030041320)
+  [1m[35m (4.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (6.3ms)[0m  [1m[35mCREATE TABLE "topics" ("id" bigserial primary key, "name" text, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[36mprimary::SchemaMigration Create (0.4ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20191030041320"]]
+  [1m[35m (1.4ms)[0m  [1m[35mCOMMIT[0m
+Migrating to CreateUsers (20191030041321)
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (6.7ms)[0m  [1m[35mCREATE TABLE "users" ("id" bigserial primary key, "email" text, "password_digest" character varying, "teacher" boolean DEFAULT FALSE, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[36mprimary::SchemaMigration Create (1.5ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20191030041321"]]
+  [1m[35m (0.6ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.5ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.6ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mActiveRecord::InternalMetadata Create (0.8ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "key"[0m  [["key", "environment"], ["value", "development"], ["created_at", "2019-11-06 03:36:46.784364"], ["updated_at", "2019-11-06 03:36:46.784364"]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.9ms)[0m  [1m[34mSELECT pg_advisory_unlock(5870676503668667565)[0m
+  [1m[35m (1.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (1.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (1.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (1.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1[0m  [["key", "environment"]]
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1[0m  [["key", "environment"]]
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1[0m  [["key", "environment"]]
+  [1m[35m (39.8ms)[0m  [1m[35mDROP DATABASE IF EXISTS "tunr_development"[0m
+  [1m[35m (34.6ms)[0m  [1m[35mDROP DATABASE IF EXISTS "tunr_test"[0m
+  [1m[35m (112.8ms)[0m  [1m[35mCREATE DATABASE "tunr_development" ENCODING = 'unicode'[0m
+  [1m[35m (107.9ms)[0m  [1m[35mCREATE DATABASE "tunr_test" ENCODING = 'unicode'[0m
+  [1m[35m (6.0ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" character varying NOT NULL PRIMARY KEY)[0m
+  [1m[35m (3.3ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" character varying NOT NULL PRIMARY KEY, "value" character varying, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT pg_try_advisory_lock(5870676503668667565)[0m
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to CreateFolders (20191030041312)
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (5.6ms)[0m  [1m[35mCREATE TABLE "folders" ("id" bigserial primary key, "name" text, "user_id" integer, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[36mprimary::SchemaMigration Create (0.5ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20191030041312"]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+Migrating to CreateResources (20191030041313)
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (4.1ms)[0m  [1m[35mCREATE TABLE "resources" ("id" bigserial primary key, "title" text, "kind" text, "image" character varying, "subject_id" integer, "teacher_id" integer, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[36mprimary::SchemaMigration Create (0.3ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20191030041313"]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+Migrating to CreateSubjects (20191030041315)
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (5.2ms)[0m  [1m[35mCREATE TABLE "subjects" ("id" bigserial primary key, "name" text, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[36mprimary::SchemaMigration Create (0.3ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20191030041315"]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+Migrating to CreateResourcesTopics (20191030041316)
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (1.3ms)[0m  [1m[35mCREATE TABLE "resources_topics" ("topic_id" integer, "resource_id" integer, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[36mprimary::SchemaMigration Create (0.4ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20191030041316"]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+Migrating to CreateTeachers (20191030041318)
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (4.0ms)[0m  [1m[35mCREATE TABLE "teachers" ("id" bigserial primary key, "name" text, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[36mprimary::SchemaMigration Create (0.3ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20191030041318"]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+Migrating to CreateFoldersResources (20191030041319)
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.7ms)[0m  [1m[35mCREATE TABLE "folders_resources" ("folder_id" integer, "resource_id" integer)[0m
+  [1m[36mprimary::SchemaMigration Create (0.3ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20191030041319"]]
+  [1m[35m (3.4ms)[0m  [1m[35mCOMMIT[0m
+Migrating to CreateTopics (20191030041320)
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (4.7ms)[0m  [1m[35mCREATE TABLE "topics" ("id" bigserial primary key, "name" text, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[36mprimary::SchemaMigration Create (0.3ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20191030041320"]]
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+Migrating to CreateUsers (20191030041321)
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (5.4ms)[0m  [1m[35mCREATE TABLE "users" ("id" bigserial primary key, "email" text, "password_digest" character varying, "teacher" boolean DEFAULT FALSE, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[36mprimary::SchemaMigration Create (0.3ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20191030041321"]]
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.5ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mActiveRecord::InternalMetadata Create (0.4ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "key"[0m  [["key", "environment"], ["value", "development"], ["created_at", "2019-11-06 03:39:13.977787"], ["updated_at", "2019-11-06 03:39:13.977787"]]
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT pg_advisory_unlock(5870676503668667565)[0m
+  [1m[35m (1.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (1.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (1.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (1.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (1.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (1.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.9ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mUser Load (1.4ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Exists? (0.4ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "jonesy@ga.co"], ["LIMIT", 1]]
+  [1m[36mUser Create (0.9ms)[0m  [1m[32mINSERT INTO "users" ("email", "password_digest", "teacher", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["email", "jonesy@ga.co"], ["password_digest", "$2a$12$vnr2KfAb8wmxuApawL85TutTktUQKyurFlm5M8kQGTsWKTvJeYJUu"], ["teacher", true], ["created_at", "2019-11-06 03:43:23.319814"], ["updated_at", "2019-11-06 03:43:23.319814"]]
+  [1m[35m (0.6ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Exists? (0.3ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "sia@ga.co"], ["LIMIT", 1]]
+  [1m[36mUser Create (0.3ms)[0m  [1m[32mINSERT INTO "users" ("email", "password_digest", "teacher", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["email", "sia@ga.co"], ["password_digest", "$2a$12$SUnVzHgOKJVhciNHPFR6HevQ0kjLmThMJPsqKcnLxBy7NdfTfv21C"], ["teacher", true], ["created_at", "2019-11-06 03:43:23.554872"], ["updated_at", "2019-11-06 03:43:23.554872"]]
+  [1m[35m (1.9ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Exists? (0.3ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "craigsy@ga.co"], ["LIMIT", 1]]
+  [1m[36mUser Create (0.3ms)[0m  [1m[32mINSERT INTO "users" ("email", "password_digest", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["email", "craigsy@ga.co"], ["password_digest", "$2a$12$.hqf1zjQ0p73aoiMgJHQAunkMDjZoCCUO51L7ZjCq44.jQNT768uG"], ["created_at", "2019-11-06 03:43:23.789403"], ["updated_at", "2019-11-06 03:43:23.789403"]]
+  [1m[35m (1.8ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Exists? (0.3ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "liz@ga.co"], ["LIMIT", 1]]
+  [1m[36mUser Create (0.4ms)[0m  [1m[32mINSERT INTO "users" ("email", "password_digest", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["email", "liz@ga.co"], ["password_digest", "$2a$12$.FetqSlho3awokyxZpu4ae.bnZP.ElAqXcJKZiCEYC.g9oLZm2nyC"], ["created_at", "2019-11-06 03:43:24.019602"], ["updated_at", "2019-11-06 03:43:24.019602"]]
+  [1m[35m (1.8ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT COUNT(*) FROM "users"[0m
+  [1m[36mSubject Load (2.0ms)[0m  [1m[34mSELECT "subjects".* FROM "subjects"[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mSubject Create (0.6ms)[0m  [1m[32mINSERT INTO "subjects" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", "Maths"], ["created_at", "2019-11-06 03:43:24.051617"], ["updated_at", "2019-11-06 03:43:24.051617"]]
+  [1m[35m (0.7ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mSubject Create (0.4ms)[0m  [1m[32mINSERT INTO "subjects" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", "English"], ["created_at", "2019-11-06 03:43:24.056621"], ["updated_at", "2019-11-06 03:43:24.056621"]]
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "subjects"[0m
+  [1m[36mTopic Load (1.5ms)[0m  [1m[34mSELECT "topics".* FROM "topics"[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mTopic Create (0.7ms)[0m  [1m[32mINSERT INTO "topics" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", "Algebra"], ["created_at", "2019-11-06 03:43:24.078027"], ["updated_at", "2019-11-06 03:43:24.078027"]]
+  [1m[35m (0.7ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mTopic Create (0.4ms)[0m  [1m[32mINSERT INTO "topics" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", "Fractions"], ["created_at", "2019-11-06 03:43:24.100362"], ["updated_at", "2019-11-06 03:43:24.100362"]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mTopic Create (0.3ms)[0m  [1m[32mINSERT INTO "topics" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", "Geometry"], ["created_at", "2019-11-06 03:43:24.104094"], ["updated_at", "2019-11-06 03:43:24.104094"]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mTopic Create (0.3ms)[0m  [1m[32mINSERT INTO "topics" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", "Trigonometry"], ["created_at", "2019-11-06 03:43:24.107755"], ["updated_at", "2019-11-06 03:43:24.107755"]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mTopic Create (0.3ms)[0m  [1m[32mINSERT INTO "topics" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", "Primitives"], ["created_at", "2019-11-06 03:43:24.111257"], ["updated_at", "2019-11-06 03:43:24.111257"]]
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mTopic Create (0.3ms)[0m  [1m[32mINSERT INTO "topics" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", "Derivatives"], ["created_at", "2019-11-06 03:43:24.114910"], ["updated_at", "2019-11-06 03:43:24.114910"]]
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mTopic Create (0.3ms)[0m  [1m[32mINSERT INTO "topics" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", "Othello"], ["created_at", "2019-11-06 03:43:24.118650"], ["updated_at", "2019-11-06 03:43:24.118650"]]
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mTopic Create (0.4ms)[0m  [1m[32mINSERT INTO "topics" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", "Robert Frost"], ["created_at", "2019-11-06 03:43:24.122270"], ["updated_at", "2019-11-06 03:43:24.122270"]]
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT COUNT(*) FROM "topics"[0m
+  [1m[36mFolder Load (0.6ms)[0m  [1m[34mSELECT "folders".* FROM "folders"[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mFolder Create (0.5ms)[0m  [1m[32mINSERT INTO "folders" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", "Craigsy Algebra"], ["created_at", "2019-11-06 03:43:24.141030"], ["updated_at", "2019-11-06 03:43:24.141030"]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mFolder Create (0.4ms)[0m  [1m[32mINSERT INTO "folders" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", "Craigsy Fractions"], ["created_at", "2019-11-06 03:43:24.144998"], ["updated_at", "2019-11-06 03:43:24.144998"]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mFolder Create (0.4ms)[0m  [1m[32mINSERT INTO "folders" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", "Lizzys Poems"], ["created_at", "2019-11-06 03:43:24.149718"], ["updated_at", "2019-11-06 03:43:24.149718"]]
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mFolder Create (0.3ms)[0m  [1m[32mINSERT INTO "folders" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", "Lizzys Misc"], ["created_at", "2019-11-06 03:43:24.154596"], ["updated_at", "2019-11-06 03:43:24.154596"]]
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT COUNT(*) FROM "folders"[0m
+  [1m[35m (1.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Destroy (0.6ms)[0m  [1m[31mDELETE FROM "users" WHERE "users"."id" = $1[0m  [["id", 1]]
+  [1m[35m (1.9ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Destroy (0.3ms)[0m  [1m[31mDELETE FROM "users" WHERE "users"."id" = $1[0m  [["id", 2]]
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Destroy (0.3ms)[0m  [1m[31mDELETE FROM "users" WHERE "users"."id" = $1[0m  [["id", 3]]
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Destroy (0.3ms)[0m  [1m[31mDELETE FROM "users" WHERE "users"."id" = $1[0m  [["id", 4]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Exists? (0.4ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "jonesy@ga.co"], ["LIMIT", 1]]
+  [1m[36mUser Create (0.5ms)[0m  [1m[32mINSERT INTO "users" ("email", "password_digest", "teacher", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["email", "jonesy@ga.co"], ["password_digest", "$2a$12$wldNJQ.hAsv/LCgFub8xB.4pfjAX9vcu4rS6cBd30F7c4qldd2G56"], ["teacher", true], ["created_at", "2019-11-06 03:44:27.776458"], ["updated_at", "2019-11-06 03:44:27.776458"]]
+  [1m[35m (1.8ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Exists? (0.3ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "sia@ga.co"], ["LIMIT", 1]]
+  [1m[36mUser Create (0.3ms)[0m  [1m[32mINSERT INTO "users" ("email", "password_digest", "teacher", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["email", "sia@ga.co"], ["password_digest", "$2a$12$Plg9rAwnZZ.98pnvcR3nk.4Z1Hj8cRyISVMpp5u.gYUVwiknacy.C"], ["teacher", true], ["created_at", "2019-11-06 03:44:28.006874"], ["updated_at", "2019-11-06 03:44:28.006874"]]
+  [1m[35m (2.0ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Exists? (0.3ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "craigsy@ga.co"], ["LIMIT", 1]]
+  [1m[36mUser Create (0.3ms)[0m  [1m[32mINSERT INTO "users" ("email", "password_digest", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["email", "craigsy@ga.co"], ["password_digest", "$2a$12$6dWLcA/lTCfO0ybWx319FOQIquGKNtYtqkDz64wIW7DXiEFywXZPq"], ["created_at", "2019-11-06 03:44:28.237948"], ["updated_at", "2019-11-06 03:44:28.237948"]]
+  [1m[35m (1.9ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Exists? (0.3ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "liz@ga.co"], ["LIMIT", 1]]
+  [1m[36mUser Create (0.4ms)[0m  [1m[32mINSERT INTO "users" ("email", "password_digest", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["email", "liz@ga.co"], ["password_digest", "$2a$12$V47y3SBCtu87dUS2G8U99uRz9I5/nav56Q9tZX9G0Ah97/rfrtn2O"], ["created_at", "2019-11-06 03:44:28.471216"], ["updated_at", "2019-11-06 03:44:28.471216"]]
+  [1m[35m (1.8ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT COUNT(*) FROM "users"[0m
+  [1m[36mSubject Load (1.5ms)[0m  [1m[34mSELECT "subjects".* FROM "subjects"[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mSubject Destroy (0.5ms)[0m  [1m[31mDELETE FROM "subjects" WHERE "subjects"."id" = $1[0m  [["id", 1]]
+  [1m[35m (0.8ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mSubject Destroy (0.3ms)[0m  [1m[31mDELETE FROM "subjects" WHERE "subjects"."id" = $1[0m  [["id", 2]]
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mSubject Create (0.5ms)[0m  [1m[32mINSERT INTO "subjects" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", "Maths"], ["created_at", "2019-11-06 03:44:28.517425"], ["updated_at", "2019-11-06 03:44:28.517425"]]
+  [1m[35m (0.6ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mSubject Create (0.3ms)[0m  [1m[32mINSERT INTO "subjects" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", "English"], ["created_at", "2019-11-06 03:44:28.522053"], ["updated_at", "2019-11-06 03:44:28.522053"]]
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT COUNT(*) FROM "subjects"[0m
+  [1m[36mTopic Load (0.6ms)[0m  [1m[34mSELECT "topics".* FROM "topics"[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mTopic::HABTM_Resources Destroy (0.6ms)[0m  [1m[31mDELETE FROM "resources_topics" WHERE "resources_topics"."topic_id" = $1[0m  [["topic_id", 1]]
+  [1m[36mTopic Destroy (0.5ms)[0m  [1m[31mDELETE FROM "topics" WHERE "topics"."id" = $1[0m  [["id", 1]]
+  [1m[35m (0.8ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mTopic::HABTM_Resources Destroy (0.3ms)[0m  [1m[31mDELETE FROM "resources_topics" WHERE "resources_topics"."topic_id" = $1[0m  [["topic_id", 2]]
+  [1m[36mTopic Destroy (0.3ms)[0m  [1m[31mDELETE FROM "topics" WHERE "topics"."id" = $1[0m  [["id", 2]]
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mTopic::HABTM_Resources Destroy (0.2ms)[0m  [1m[31mDELETE FROM "resources_topics" WHERE "resources_topics"."topic_id" = $1[0m  [["topic_id", 3]]
+  [1m[36mTopic Destroy (0.3ms)[0m  [1m[31mDELETE FROM "topics" WHERE "topics"."id" = $1[0m  [["id", 3]]
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mTopic::HABTM_Resources Destroy (0.2ms)[0m  [1m[31mDELETE FROM "resources_topics" WHERE "resources_topics"."topic_id" = $1[0m  [["topic_id", 4]]
+  [1m[36mTopic Destroy (0.2ms)[0m  [1m[31mDELETE FROM "topics" WHERE "topics"."id" = $1[0m  [["id", 4]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mTopic::HABTM_Resources Destroy (0.2ms)[0m  [1m[31mDELETE FROM "resources_topics" WHERE "resources_topics"."topic_id" = $1[0m  [["topic_id", 5]]
+  [1m[36mTopic Destroy (0.2ms)[0m  [1m[31mDELETE FROM "topics" WHERE "topics"."id" = $1[0m  [["id", 5]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mTopic::HABTM_Resources Destroy (0.3ms)[0m  [1m[31mDELETE FROM "resources_topics" WHERE "resources_topics"."topic_id" = $1[0m  [["topic_id", 6]]
+  [1m[36mTopic Destroy (0.3ms)[0m  [1m[31mDELETE FROM "topics" WHERE "topics"."id" = $1[0m  [["id", 6]]
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mTopic::HABTM_Resources Destroy (0.2ms)[0m  [1m[31mDELETE FROM "resources_topics" WHERE "resources_topics"."topic_id" = $1[0m  [["topic_id", 7]]
+  [1m[36mTopic Destroy (0.3ms)[0m  [1m[31mDELETE FROM "topics" WHERE "topics"."id" = $1[0m  [["id", 7]]
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mTopic::HABTM_Resources Destroy (0.3ms)[0m  [1m[31mDELETE FROM "resources_topics" WHERE "resources_topics"."topic_id" = $1[0m  [["topic_id", 8]]
+  [1m[36mTopic Destroy (0.3ms)[0m  [1m[31mDELETE FROM "topics" WHERE "topics"."id" = $1[0m  [["id", 8]]
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mTopic Create (0.4ms)[0m  [1m[32mINSERT INTO "topics" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", "Algebra"], ["created_at", "2019-11-06 03:44:28.607384"], ["updated_at", "2019-11-06 03:44:28.607384"]]
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mTopic Create (0.3ms)[0m  [1m[32mINSERT INTO "topics" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", "Fractions"], ["created_at", "2019-11-06 03:44:28.611458"], ["updated_at", "2019-11-06 03:44:28.611458"]]
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mTopic Create (0.3ms)[0m  [1m[32mINSERT INTO "topics" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", "Geometry"], ["created_at", "2019-11-06 03:44:28.615274"], ["updated_at", "2019-11-06 03:44:28.615274"]]
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mTopic Create (0.3ms)[0m  [1m[32mINSERT INTO "topics" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", "Trigonometry"], ["created_at", "2019-11-06 03:44:28.619029"], ["updated_at", "2019-11-06 03:44:28.619029"]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mTopic Create (0.3ms)[0m  [1m[32mINSERT INTO "topics" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", "Primitives"], ["created_at", "2019-11-06 03:44:28.622543"], ["updated_at", "2019-11-06 03:44:28.622543"]]
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mTopic Create (0.3ms)[0m  [1m[32mINSERT INTO "topics" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", "Derivatives"], ["created_at", "2019-11-06 03:44:28.626240"], ["updated_at", "2019-11-06 03:44:28.626240"]]
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mTopic Create (0.3ms)[0m  [1m[32mINSERT INTO "topics" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", "Othello"], ["created_at", "2019-11-06 03:44:28.630059"], ["updated_at", "2019-11-06 03:44:28.630059"]]
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mTopic Create (0.3ms)[0m  [1m[32mINSERT INTO "topics" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", "Robert Frost"], ["created_at", "2019-11-06 03:44:28.633869"], ["updated_at", "2019-11-06 03:44:28.633869"]]
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "topics"[0m
+  [1m[36mFolder Load (0.6ms)[0m  [1m[34mSELECT "folders".* FROM "folders"[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mFolder::HABTM_Resources Destroy (0.4ms)[0m  [1m[31mDELETE FROM "folders_resources" WHERE "folders_resources"."folder_id" = $1[0m  [["folder_id", 1]]
+  [1m[36mFolder Destroy (0.3ms)[0m  [1m[31mDELETE FROM "folders" WHERE "folders"."id" = $1[0m  [["id", 1]]
+  [1m[35m (0.7ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mFolder::HABTM_Resources Destroy (0.3ms)[0m  [1m[31mDELETE FROM "folders_resources" WHERE "folders_resources"."folder_id" = $1[0m  [["folder_id", 2]]
+  [1m[36mFolder Destroy (0.4ms)[0m  [1m[31mDELETE FROM "folders" WHERE "folders"."id" = $1[0m  [["id", 2]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mFolder::HABTM_Resources Destroy (0.3ms)[0m  [1m[31mDELETE FROM "folders_resources" WHERE "folders_resources"."folder_id" = $1[0m  [["folder_id", 3]]
+  [1m[36mFolder Destroy (0.3ms)[0m  [1m[31mDELETE FROM "folders" WHERE "folders"."id" = $1[0m  [["id", 3]]
+  [1m[35m (0.7ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mFolder::HABTM_Resources Destroy (0.2ms)[0m  [1m[31mDELETE FROM "folders_resources" WHERE "folders_resources"."folder_id" = $1[0m  [["folder_id", 4]]
+  [1m[36mFolder Destroy (0.2ms)[0m  [1m[31mDELETE FROM "folders" WHERE "folders"."id" = $1[0m  [["id", 4]]
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mFolder Create (0.5ms)[0m  [1m[32mINSERT INTO "folders" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", "Craigsy Algebra"], ["created_at", "2019-11-06 03:44:28.676637"], ["updated_at", "2019-11-06 03:44:28.676637"]]
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mFolder Create (0.3ms)[0m  [1m[32mINSERT INTO "folders" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", "Craigsy Fractions"], ["created_at", "2019-11-06 03:44:28.681033"], ["updated_at", "2019-11-06 03:44:28.681033"]]
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mFolder Create (0.4ms)[0m  [1m[32mINSERT INTO "folders" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", "Lizzys Poems"], ["created_at", "2019-11-06 03:44:28.697221"], ["updated_at", "2019-11-06 03:44:28.697221"]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mFolder Create (0.3ms)[0m  [1m[32mINSERT INTO "folders" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", "Lizzys Misc"], ["created_at", "2019-11-06 03:44:28.701245"], ["updated_at", "2019-11-06 03:44:28.701245"]]
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "folders"[0m
+  [1m[35m (1.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Destroy (0.5ms)[0m  [1m[31mDELETE FROM "users" WHERE "users"."id" = $1[0m  [["id", 5]]
+  [1m[35m (1.0ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Destroy (0.3ms)[0m  [1m[31mDELETE FROM "users" WHERE "users"."id" = $1[0m  [["id", 6]]
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Destroy (0.3ms)[0m  [1m[31mDELETE FROM "users" WHERE "users"."id" = $1[0m  [["id", 7]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Destroy (0.3ms)[0m  [1m[31mDELETE FROM "users" WHERE "users"."id" = $1[0m  [["id", 8]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Exists? (0.4ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "jonesy@ga.co"], ["LIMIT", 1]]
+  [1m[36mUser Create (0.5ms)[0m  [1m[32mINSERT INTO "users" ("email", "password_digest", "teacher", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["email", "jonesy@ga.co"], ["password_digest", "$2a$12$eKKdKJfZZdyviIkHlxzJlOWna3k0Ag57WHV46ejCwgX9i1uvejzm2"], ["teacher", true], ["created_at", "2019-11-06 03:44:43.168830"], ["updated_at", "2019-11-06 03:44:43.168830"]]
+  [1m[35m (1.6ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Exists? (0.3ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "sia@ga.co"], ["LIMIT", 1]]
+  [1m[36mUser Create (0.3ms)[0m  [1m[32mINSERT INTO "users" ("email", "password_digest", "teacher", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["email", "sia@ga.co"], ["password_digest", "$2a$12$w3P8C8xnjl.NE4zjRC.0B.MK0cZCKsAOKZPrkxO6gbTZdtiPzH.4e"], ["teacher", true], ["created_at", "2019-11-06 03:44:43.407086"], ["updated_at", "2019-11-06 03:44:43.407086"]]
+  [1m[35m (1.9ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Exists? (0.3ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "craigsy@ga.co"], ["LIMIT", 1]]
+  [1m[36mUser Create (0.3ms)[0m  [1m[32mINSERT INTO "users" ("email", "password_digest", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["email", "craigsy@ga.co"], ["password_digest", "$2a$12$zdAlVSGuhSz3kVrYCPxZJ.zWLXAHfudp9M8erCDRAF9dNAigD49OS"], ["created_at", "2019-11-06 03:44:43.640347"], ["updated_at", "2019-11-06 03:44:43.640347"]]
+  [1m[35m (1.8ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Exists? (0.3ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "liz@ga.co"], ["LIMIT", 1]]
+  [1m[36mUser Create (0.3ms)[0m  [1m[32mINSERT INTO "users" ("email", "password_digest", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["email", "liz@ga.co"], ["password_digest", "$2a$12$OneWWLCT9W5oYSa648z2metlvJcGnWz/MCXz.ER/0cOhywklKh3Zm"], ["created_at", "2019-11-06 03:44:43.870078"], ["updated_at", "2019-11-06 03:44:43.870078"]]
+  [1m[35m (1.9ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT COUNT(*) FROM "users"[0m
+  [1m[36mSubject Load (1.7ms)[0m  [1m[34mSELECT "subjects".* FROM "subjects"[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mSubject Destroy (0.5ms)[0m  [1m[31mDELETE FROM "subjects" WHERE "subjects"."id" = $1[0m  [["id", 3]]
+  [1m[35m (0.6ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mSubject Destroy (0.3ms)[0m  [1m[31mDELETE FROM "subjects" WHERE "subjects"."id" = $1[0m  [["id", 4]]
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mSubject Create (0.4ms)[0m  [1m[32mINSERT INTO "subjects" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", "Maths"], ["created_at", "2019-11-06 03:44:43.911661"], ["updated_at", "2019-11-06 03:44:43.911661"]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mSubject Create (0.3ms)[0m  [1m[32mINSERT INTO "subjects" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", "English"], ["created_at", "2019-11-06 03:44:43.915734"], ["updated_at", "2019-11-06 03:44:43.915734"]]
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "subjects"[0m
+  [1m[36mTopic Load (0.6ms)[0m  [1m[34mSELECT "topics".* FROM "topics"[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mTopic::HABTM_Resources Destroy (0.5ms)[0m  [1m[31mDELETE FROM "resources_topics" WHERE "resources_topics"."topic_id" = $1[0m  [["topic_id", 9]]
+  [1m[36mTopic Destroy (0.3ms)[0m  [1m[31mDELETE FROM "topics" WHERE "topics"."id" = $1[0m  [["id", 9]]
+  [1m[35m (0.7ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mTopic::HABTM_Resources Destroy (0.3ms)[0m  [1m[31mDELETE FROM "resources_topics" WHERE "resources_topics"."topic_id" = $1[0m  [["topic_id", 10]]
+  [1m[36mTopic Destroy (0.3ms)[0m  [1m[31mDELETE FROM "topics" WHERE "topics"."id" = $1[0m  [["id", 10]]
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mTopic::HABTM_Resources Destroy (0.3ms)[0m  [1m[31mDELETE FROM "resources_topics" WHERE "resources_topics"."topic_id" = $1[0m  [["topic_id", 11]]
+  [1m[36mTopic Destroy (0.3ms)[0m  [1m[31mDELETE FROM "topics" WHERE "topics"."id" = $1[0m  [["id", 11]]
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mTopic::HABTM_Resources Destroy (0.2ms)[0m  [1m[31mDELETE FROM "resources_topics" WHERE "resources_topics"."topic_id" = $1[0m  [["topic_id", 12]]
+  [1m[36mTopic Destroy (0.3ms)[0m  [1m[31mDELETE FROM "topics" WHERE "topics"."id" = $1[0m  [["id", 12]]
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mTopic::HABTM_Resources Destroy (0.2ms)[0m  [1m[31mDELETE FROM "resources_topics" WHERE "resources_topics"."topic_id" = $1[0m  [["topic_id", 13]]
+  [1m[36mTopic Destroy (0.3ms)[0m  [1m[31mDELETE FROM "topics" WHERE "topics"."id" = $1[0m  [["id", 13]]
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mTopic::HABTM_Resources Destroy (0.2ms)[0m  [1m[31mDELETE FROM "resources_topics" WHERE "resources_topics"."topic_id" = $1[0m  [["topic_id", 14]]
+  [1m[36mTopic Destroy (0.2ms)[0m  [1m[31mDELETE FROM "topics" WHERE "topics"."id" = $1[0m  [["id", 14]]
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mTopic::HABTM_Resources Destroy (0.2ms)[0m  [1m[31mDELETE FROM "resources_topics" WHERE "resources_topics"."topic_id" = $1[0m  [["topic_id", 15]]
+  [1m[36mTopic Destroy (0.3ms)[0m  [1m[31mDELETE FROM "topics" WHERE "topics"."id" = $1[0m  [["id", 15]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mTopic::HABTM_Resources Destroy (0.2ms)[0m  [1m[31mDELETE FROM "resources_topics" WHERE "resources_topics"."topic_id" = $1[0m  [["topic_id", 16]]
+  [1m[36mTopic Destroy (0.3ms)[0m  [1m[31mDELETE FROM "topics" WHERE "topics"."id" = $1[0m  [["id", 16]]
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mTopic Create (0.4ms)[0m  [1m[32mINSERT INTO "topics" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", "Algebra"], ["created_at", "2019-11-06 03:44:44.002101"], ["updated_at", "2019-11-06 03:44:44.002101"]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mTopic Create (0.3ms)[0m  [1m[32mINSERT INTO "topics" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", "Fractions"], ["created_at", "2019-11-06 03:44:44.005807"], ["updated_at", "2019-11-06 03:44:44.005807"]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mTopic Create (0.3ms)[0m  [1m[32mINSERT INTO "topics" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", "Geometry"], ["created_at", "2019-11-06 03:44:44.009205"], ["updated_at", "2019-11-06 03:44:44.009205"]]
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mTopic Create (0.3ms)[0m  [1m[32mINSERT INTO "topics" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", "Trigonometry"], ["created_at", "2019-11-06 03:44:44.012964"], ["updated_at", "2019-11-06 03:44:44.012964"]]
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mTopic Create (0.3ms)[0m  [1m[32mINSERT INTO "topics" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", "Primitives"], ["created_at", "2019-11-06 03:44:44.016694"], ["updated_at", "2019-11-06 03:44:44.016694"]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mTopic Create (0.3ms)[0m  [1m[32mINSERT INTO "topics" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", "Derivatives"], ["created_at", "2019-11-06 03:44:44.020152"], ["updated_at", "2019-11-06 03:44:44.020152"]]
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mTopic Create (0.3ms)[0m  [1m[32mINSERT INTO "topics" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", "Othello"], ["created_at", "2019-11-06 03:44:44.023715"], ["updated_at", "2019-11-06 03:44:44.023715"]]
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mTopic Create (0.3ms)[0m  [1m[32mINSERT INTO "topics" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", "Robert Frost"], ["created_at", "2019-11-06 03:44:44.027489"], ["updated_at", "2019-11-06 03:44:44.027489"]]
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "topics"[0m
+  [1m[36mFolder Load (0.6ms)[0m  [1m[34mSELECT "folders".* FROM "folders"[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mFolder::HABTM_Resources Destroy (0.6ms)[0m  [1m[31mDELETE FROM "folders_resources" WHERE "folders_resources"."folder_id" = $1[0m  [["folder_id", 5]]
+  [1m[36mFolder Destroy (0.3ms)[0m  [1m[31mDELETE FROM "folders" WHERE "folders"."id" = $1[0m  [["id", 5]]
+  [1m[35m (0.7ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mFolder::HABTM_Resources Destroy (0.2ms)[0m  [1m[31mDELETE FROM "folders_resources" WHERE "folders_resources"."folder_id" = $1[0m  [["folder_id", 6]]
+  [1m[36mFolder Destroy (0.3ms)[0m  [1m[31mDELETE FROM "folders" WHERE "folders"."id" = $1[0m  [["id", 6]]
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mFolder::HABTM_Resources Destroy (0.2ms)[0m  [1m[31mDELETE FROM "folders_resources" WHERE "folders_resources"."folder_id" = $1[0m  [["folder_id", 7]]
+  [1m[36mFolder Destroy (0.3ms)[0m  [1m[31mDELETE FROM "folders" WHERE "folders"."id" = $1[0m  [["id", 7]]
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mFolder::HABTM_Resources Destroy (0.3ms)[0m  [1m[31mDELETE FROM "folders_resources" WHERE "folders_resources"."folder_id" = $1[0m  [["folder_id", 8]]
+  [1m[36mFolder Destroy (0.5ms)[0m  [1m[31mDELETE FROM "folders" WHERE "folders"."id" = $1[0m  [["id", 8]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mFolder Create (0.4ms)[0m  [1m[32mINSERT INTO "folders" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", "Craigsy Algebra"], ["created_at", "2019-11-06 03:44:44.068189"], ["updated_at", "2019-11-06 03:44:44.068189"]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mFolder Create (0.4ms)[0m  [1m[32mINSERT INTO "folders" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", "Craigsy Fractions"], ["created_at", "2019-11-06 03:44:44.072421"], ["updated_at", "2019-11-06 03:44:44.072421"]]
+  [1m[35m (0.6ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mFolder Create (0.3ms)[0m  [1m[32mINSERT INTO "folders" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", "Lizzys Poems"], ["created_at", "2019-11-06 03:44:44.087987"], ["updated_at", "2019-11-06 03:44:44.087987"]]
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mFolder Create (0.3ms)[0m  [1m[32mINSERT INTO "folders" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", "Lizzys Misc"], ["created_at", "2019-11-06 03:44:44.091899"], ["updated_at", "2019-11-06 03:44:44.091899"]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT COUNT(*) FROM "folders"[0m
+  [1m[35m (1.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Destroy (0.5ms)[0m  [1m[31mDELETE FROM "users" WHERE "users"."id" = $1[0m  [["id", 9]]
+  [1m[35m (2.0ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Destroy (0.3ms)[0m  [1m[31mDELETE FROM "users" WHERE "users"."id" = $1[0m  [["id", 10]]
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Destroy (0.3ms)[0m  [1m[31mDELETE FROM "users" WHERE "users"."id" = $1[0m  [["id", 11]]
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Destroy (0.3ms)[0m  [1m[31mDELETE FROM "users" WHERE "users"."id" = $1[0m  [["id", 12]]
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Exists? (0.4ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "jonesy@ga.co"], ["LIMIT", 1]]
+  [1m[36mUser Create (0.6ms)[0m  [1m[32mINSERT INTO "users" ("email", "password_digest", "teacher", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["email", "jonesy@ga.co"], ["password_digest", "$2a$12$jSdgLJB9vKE/.SZJH0seQ.mqIgmeoYgym1dYdgOHx9ygTMy5.AMDe"], ["teacher", true], ["created_at", "2019-11-06 03:45:03.429728"], ["updated_at", "2019-11-06 03:45:03.429728"]]
+  [1m[35m (1.8ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Exists? (0.3ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "sia@ga.co"], ["LIMIT", 1]]
+  [1m[36mUser Create (0.3ms)[0m  [1m[32mINSERT INTO "users" ("email", "password_digest", "teacher", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["email", "sia@ga.co"], ["password_digest", "$2a$12$9nI9YWLv1oUdEhRbacZCjeQ46uTzlaD8cxDQ0Wku3Hr2f85X2neOK"], ["teacher", true], ["created_at", "2019-11-06 03:45:03.661055"], ["updated_at", "2019-11-06 03:45:03.661055"]]
+  [1m[35m (1.9ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Exists? (0.4ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "craigsy@ga.co"], ["LIMIT", 1]]
+  [1m[36mUser Create (0.4ms)[0m  [1m[32mINSERT INTO "users" ("email", "password_digest", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["email", "craigsy@ga.co"], ["password_digest", "$2a$12$Vkl/prB66YIPLdpD76QHv.YQwB2rgB1BTNeM0veUt.o.ig.2T56wy"], ["created_at", "2019-11-06 03:45:03.904033"], ["updated_at", "2019-11-06 03:45:03.904033"]]
+  [1m[35m (0.7ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Exists? (0.3ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "liz@ga.co"], ["LIMIT", 1]]
+  [1m[36mUser Create (0.5ms)[0m  [1m[32mINSERT INTO "users" ("email", "password_digest", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["email", "liz@ga.co"], ["password_digest", "$2a$12$aEBH2t/mPCIvo92//A4GAuFtYqfTsUb/bnMOHdODNpzuTvivRZxVW"], ["created_at", "2019-11-06 03:45:04.152439"], ["updated_at", "2019-11-06 03:45:04.152439"]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT COUNT(*) FROM "users"[0m
+  [1m[36mSubject Load (3.8ms)[0m  [1m[34mSELECT "subjects".* FROM "subjects"[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mSubject Destroy (0.6ms)[0m  [1m[31mDELETE FROM "subjects" WHERE "subjects"."id" = $1[0m  [["id", 5]]
+  [1m[35m (0.8ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mSubject Destroy (0.3ms)[0m  [1m[31mDELETE FROM "subjects" WHERE "subjects"."id" = $1[0m  [["id", 6]]
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mSubject Create (0.4ms)[0m  [1m[32mINSERT INTO "subjects" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", "Maths"], ["created_at", "2019-11-06 03:45:04.193606"], ["updated_at", "2019-11-06 03:45:04.193606"]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mSubject Create (0.3ms)[0m  [1m[32mINSERT INTO "subjects" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", "English"], ["created_at", "2019-11-06 03:45:04.197412"], ["updated_at", "2019-11-06 03:45:04.197412"]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "subjects"[0m
+  [1m[36mTopic Load (0.6ms)[0m  [1m[34mSELECT "topics".* FROM "topics"[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mTopic::HABTM_Resources Destroy (0.5ms)[0m  [1m[31mDELETE FROM "resources_topics" WHERE "resources_topics"."topic_id" = $1[0m  [["topic_id", 17]]
+  [1m[36mTopic Destroy (0.4ms)[0m  [1m[31mDELETE FROM "topics" WHERE "topics"."id" = $1[0m  [["id", 17]]
+  [1m[35m (0.8ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mTopic::HABTM_Resources Destroy (0.4ms)[0m  [1m[31mDELETE FROM "resources_topics" WHERE "resources_topics"."topic_id" = $1[0m  [["topic_id", 18]]
+  [1m[36mTopic Destroy (0.3ms)[0m  [1m[31mDELETE FROM "topics" WHERE "topics"."id" = $1[0m  [["id", 18]]
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mTopic::HABTM_Resources Destroy (0.2ms)[0m  [1m[31mDELETE FROM "resources_topics" WHERE "resources_topics"."topic_id" = $1[0m  [["topic_id", 19]]
+  [1m[36mTopic Destroy (0.3ms)[0m  [1m[31mDELETE FROM "topics" WHERE "topics"."id" = $1[0m  [["id", 19]]
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mTopic::HABTM_Resources Destroy (0.3ms)[0m  [1m[31mDELETE FROM "resources_topics" WHERE "resources_topics"."topic_id" = $1[0m  [["topic_id", 20]]
+  [1m[36mTopic Destroy (0.4ms)[0m  [1m[31mDELETE FROM "topics" WHERE "topics"."id" = $1[0m  [["id", 20]]
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mTopic::HABTM_Resources Destroy (0.3ms)[0m  [1m[31mDELETE FROM "resources_topics" WHERE "resources_topics"."topic_id" = $1[0m  [["topic_id", 21]]
+  [1m[36mTopic Destroy (0.3ms)[0m  [1m[31mDELETE FROM "topics" WHERE "topics"."id" = $1[0m  [["id", 21]]
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mTopic::HABTM_Resources Destroy (0.2ms)[0m  [1m[31mDELETE FROM "resources_topics" WHERE "resources_topics"."topic_id" = $1[0m  [["topic_id", 22]]
+  [1m[36mTopic Destroy (0.3ms)[0m  [1m[31mDELETE FROM "topics" WHERE "topics"."id" = $1[0m  [["id", 22]]
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mTopic::HABTM_Resources Destroy (0.3ms)[0m  [1m[31mDELETE FROM "resources_topics" WHERE "resources_topics"."topic_id" = $1[0m  [["topic_id", 23]]
+  [1m[36mTopic Destroy (0.3ms)[0m  [1m[31mDELETE FROM "topics" WHERE "topics"."id" = $1[0m  [["id", 23]]
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mTopic::HABTM_Resources Destroy (0.3ms)[0m  [1m[31mDELETE FROM "resources_topics" WHERE "resources_topics"."topic_id" = $1[0m  [["topic_id", 24]]
+  [1m[36mTopic Destroy (0.3ms)[0m  [1m[31mDELETE FROM "topics" WHERE "topics"."id" = $1[0m  [["id", 24]]
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mTopic Create (0.4ms)[0m  [1m[32mINSERT INTO "topics" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", "Algebra"], ["created_at", "2019-11-06 03:45:04.286087"], ["updated_at", "2019-11-06 03:45:04.286087"]]
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mTopic Create (0.3ms)[0m  [1m[32mINSERT INTO "topics" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", "Fractions"], ["created_at", "2019-11-06 03:45:04.290138"], ["updated_at", "2019-11-06 03:45:04.290138"]]
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mTopic Create (0.3ms)[0m  [1m[32mINSERT INTO "topics" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", "Geometry"], ["created_at", "2019-11-06 03:45:04.294250"], ["updated_at", "2019-11-06 03:45:04.294250"]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mTopic Create (0.3ms)[0m  [1m[32mINSERT INTO "topics" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", "Trigonometry"], ["created_at", "2019-11-06 03:45:04.297811"], ["updated_at", "2019-11-06 03:45:04.297811"]]
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mTopic Create (0.3ms)[0m  [1m[32mINSERT INTO "topics" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", "Primitives"], ["created_at", "2019-11-06 03:45:04.301476"], ["updated_at", "2019-11-06 03:45:04.301476"]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mTopic Create (0.4ms)[0m  [1m[32mINSERT INTO "topics" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", "Derivatives"], ["created_at", "2019-11-06 03:45:04.305013"], ["updated_at", "2019-11-06 03:45:04.305013"]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mTopic Create (0.3ms)[0m  [1m[32mINSERT INTO "topics" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", "Othello"], ["created_at", "2019-11-06 03:45:04.309012"], ["updated_at", "2019-11-06 03:45:04.309012"]]
+  [1m[35m (0.6ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mTopic Create (0.3ms)[0m  [1m[32mINSERT INTO "topics" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", "Robert Frost"], ["created_at", "2019-11-06 03:45:04.313271"], ["updated_at", "2019-11-06 03:45:04.313271"]]
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "topics"[0m
+  [1m[36mFolder Load (0.6ms)[0m  [1m[34mSELECT "folders".* FROM "folders"[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mFolder::HABTM_Resources Destroy (0.5ms)[0m  [1m[31mDELETE FROM "folders_resources" WHERE "folders_resources"."folder_id" = $1[0m  [["folder_id", 9]]
+  [1m[36mFolder Destroy (0.3ms)[0m  [1m[31mDELETE FROM "folders" WHERE "folders"."id" = $1[0m  [["id", 9]]
+  [1m[35m (0.7ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mFolder::HABTM_Resources Destroy (0.2ms)[0m  [1m[31mDELETE FROM "folders_resources" WHERE "folders_resources"."folder_id" = $1[0m  [["folder_id", 10]]
+  [1m[36mFolder Destroy (0.3ms)[0m  [1m[31mDELETE FROM "folders" WHERE "folders"."id" = $1[0m  [["id", 10]]
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mFolder::HABTM_Resources Destroy (0.2ms)[0m  [1m[31mDELETE FROM "folders_resources" WHERE "folders_resources"."folder_id" = $1[0m  [["folder_id", 11]]
+  [1m[36mFolder Destroy (0.3ms)[0m  [1m[31mDELETE FROM "folders" WHERE "folders"."id" = $1[0m  [["id", 11]]
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mFolder::HABTM_Resources Destroy (0.2ms)[0m  [1m[31mDELETE FROM "folders_resources" WHERE "folders_resources"."folder_id" = $1[0m  [["folder_id", 12]]
+  [1m[36mFolder Destroy (0.3ms)[0m  [1m[31mDELETE FROM "folders" WHERE "folders"."id" = $1[0m  [["id", 12]]
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mFolder Create (0.4ms)[0m  [1m[32mINSERT INTO "folders" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", "Craigsy Algebra"], ["created_at", "2019-11-06 03:45:04.355320"], ["updated_at", "2019-11-06 03:45:04.355320"]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mFolder Create (0.4ms)[0m  [1m[32mINSERT INTO "folders" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", "Craigsy Fractions"], ["created_at", "2019-11-06 03:45:04.359105"], ["updated_at", "2019-11-06 03:45:04.359105"]]
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mFolder Create (0.3ms)[0m  [1m[32mINSERT INTO "folders" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", "Lizzys Poems"], ["created_at", "2019-11-06 03:45:04.374658"], ["updated_at", "2019-11-06 03:45:04.374658"]]
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mFolder Create (0.3ms)[0m  [1m[32mINSERT INTO "folders" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", "Lizzys Misc"], ["created_at", "2019-11-06 03:45:04.378754"], ["updated_at", "2019-11-06 03:45:04.378754"]]
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "folders"[0m
+  [1m[35m (1.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.8ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.9ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Destroy (0.5ms)[0m  [1m[31mDELETE FROM "users" WHERE "users"."id" = $1[0m  [["id", 13]]
+  [1m[35m (0.8ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Destroy (0.3ms)[0m  [1m[31mDELETE FROM "users" WHERE "users"."id" = $1[0m  [["id", 14]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Destroy (0.3ms)[0m  [1m[31mDELETE FROM "users" WHERE "users"."id" = $1[0m  [["id", 15]]
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Destroy (0.3ms)[0m  [1m[31mDELETE FROM "users" WHERE "users"."id" = $1[0m  [["id", 16]]
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Exists? (0.5ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "jonesy@ga.co"], ["LIMIT", 1]]
+  [1m[36mUser Create (0.5ms)[0m  [1m[32mINSERT INTO "users" ("email", "password_digest", "teacher", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["email", "jonesy@ga.co"], ["password_digest", "$2a$12$TuU7Kobde78kUTjAaRGO6e3LJPU9Y4YwI1LmfWdXwTWHD20ds0oFC"], ["teacher", true], ["created_at", "2019-11-06 03:48:09.318267"], ["updated_at", "2019-11-06 03:48:09.318267"]]
+  [1m[35m (1.6ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Exists? (0.4ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "sia@ga.co"], ["LIMIT", 1]]
+  [1m[36mUser Create (0.3ms)[0m  [1m[32mINSERT INTO "users" ("email", "password_digest", "teacher", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["email", "sia@ga.co"], ["password_digest", "$2a$12$m8aig2v2WDX7Z/TQUtTfAu80kaWNUUPIUTNbJV5J.yJYAe5a/5Jhe"], ["teacher", true], ["created_at", "2019-11-06 03:48:09.560101"], ["updated_at", "2019-11-06 03:48:09.560101"]]
+  [1m[35m (1.8ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Exists? (0.3ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "craigsy@ga.co"], ["LIMIT", 1]]
+  [1m[36mUser Create (0.4ms)[0m  [1m[32mINSERT INTO "users" ("email", "password_digest", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["email", "craigsy@ga.co"], ["password_digest", "$2a$12$d38ZoGyTAs/5xpSTeUubweZxj73nY6uAyxItfiIFCdgp/gB1/ZLf6"], ["created_at", "2019-11-06 03:48:09.801277"], ["updated_at", "2019-11-06 03:48:09.801277"]]
+  [1m[35m (2.0ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Exists? (0.4ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "liz@ga.co"], ["LIMIT", 1]]
+  [1m[36mUser Create (0.4ms)[0m  [1m[32mINSERT INTO "users" ("email", "password_digest", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["email", "liz@ga.co"], ["password_digest", "$2a$12$903MnQvoBWs62rAQcbvzr.mZuYdR5HAHtNygSXV2ZvQWXIfTteOQ2"], ["created_at", "2019-11-06 03:48:10.045506"], ["updated_at", "2019-11-06 03:48:10.045506"]]
+  [1m[35m (1.9ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT COUNT(*) FROM "users"[0m
+  [1m[36mResource Load (3.1ms)[0m  [1m[34mSELECT "resources".* FROM "resources"[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mResource Create (0.7ms)[0m  [1m[32mINSERT INTO "resources" ("title", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["title", "Maths Sheet"], ["created_at", "2019-11-06 03:48:10.110643"], ["updated_at", "2019-11-06 03:48:10.110643"]]
+  [1m[35m (0.8ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mResource Create (0.5ms)[0m  [1m[32mINSERT INTO "resources" ("title", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["title", "English Essay"], ["created_at", "2019-11-06 03:48:10.115921"], ["updated_at", "2019-11-06 03:48:10.115921"]]
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mResource Create (0.3ms)[0m  [1m[32mINSERT INTO "resources" ("title", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["title", "Maths Puzzle"], ["created_at", "2019-11-06 03:48:10.120692"], ["updated_at", "2019-11-06 03:48:10.120692"]]
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mResource Create (0.4ms)[0m  [1m[32mINSERT INTO "resources" ("title", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["title", "English Poem"], ["created_at", "2019-11-06 03:48:10.124703"], ["updated_at", "2019-11-06 03:48:10.124703"]]
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "resources"[0m
+  [1m[36mSubject Load (0.9ms)[0m  [1m[34mSELECT "subjects".* FROM "subjects"[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mSubject Destroy (0.3ms)[0m  [1m[31mDELETE FROM "subjects" WHERE "subjects"."id" = $1[0m  [["id", 7]]
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mSubject Destroy (0.4ms)[0m  [1m[31mDELETE FROM "subjects" WHERE "subjects"."id" = $1[0m  [["id", 8]]
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mSubject Create (0.5ms)[0m  [1m[32mINSERT INTO "subjects" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", "Maths"], ["created_at", "2019-11-06 03:48:10.150977"], ["updated_at", "2019-11-06 03:48:10.150977"]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mSubject Create (0.3ms)[0m  [1m[32mINSERT INTO "subjects" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", "English"], ["created_at", "2019-11-06 03:48:10.154671"], ["updated_at", "2019-11-06 03:48:10.154671"]]
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "subjects"[0m
+  [1m[36mTopic Load (0.6ms)[0m  [1m[34mSELECT "topics".* FROM "topics"[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mTopic::HABTM_Resources Destroy (0.5ms)[0m  [1m[31mDELETE FROM "resources_topics" WHERE "resources_topics"."topic_id" = $1[0m  [["topic_id", 25]]
+  [1m[36mTopic Destroy (0.4ms)[0m  [1m[31mDELETE FROM "topics" WHERE "topics"."id" = $1[0m  [["id", 25]]
+  [1m[35m (0.9ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mTopic::HABTM_Resources Destroy (0.3ms)[0m  [1m[31mDELETE FROM "resources_topics" WHERE "resources_topics"."topic_id" = $1[0m  [["topic_id", 26]]
+  [1m[36mTopic Destroy (0.3ms)[0m  [1m[31mDELETE FROM "topics" WHERE "topics"."id" = $1[0m  [["id", 26]]
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mTopic::HABTM_Resources Destroy (0.2ms)[0m  [1m[31mDELETE FROM "resources_topics" WHERE "resources_topics"."topic_id" = $1[0m  [["topic_id", 27]]
+  [1m[36mTopic Destroy (0.3ms)[0m  [1m[31mDELETE FROM "topics" WHERE "topics"."id" = $1[0m  [["id", 27]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mTopic::HABTM_Resources Destroy (0.3ms)[0m  [1m[31mDELETE FROM "resources_topics" WHERE "resources_topics"."topic_id" = $1[0m  [["topic_id", 28]]
+  [1m[36mTopic Destroy (0.4ms)[0m  [1m[31mDELETE FROM "topics" WHERE "topics"."id" = $1[0m  [["id", 28]]
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.4ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mTopic::HABTM_Resources Destroy (0.3ms)[0m  [1m[31mDELETE FROM "resources_topics" WHERE "resources_topics"."topic_id" = $1[0m  [["topic_id", 29]]
+  [1m[36mTopic Destroy (0.3ms)[0m  [1m[31mDELETE FROM "topics" WHERE "topics"."id" = $1[0m  [["id", 29]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mTopic::HABTM_Resources Destroy (0.2ms)[0m  [1m[31mDELETE FROM "resources_topics" WHERE "resources_topics"."topic_id" = $1[0m  [["topic_id", 30]]
+  [1m[36mTopic Destroy (0.3ms)[0m  [1m[31mDELETE FROM "topics" WHERE "topics"."id" = $1[0m  [["id", 30]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mTopic::HABTM_Resources Destroy (0.3ms)[0m  [1m[31mDELETE FROM "resources_topics" WHERE "resources_topics"."topic_id" = $1[0m  [["topic_id", 31]]
+  [1m[36mTopic Destroy (0.3ms)[0m  [1m[31mDELETE FROM "topics" WHERE "topics"."id" = $1[0m  [["id", 31]]
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mTopic::HABTM_Resources Destroy (0.2ms)[0m  [1m[31mDELETE FROM "resources_topics" WHERE "resources_topics"."topic_id" = $1[0m  [["topic_id", 32]]
+  [1m[36mTopic Destroy (0.3ms)[0m  [1m[31mDELETE FROM "topics" WHERE "topics"."id" = $1[0m  [["id", 32]]
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mTopic Create (0.4ms)[0m  [1m[32mINSERT INTO "topics" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", "Algebra"], ["created_at", "2019-11-06 03:48:10.228449"], ["updated_at", "2019-11-06 03:48:10.228449"]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mTopic Create (0.3ms)[0m  [1m[32mINSERT INTO "topics" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", "Fractions"], ["created_at", "2019-11-06 03:48:10.232166"], ["updated_at", "2019-11-06 03:48:10.232166"]]
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mTopic Create (0.4ms)[0m  [1m[32mINSERT INTO "topics" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", "Geometry"], ["created_at", "2019-11-06 03:48:10.235771"], ["updated_at", "2019-11-06 03:48:10.235771"]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mTopic Create (0.3ms)[0m  [1m[32mINSERT INTO "topics" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", "Trigonometry"], ["created_at", "2019-11-06 03:48:10.239314"], ["updated_at", "2019-11-06 03:48:10.239314"]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mTopic Create (0.3ms)[0m  [1m[32mINSERT INTO "topics" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", "Primitives"], ["created_at", "2019-11-06 03:48:10.242673"], ["updated_at", "2019-11-06 03:48:10.242673"]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mTopic Create (0.3ms)[0m  [1m[32mINSERT INTO "topics" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", "Derivatives"], ["created_at", "2019-11-06 03:48:10.246229"], ["updated_at", "2019-11-06 03:48:10.246229"]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mTopic Create (0.3ms)[0m  [1m[32mINSERT INTO "topics" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", "Othello"], ["created_at", "2019-11-06 03:48:10.249795"], ["updated_at", "2019-11-06 03:48:10.249795"]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mTopic Create (0.4ms)[0m  [1m[32mINSERT INTO "topics" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", "Robert Frost"], ["created_at", "2019-11-06 03:48:10.253176"], ["updated_at", "2019-11-06 03:48:10.253176"]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT COUNT(*) FROM "topics"[0m
+  [1m[36mFolder Load (0.6ms)[0m  [1m[34mSELECT "folders".* FROM "folders"[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mFolder::HABTM_Resources Destroy (0.4ms)[0m  [1m[31mDELETE FROM "folders_resources" WHERE "folders_resources"."folder_id" = $1[0m  [["folder_id", 13]]
+  [1m[36mFolder Destroy (0.4ms)[0m  [1m[31mDELETE FROM "folders" WHERE "folders"."id" = $1[0m  [["id", 13]]
+  [1m[35m (0.6ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mFolder::HABTM_Resources Destroy (0.3ms)[0m  [1m[31mDELETE FROM "folders_resources" WHERE "folders_resources"."folder_id" = $1[0m  [["folder_id", 14]]
+  [1m[36mFolder Destroy (0.3ms)[0m  [1m[31mDELETE FROM "folders" WHERE "folders"."id" = $1[0m  [["id", 14]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mFolder::HABTM_Resources Destroy (0.3ms)[0m  [1m[31mDELETE FROM "folders_resources" WHERE "folders_resources"."folder_id" = $1[0m  [["folder_id", 15]]
+  [1m[36mFolder Destroy (0.3ms)[0m  [1m[31mDELETE FROM "folders" WHERE "folders"."id" = $1[0m  [["id", 15]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mFolder::HABTM_Resources Destroy (0.2ms)[0m  [1m[31mDELETE FROM "folders_resources" WHERE "folders_resources"."folder_id" = $1[0m  [["folder_id", 16]]
+  [1m[36mFolder Destroy (0.3ms)[0m  [1m[31mDELETE FROM "folders" WHERE "folders"."id" = $1[0m  [["id", 16]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mFolder Create (0.4ms)[0m  [1m[32mINSERT INTO "folders" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", "Craigsy Algebra"], ["created_at", "2019-11-06 03:48:10.293672"], ["updated_at", "2019-11-06 03:48:10.293672"]]
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mFolder Create (0.4ms)[0m  [1m[32mINSERT INTO "folders" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", "Craigsy Fractions"], ["created_at", "2019-11-06 03:48:10.297781"], ["updated_at", "2019-11-06 03:48:10.297781"]]
+  [1m[35m (0.6ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mFolder Create (0.3ms)[0m  [1m[32mINSERT INTO "folders" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", "Lizzys Poems"], ["created_at", "2019-11-06 03:48:10.312655"], ["updated_at", "2019-11-06 03:48:10.312655"]]
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mFolder Create (0.5ms)[0m  [1m[32mINSERT INTO "folders" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", "Lizzys Misc"], ["created_at", "2019-11-06 03:48:10.316562"], ["updated_at", "2019-11-06 03:48:10.316562"]]
+  [1m[35m (0.6ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT COUNT(*) FROM "folders"[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mResource Update (0.4ms)[0m  [1m[33mUPDATE "resources" SET "subject_id" = $1, "updated_at" = $2 WHERE "resources"."id" = $3[0m  [["subject_id", 9], ["updated_at", "2019-11-06 03:48:10.323856"], ["id", 1]]
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mResource Update (0.5ms)[0m  [1m[33mUPDATE "resources" SET "subject_id" = $1, "updated_at" = $2 WHERE "resources"."id" = $3[0m  [["subject_id", 9], ["updated_at", "2019-11-06 03:48:10.328506"], ["id", 3]]
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mResource Update (0.5ms)[0m  [1m[33mUPDATE "resources" SET "subject_id" = $1, "updated_at" = $2 WHERE "resources"."id" = $3[0m  [["subject_id", 10], ["updated_at", "2019-11-06 03:48:10.333085"], ["id", 2]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mResource Update (0.4ms)[0m  [1m[33mUPDATE "resources" SET "subject_id" = $1, "updated_at" = $2 WHERE "resources"."id" = $3[0m  [["subject_id", 10], ["updated_at", "2019-11-06 03:48:10.337995"], ["id", 4]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mResource::HABTM_Topics Create (0.6ms)[0m  [1m[32mINSERT INTO "resources_topics" ("topic_id", "resource_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4)[0m  [["topic_id", 33], ["resource_id", 1], ["created_at", "2019-11-06 03:48:10.349831"], ["updated_at", "2019-11-06 03:48:10.349831"]]
+  [1m[35m (0.6ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mResource::HABTM_Topics Create (0.3ms)[0m  [1m[32mINSERT INTO "resources_topics" ("topic_id", "resource_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4)[0m  [["topic_id", 39], ["resource_id", 2], ["created_at", "2019-11-06 03:48:10.354545"], ["updated_at", "2019-11-06 03:48:10.354545"]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mResource::HABTM_Topics Create (0.3ms)[0m  [1m[32mINSERT INTO "resources_topics" ("topic_id", "resource_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4)[0m  [["topic_id", 36], ["resource_id", 3], ["created_at", "2019-11-06 03:48:10.359636"], ["updated_at", "2019-11-06 03:48:10.359636"]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mResource::HABTM_Topics Create (1.2ms)[0m  [1m[32mINSERT INTO "resources_topics" ("topic_id", "resource_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4)[0m  [["topic_id", 36], ["resource_id", 3], ["created_at", "2019-11-06 03:48:10.364780"], ["updated_at", "2019-11-06 03:48:10.364780"]]
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mResource::HABTM_Topics Create (0.3ms)[0m  [1m[32mINSERT INTO "resources_topics" ("topic_id", "resource_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4)[0m  [["topic_id", 40], ["resource_id", 4], ["created_at", "2019-11-06 03:48:10.371513"], ["updated_at", "2019-11-06 03:48:10.371513"]]
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mFolder::HABTM_Resources Create (0.4ms)[0m  [1m[32mINSERT INTO "folders_resources" ("folder_id", "resource_id") VALUES ($1, $2)[0m  [["folder_id", 17], ["resource_id", 1]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mFolder::HABTM_Resources Create (0.4ms)[0m  [1m[32mINSERT INTO "folders_resources" ("folder_id", "resource_id") VALUES ($1, $2)[0m  [["folder_id", 17], ["resource_id", 3]]
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mFolder::HABTM_Resources Create (0.2ms)[0m  [1m[32mINSERT INTO "folders_resources" ("folder_id", "resource_id") VALUES ($1, $2)[0m  [["folder_id", 18], ["resource_id", 3]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mFolder::HABTM_Resources Create (0.3ms)[0m  [1m[32mINSERT INTO "folders_resources" ("folder_id", "resource_id") VALUES ($1, $2)[0m  [["folder_id", 19], ["resource_id", 4]]
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mFolder::HABTM_Resources Create (0.3ms)[0m  [1m[32mINSERT INTO "folders_resources" ("folder_id", "resource_id") VALUES ($1, $2)[0m  [["folder_id", 20], ["resource_id", 4]]
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mFolder::HABTM_Resources Create (0.3ms)[0m  [1m[32mINSERT INTO "folders_resources" ("folder_id", "resource_id") VALUES ($1, $2)[0m  [["folder_id", 20], ["resource_id", 3]]
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mFolder::HABTM_Resources Create (0.2ms)[0m  [1m[32mINSERT INTO "folders_resources" ("folder_id", "resource_id") VALUES ($1, $2)[0m  [["folder_id", 20], ["resource_id", 2]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mFolder::HABTM_Resources Create (0.2ms)[0m  [1m[32mINSERT INTO "folders_resources" ("folder_id", "resource_id") VALUES ($1, $2)[0m  [["folder_id", 20], ["resource_id", 1]]
+  [1m[35m (0.6ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mFolder Update (0.4ms)[0m  [1m[33mUPDATE "folders" SET "user_id" = $1, "updated_at" = $2 WHERE "folders"."id" = $3[0m  [["user_id", 19], ["updated_at", "2019-11-06 03:48:10.426746"], ["id", 19]]
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mFolder Update (0.5ms)[0m  [1m[33mUPDATE "folders" SET "user_id" = $1, "updated_at" = $2 WHERE "folders"."id" = $3[0m  [["user_id", 19], ["updated_at", "2019-11-06 03:48:10.431342"], ["id", 20]]
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mFolder Update (0.4ms)[0m  [1m[33mUPDATE "folders" SET "user_id" = $1, "updated_at" = $2 WHERE "folders"."id" = $3[0m  [["user_id", 20], ["updated_at", "2019-11-06 03:48:10.435783"], ["id", 17]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mFolder Update (0.4ms)[0m  [1m[33mUPDATE "folders" SET "user_id" = $1, "updated_at" = $2 WHERE "folders"."id" = $3[0m  [["user_id", 20], ["updated_at", "2019-11-06 03:48:10.440344"], ["id", 18]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m

@@ -6,10 +6,10 @@ u4 = User.create :email => 'liz@ga.co', :password => 'chicken'
 puts "#{ User.count } users created"
 
 Resource.destroy_all
-r1 = Resource.create :title => 'Maths Sheet', :kind => 'quiz'
-r2 = Resource.create :title => 'English Essay', :kind => 'test'
-r3 = Resource.create :title => 'Maths Puzzle', :kind => 'quiz'
-r4 = Resource.create :title => 'English Poem', :kind => 'info'
+r1 = Resource.create :title => 'Maths Sheet'
+r2 = Resource.create :title => 'English Essay'
+r3 = Resource.create :title => 'Maths Puzzle'
+r4 = Resource.create :title => 'English Poem'
 puts "#{ Resource.count } resources created"
 
 Subject.destroy_all
