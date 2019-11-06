@@ -1,10 +1,14 @@
-<%= form_for @resource do |f| %>
+<%= form_for(@resource, :html => {:multipart => true}) do |f| %>
 
 <%= f.label :title %>
 <%= f.text_field :title %>
 <%= f.label :kind %>
 <%= f.text_field :kind %>
+<%= f.label :image  %>
+<%= f.cl_image_upload :image %>
 
+<%= f.label :subject_id %>
+<%= f.select :subject_id, Subject.pluck(:name, :id) %>
 
 <%= f.submit %>
 

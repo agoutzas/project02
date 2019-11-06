@@ -2,14 +2,14 @@ User.destroy_all
 u1 = User.create :email => 'jonesy@ga.co', :password => 'chicken', :teacher => true
 u2 = User.create :email => 'sia@ga.co', :password => 'chicken', :teacher => true
 u3 = User.create :email => 'craigsy@ga.co', :password => 'chicken'
-u4 = User.create :email => 'adony@ga.co', :password => 'chicken'
+u4 = User.create :email => 'liz@ga.co', :password => 'chicken'
 puts "#{ User.count } users created"
 
 Resource.destroy_all
-r1 = Resource.create :title => 'Maths Sheet'
-r2 = Resource.create :title => 'English Essay'
-r3 = Resource.create :title => 'Maths Puzzle'
-r4 = Resource.create :title => 'English Poem'
+r1 = Resource.create :title => 'Maths Sheet', :kind => 'quiz'
+r2 = Resource.create :title => 'English Essay', :kind => 'test'
+r3 = Resource.create :title => 'Maths Puzzle', :kind => 'quiz'
+r4 = Resource.create :title => 'English Poem', :kind => 'info'
 puts "#{ Resource.count } resources created"
 
 Subject.destroy_all
@@ -31,18 +31,22 @@ o3 = Topic.create :name => 'Geometry'
 o4 = Topic.create :name => 'Trigonometry'
 o5 = Topic.create :name => 'Primitives'
 o6 = Topic.create :name => 'Derivatives'
+o7 = Topic.create :name => 'Othello'
+o8 = Topic.create :name => 'Robert Frost'
 puts "#{ Topic.count } Topic created"
 
 Folder.destroy_all
-f1 = Folder.create :name => 'Peters Algebra'
-f2 = Folder.create :name => 'John Fractions'
-f3 = Folder.create :name => 'James Trigonometry'
-f4 = Folder.create :name => 'Johns Derivatives'
+f1 = Folder.create :name => 'Craigsy Algebra'
+f2 = Folder.create :name => 'Craigsy Fractions'
+f3 = Folder.create :name => 'Lizzys Poems'
+f4 = Folder.create :name => 'Lizzys Misc'
 puts "#{ Folder.count } folder created"
 
 # Associations #################################################################
 puts "Subjects and Resources"
 s1.resources << r1
+s1.resources << r3
+s2.resources << r2
 s2.resources << r4
 
 
@@ -53,19 +57,17 @@ s2.resources << r4
 # t4.resources << r4
 
 puts "Topics and Resources"
-r1.topics << o1 << o2
-r2.topics << o5
-r3.topics << o3 << o4
-o3.resources << r4
+r1.topics << o1
+r2.topics << o7
+r3.topics << o4 << o4
+r4.topics << o8
 
 puts "Folders and Resources"
-f1.resources << r1 << r2 << r3 << r4
-f2.resources << r2 << r2 << r2 << r2
-f3.resources << r2 << r4 << r2 << r4
-f4.resources << r4 << r3 << r2 << r2
+f1.resources << r1 << r3
+f2.resources << r3
+f3.resources << r4
+f4.resources << r4 << r3 << r2 << r1
 
 puts "Folders and Users"
-u1.folders << f1 << f2
-u2.folders << f3 << f4
-u3.folders << f2 << f4
-u4.folders << f1 << f3
+u3.folders << f3 << f4
+u4.folders << f1 << f2

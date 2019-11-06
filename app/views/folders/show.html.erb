@@ -2,10 +2,10 @@
 
 
 <ul>
-  <li>Name: <%= @folder.name %></li>
+  <li>Folder Name: <%= @folder.name %></li>
    <% if @folder.resources.present? %>
     <% @folder.resources.each do |l| %>
-    <li><%= l.title %></li>
+    <li>Resource Item: <%=link_to l.title, resource_path(l.id) %></li>
     <% end %>
 
   <% end %>

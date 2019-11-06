@@ -4,8 +4,11 @@
    <ul>
      <li>Title: <%= link_to resource.title, resource %> </li>
      <li>Kind : <%= resource.kind %></li>
-     <li>Subject <%= resource.subject_id %></li>
-   </ul>
+     <% if resource.subject.present? %>
+     <li>Subject : <%= resource.subject.name %></li>
+     
 
+     <% end %>
+   </ul>
 
 <% end %>

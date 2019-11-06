@@ -8,8 +8,8 @@
 
 
   <p> <% @current_user.folders.each do |folder|%> </p>
-  <ul>
-     <li> Name: <%= link_to folder.name, folder %> </li>
-   </ul>
+    <ul>
+       <li> Name: <%= link_to folder.name, folder %> </li>
+    </ul>
 
 <% end %>

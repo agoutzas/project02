@@ -12,6 +12,8 @@ class FoldersController < ApplicationController
 
   def create
     folder = Folder.create folder_params
+    resource = Resource.find :id => params[:resources_ids]
+    folder.resources << resource
     @current_user.folders << folder
     redirect_to folders_path
   end
@@ -40,7 +42,7 @@ class FoldersController < ApplicationController
   private
 
   def folder_params
-    params.require(:folder).permit(:name)
+    params.require(:folder).permit(:name, :resource_ids)
   end
 
 end

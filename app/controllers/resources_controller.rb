@@ -1,7 +1,7 @@
 class ResourcesController < ApplicationController
 
-  before_action :check_for_login  #, :only => [:index]
-  before_action :check_for_teacher #, :only => [:create]
+  before_action :check_for_login, :only => [:index]
+  before_action :check_for_teacher, :only => [:create, :destroy, :edit]
 
 
   def index
@@ -19,12 +19,24 @@ class ResourcesController < ApplicationController
   def update
     resource = Resource.find params[:id]
     resource.update resource_params
-    redirect_to resource
+    if params[:file].present?
+      req = Cloudinary::Uploader.upload(params[:file])
+      resource.image = req["public_id"]
+    end
+      resource.update_attributes(resource_params)
+      resource.save
+      redirect_to resource_path
   end
+
+
 
   def create
     @resource = Resource.create resource_params
-    raise "hell"
+    if params[:file].present?
+      req = Cloudinary::Uploader.upload(params[:file])
+      @resource.image = req["public_id"]
+      @resource.save
+    end
     redirect_to resources_path
   end
 
@@ -39,11 +51,10 @@ class ResourcesController < ApplicationController
   end
 
 
-
   private
 
   def resource_params
-    params.require(:resource).permit(:title, :kind)
+    params.require(:resource).permit(:title, :kind, :image, :subject_id)
   end
 
 end

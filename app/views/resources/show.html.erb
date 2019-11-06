@@ -3,6 +3,10 @@
 
 <ul>
   <li>Name: <%= @resource.title %></li>
+</ul>
+
+<h2>Students using these folders</h2>
+<ul>
   <% if @resource.folders.present? %>
     <% @resource.folders.each do |l| %>
     <li><%= l.name %></li>
@@ -10,7 +14,14 @@
   <% end %>
 </ul>
 
-<div class="controls">
-  <%= link_to "Edit Resources", edit_resource_path(@resource) %>
-  <%= link_to "Delete Resources", @resource, :method => 'delete', :data => { :confirm => 'Are you sure?' } %>
-</div>
+
+<% if @current_user.teacher? %>
+  <div class="controls">
+    <%= link_to "Edit Resource", edit_resource_path(@resource) %>
+    <%= link_to "Delete Resource", @resource, :method => 'delete', :data => { :confirm => 'Are you sure?' } %>
+  </div>
+<% end %>
+
+  <div>
+    <%= cl_image_tag(@resource.image) %>
+  </div>
