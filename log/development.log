@@ -26323,3 +26323,150 @@ Migrating to CreateUsers (20191030041321)
   [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
   [1m[36mFolder Update (0.4ms)[0m  [1m[33mUPDATE "folders" SET "user_id" = $1, "updated_at" = $2 WHERE "folders"."id" = $3[0m  [["user_id", 20], ["updated_at", "2019-11-06 03:48:10.440344"], ["id", 18]]
   [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+Started GET "/" for ::1 at 2019-11-06 15:05:41 +1100
+  [1m[35m (0.8ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by PagesController#home as HTML
+  Rendering pages/home.html.erb within layouts/application
+  Rendered pages/home.html.erb within layouts/application (Duration: 1.8ms | Allocations: 238)
+Completed 200 OK in 25ms (Views: 17.8ms | ActiveRecord: 0.0ms | Allocations: 7124)
+
+
+Started GET "/" for ::1 at 2019-11-06 15:05:44 +1100
+Processing by PagesController#home as HTML
+  Rendering pages/home.html.erb within layouts/application
+  Rendered pages/home.html.erb within layouts/application (Duration: 0.1ms | Allocations: 5)
+Completed 200 OK in 36ms (Views: 32.4ms | ActiveRecord: 0.0ms | Allocations: 5065)
+
+
+Started GET "/users/new" for ::1 at 2019-11-06 15:05:46 +1100
+Processing by UsersController#new as HTML
+  Rendering users/new.html.erb within layouts/application
+  Rendered users/new.html.erb within layouts/application (Duration: 16.6ms | Allocations: 4024)
+Completed 200 OK in 66ms (Views: 24.4ms | ActiveRecord: 14.2ms | Allocations: 15444)
+
+
+Started GET "/login" for ::1 at 2019-11-06 15:05:47 +1100
+Processing by SessionController#new as HTML
+  Rendering session/new.html.erb within layouts/application
+  Rendered session/new.html.erb within layouts/application (Duration: 2.9ms | Allocations: 534)
+Completed 200 OK in 39ms (Views: 35.6ms | ActiveRecord: 0.0ms | Allocations: 5952)
+
+
+Started POST "/login" for ::1 at 2019-11-06 15:05:55 +1100
+Processing by SessionController#create as HTML
+  Parameters: {"authenticity_token"=>"IvOJrjPfJAB7Gdh5YVZIELNYLPiSy+IxVkpn3fKR9kmGbR+hI+7G9L/A/3xggyUuaNtgiyRAJplxeQvRpubimQ==", "email"=>"sia@ga.co", "password"=>"[FILTERED]", "commit"=>"Sign in"}
+  [1m[36mUser Load (2.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "sia@ga.co"], ["LIMIT", 1]]
+  ↳ app/controllers/session_controller.rb:7:in `create'
+Redirected to http://localhost:3000/
+Completed 302 Found in 314ms (ActiveRecord: 3.1ms | Allocations: 1867)
+
+
+Started GET "/" for ::1 at 2019-11-06 15:05:56 +1100
+Processing by PagesController#home as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 18], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:7:in `fetch_user'
+  Rendering pages/home.html.erb within layouts/application
+  Rendered pages/home.html.erb within layouts/application (Duration: 0.2ms | Allocations: 8)
+Completed 200 OK in 16ms (Views: 13.0ms | ActiveRecord: 0.3ms | Allocations: 5785)
+
+
+Started GET "/resources/new" for ::1 at 2019-11-06 15:05:57 +1100
+Processing by ResourcesController#new as HTML
+  [1m[36mUser Load (2.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 18], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:7:in `fetch_user'
+  Rendering resources/new.html.erb within layouts/application
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT "subjects"."name", "subjects"."id" FROM "subjects"[0m
+  ↳ app/views/resources/_form.html.erb:11
+  Rendered resources/_form.html.erb (Duration: 203.0ms | Allocations: 146206)
+  Rendered resources/new.html.erb within layouts/application (Duration: 205.3ms | Allocations: 146520)
+Completed 200 OK in 287ms (Views: 211.6ms | ActiveRecord: 14.8ms | Allocations: 162234)
+
+
+Started GET "/resources" for ::1 at 2019-11-06 15:05:59 +1100
+Processing by ResourcesController#index as HTML
+  [1m[36mUser Load (7.8ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 18], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:7:in `fetch_user'
+  Rendering resources/index.html.erb within layouts/application
+  [1m[36mResource Load (33.0ms)[0m  [1m[34mSELECT "resources".* FROM "resources"[0m
+  ↳ app/views/resources/index.html.erb:3
+  [1m[36mSubject Load (0.4ms)[0m  [1m[34mSELECT "subjects".* FROM "subjects" WHERE "subjects"."id" = $1 LIMIT $2[0m  [["id", 9], ["LIMIT", 1]]
+  ↳ app/views/resources/index.html.erb:7
+  [1m[36mCACHE Subject Load (0.1ms)[0m  [1m[34mSELECT "subjects".* FROM "subjects" WHERE "subjects"."id" = $1 LIMIT $2[0m  [["id", 9], ["LIMIT", 1]]
+  ↳ app/views/resources/index.html.erb:7
+  [1m[36mSubject Load (0.7ms)[0m  [1m[34mSELECT "subjects".* FROM "subjects" WHERE "subjects"."id" = $1 LIMIT $2[0m  [["id", 10], ["LIMIT", 1]]
+  ↳ app/views/resources/index.html.erb:7
+  [1m[36mCACHE Subject Load (0.1ms)[0m  [1m[34mSELECT "subjects".* FROM "subjects" WHERE "subjects"."id" = $1 LIMIT $2[0m  [["id", 10], ["LIMIT", 1]]
+  ↳ app/views/resources/index.html.erb:7
+  Rendered resources/index.html.erb within layouts/application (Duration: 79.6ms | Allocations: 7766)
+Completed 200 OK in 110ms (Views: 57.7ms | ActiveRecord: 46.6ms | Allocations: 13616)
+
+
+Started GET "/" for ::1 at 2019-11-06 15:06:02 +1100
+Processing by PagesController#home as HTML
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 18], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:7:in `fetch_user'
+  Rendering pages/home.html.erb within layouts/application
+  Rendered pages/home.html.erb within layouts/application (Duration: 0.1ms | Allocations: 8)
+Completed 200 OK in 36ms (Views: 31.6ms | ActiveRecord: 0.5ms | Allocations: 5674)
+
+
+Started GET "/resources/new" for ::1 at 2019-11-06 15:06:05 +1100
+Processing by ResourcesController#new as HTML
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 18], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:7:in `fetch_user'
+  Rendering resources/new.html.erb within layouts/application
+  [1m[35m (41.0ms)[0m  [1m[34mSELECT "subjects"."name", "subjects"."id" FROM "subjects"[0m
+  ↳ app/views/resources/_form.html.erb:11
+  Rendered resources/_form.html.erb (Duration: 50.0ms | Allocations: 1960)
+  Rendered resources/new.html.erb within layouts/application (Duration: 50.7ms | Allocations: 2033)
+Completed 200 OK in 89ms (Views: 43.3ms | ActiveRecord: 41.6ms | Allocations: 7717)
+
+
+Started GET "/resources" for ::1 at 2019-11-06 15:06:06 +1100
+Processing by ResourcesController#index as HTML
+  [1m[36mUser Load (10.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 18], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:7:in `fetch_user'
+  Rendering resources/index.html.erb within layouts/application
+  [1m[36mResource Load (0.9ms)[0m  [1m[34mSELECT "resources".* FROM "resources"[0m
+  ↳ app/views/resources/index.html.erb:3
+  [1m[36mSubject Load (0.6ms)[0m  [1m[34mSELECT "subjects".* FROM "subjects" WHERE "subjects"."id" = $1 LIMIT $2[0m  [["id", 9], ["LIMIT", 1]]
+  ↳ app/views/resources/index.html.erb:7
+  [1m[36mCACHE Subject Load (0.6ms)[0m  [1m[34mSELECT "subjects".* FROM "subjects" WHERE "subjects"."id" = $1 LIMIT $2[0m  [["id", 9], ["LIMIT", 1]]
+  ↳ app/views/resources/index.html.erb:7
+  [1m[36mSubject Load (0.6ms)[0m  [1m[34mSELECT "subjects".* FROM "subjects" WHERE "subjects"."id" = $1 LIMIT $2[0m  [["id", 10], ["LIMIT", 1]]
+  ↳ app/views/resources/index.html.erb:7
+  [1m[36mCACHE Subject Load (0.0ms)[0m  [1m[34mSELECT "subjects".* FROM "subjects" WHERE "subjects"."id" = $1 LIMIT $2[0m  [["id", 10], ["LIMIT", 1]]
+  ↳ app/views/resources/index.html.erb:7
+  Rendered resources/index.html.erb within layouts/application (Duration: 14.2ms | Allocations: 3514)
+Completed 200 OK in 55ms (Views: 38.3ms | ActiveRecord: 12.9ms | Allocations: 9174)
+
+
+Started GET "/resources/1" for ::1 at 2019-11-06 15:06:07 +1100
+Processing by ResourcesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (35.7ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 18], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:7:in `fetch_user'
+  [1m[36mResource Load (0.5ms)[0m  [1m[34mSELECT "resources".* FROM "resources" WHERE "resources"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/resources_controller.rb:44:in `show'
+  Rendering resources/show.html.erb within layouts/application
+  [1m[36mFolder Load (0.9ms)[0m  [1m[34mSELECT "folders".* FROM "folders" INNER JOIN "folders_resources" ON "folders"."id" = "folders_resources"."folder_id" WHERE "folders_resources"."resource_id" = $1[0m  [["resource_id", 1]]
+  ↳ app/views/resources/show.html.erb:10
+  Rendered resources/show.html.erb within layouts/application (Duration: 92.7ms | Allocations: 12593)
+Completed 200 OK in 148ms (Views: 88.9ms | ActiveRecord: 49.6ms | Allocations: 18952)
+
+
+Started GET "/resources/1/edit" for ::1 at 2019-11-06 15:06:12 +1100
+Processing by ResourcesController#edit as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (20.8ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 18], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:7:in `fetch_user'
+  [1m[36mResource Load (0.6ms)[0m  [1m[34mSELECT "resources".* FROM "resources" WHERE "resources"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/resources_controller.rb:16:in `edit'
+  Rendering resources/edit.html.erb within layouts/application
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT "subjects"."name", "subjects"."id" FROM "subjects"[0m
+  ↳ app/views/resources/_form.html.erb:11
+  Rendered resources/_form.html.erb (Duration: 8.9ms | Allocations: 1999)
+  Rendered resources/edit.html.erb within layouts/application (Duration: 11.8ms | Allocations: 2173)
+Completed 200 OK in 70ms (Views: 40.3ms | ActiveRecord: 21.9ms | Allocations: 8508)
+
+

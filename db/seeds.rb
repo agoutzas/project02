@@ -69,5 +69,5 @@ f3.resources << r4
 f4.resources << r4 << r3 << r2 << r1
 
 puts "Folders and Users"
-u3.folders << f3 << f4
-u4.folders << f1 << f2
+u3.folders << f1 << f2
+u4.folders << f3 << f4
