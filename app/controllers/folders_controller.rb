@@ -11,8 +11,9 @@ class FoldersController < ApplicationController
   end
 
   def create
-    folder = Folder.create folder_params
-    resource = Resource.find :id => params[:resources_ids]
+    folderdata = folder_params
+    folder = Folder.create folderdata
+    resource = Resource.find_by :id => folderdata[:resource_ids]
     folder.resources << resource
     @current_user.folders << folder
     redirect_to folders_path
