@@ -27919,3 +27919,2353 @@ Migrating to CreateUsers (20191030041321)
   [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
   [1m[36mFolder Update (0.7ms)[0m  [1m[33mUPDATE "folders" SET "user_id" = $1, "updated_at" = $2 WHERE "folders"."id" = $3[0m  [["user_id", 4], ["updated_at", "2019-11-07 23:56:36.007930"], ["id", 4]]
   [1m[35m (0.7ms)[0m  [1m[35mCOMMIT[0m
+Started GET "/" for ::1 at 2019-11-08 10:58:25 +1100
+  [1m[35m (1.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by PagesController#home as HTML
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 22], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:7:in `fetch_user'
+  Rendering pages/home.html.erb within layouts/application
+  Rendered pages/home.html.erb within layouts/application (Duration: 1.4ms | Allocations: 238)
+Completed 200 OK in 41ms (Views: 19.2ms | ActiveRecord: 3.2ms | Allocations: 10606)
+
+
+Started GET "/users/new" for ::1 at 2019-11-08 10:58:26 +1100
+Processing by UsersController#new as HTML
+  Rendering users/new.html.erb within layouts/application
+  Rendered users/new.html.erb within layouts/application (Duration: 13.3ms | Allocations: 4024)
+Completed 200 OK in 81ms (Views: 26.5ms | ActiveRecord: 15.4ms | Allocations: 13043)
+
+
+Started GET "/login" for ::1 at 2019-11-08 10:58:29 +1100
+Processing by SessionController#new as HTML
+  Rendering session/new.html.erb within layouts/application
+  Rendered session/new.html.erb within layouts/application (Duration: 1.6ms | Allocations: 534)
+Completed 200 OK in 19ms (Views: 16.9ms | ActiveRecord: 0.0ms | Allocations: 5952)
+
+
+Started POST "/login" for ::1 at 2019-11-08 10:58:36 +1100
+Processing by SessionController#create as HTML
+  Parameters: {"authenticity_token"=>"7C8qhPVBXClcXughf06jtFM4YbprhgXcd3d/lbdrIdZIsbyL5XC+3ZiHzyR+m86KiLstyd0NwXRQRBOZ4xw1Bg==", "email"=>"sia@ga.co", "password"=>"[FILTERED]", "commit"=>"Sign in"}
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "sia@ga.co"], ["LIMIT", 1]]
+  ↳ app/controllers/session_controller.rb:7:in `create'
+Redirected to http://localhost:3000/
+Completed 302 Found in 290ms (ActiveRecord: 0.8ms | Allocations: 1461)
+
+
+Started GET "/" for ::1 at 2019-11-08 10:58:37 +1100
+Processing by PagesController#home as HTML
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:7:in `fetch_user'
+  Rendering pages/home.html.erb within layouts/application
+  Rendered pages/home.html.erb within layouts/application (Duration: 0.1ms | Allocations: 8)
+Completed 200 OK in 16ms (Views: 12.7ms | ActiveRecord: 0.5ms | Allocations: 5680)
+
+
+Started GET "/resources" for ::1 at 2019-11-08 10:58:39 +1100
+Processing by ResourcesController#index as HTML
+  [1m[36mUser Load (4.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:7:in `fetch_user'
+  Rendering resources/index.html.erb within layouts/application
+  [1m[36mResource Load (1.6ms)[0m  [1m[34mSELECT "resources".* FROM "resources"[0m
+  ↳ app/views/resources/index.html.erb:3
+  [1m[36mSubject Load (0.6ms)[0m  [1m[34mSELECT "subjects".* FROM "subjects" WHERE "subjects"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/resources/index.html.erb:7
+  [1m[36mCACHE Subject Load (0.0ms)[0m  [1m[34mSELECT "subjects".* FROM "subjects" WHERE "subjects"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/resources/index.html.erb:7
+  [1m[36mSubject Load (1.4ms)[0m  [1m[34mSELECT "subjects".* FROM "subjects" WHERE "subjects"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/resources/index.html.erb:7
+  [1m[36mCACHE Subject Load (0.0ms)[0m  [1m[34mSELECT "subjects".* FROM "subjects" WHERE "subjects"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/resources/index.html.erb:7
+  Rendered resources/index.html.erb within layouts/application (Duration: 70.4ms | Allocations: 14159)
+Completed 200 OK in 121ms (Views: 71.6ms | ActiveRecord: 22.4ms | Allocations: 24737)
+
+
+Started GET "/resources/2" for ::1 at 2019-11-08 10:58:42 +1100
+Processing by ResourcesController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mUser Load (0.9ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:7:in `fetch_user'
+  [1m[36mResource Load (0.7ms)[0m  [1m[34mSELECT "resources".* FROM "resources" WHERE "resources"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/resources_controller.rb:44:in `show'
+  Rendering resources/show.html.erb within layouts/application
+  [1m[36mFolder Load (1.1ms)[0m  [1m[34mSELECT "folders".* FROM "folders" INNER JOIN "folders_resources" ON "folders"."id" = "folders_resources"."folder_id" WHERE "folders_resources"."resource_id" = $1[0m  [["resource_id", 2]]
+  ↳ app/views/resources/show.html.erb:10
+  Rendered resources/show.html.erb within layouts/application (Duration: 71.5ms | Allocations: 11921)
+Completed 200 OK in 93ms (Views: 65.3ms | ActiveRecord: 20.4ms | Allocations: 18265)
+
+
+Started GET "/resources/2/edit" for ::1 at 2019-11-08 10:58:46 +1100
+Processing by ResourcesController#edit as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mUser Load (4.7ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:7:in `fetch_user'
+  [1m[36mResource Load (5.5ms)[0m  [1m[34mSELECT "resources".* FROM "resources" WHERE "resources"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/resources_controller.rb:16:in `edit'
+  Rendering resources/edit.html.erb within layouts/application
+  [1m[35m (2.7ms)[0m  [1m[34mSELECT "subjects"."name", "subjects"."id" FROM "subjects"[0m
+  ↳ app/views/resources/_form.html.erb:11
+  Rendered resources/_form.html.erb (Duration: 238.2ms | Allocations: 142706)
+  Rendered resources/edit.html.erb within layouts/application (Duration: 240.2ms | Allocations: 143025)
+Completed 200 OK in 266ms (Views: 248.0ms | ActiveRecord: 12.9ms | Allocations: 149471)
+
+
+Started PATCH "/resources/2" for ::1 at 2019-11-08 10:58:59 +1100
+Processing by ResourcesController#update as HTML
+  Parameters: {"authenticity_token"=>"f+VjUpxa7If+zoEbnXbfOfNPWaxQuJ4GXCnp3ewMncX3Ckxkxafp4Gb8BE1dEj+O3qf9GvjHS2XFj69pwMZfaQ==", "resource"=>{"title"=>"English Essay", "kind"=>"Book OF resources", "subject_id"=>"2"}, "file"=>#<ActionDispatch::Http::UploadedFile:0x00007ff15ad2ca78 @tempfile=#<Tempfile:/var/folders/4v/z4x_mksx7c37jhm6ls3lhjrc0000gn/T/RackMultipart20191108-74633-qh7rzz.jpg>, @original_filename="eng essay.jpg", @content_type="image/jpeg", @headers="Content-Disposition: form-data; name=\"file\"; filename=\"eng essay.jpg\"\r\nContent-Type: image/jpeg\r\n">, "commit"=>"Update Resource", "id"=>"2"}
+  [1m[36mUser Load (1.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:7:in `fetch_user'
+  [1m[36mResource Load (8.7ms)[0m  [1m[34mSELECT "resources".* FROM "resources" WHERE "resources"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/resources_controller.rb:20:in `update'
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/resources_controller.rb:21:in `update'
+  [1m[36mResource Update (0.8ms)[0m  [1m[33mUPDATE "resources" SET "kind" = $1, "updated_at" = $2 WHERE "resources"."id" = $3[0m  [["kind", "Book OF resources"], ["updated_at", "2019-11-07 23:58:59.109948"], ["id", 2]]
+  ↳ app/controllers/resources_controller.rb:21:in `update'
+  [1m[35m (2.5ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/resources_controller.rb:21:in `update'
+DEPRECATION WARNING: update_attributes is deprecated and will be removed from Rails 6.1 (please, use update instead) (called from update at /Users/adony/projects/project02/student_portal_rails/app/controllers/resources_controller.rb:26)
+  [1m[35m (1.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/resources_controller.rb:26:in `update'
+  [1m[36mResource Update (2.0ms)[0m  [1m[33mUPDATE "resources" SET "image" = $1, "updated_at" = $2 WHERE "resources"."id" = $3[0m  [["image", "lyqdq9hmyxboqduuwipm"], ["updated_at", "2019-11-07 23:59:02.235209"], ["id", 2]]
+  ↳ app/controllers/resources_controller.rb:26:in `update'
+  [1m[35m (2.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/resources_controller.rb:26:in `update'
+Redirected to http://localhost:3000/resources/2
+Completed 302 Found in 3154ms (ActiveRecord: 19.2ms | Allocations: 10858)
+
+
+Started GET "/resources/2" for ::1 at 2019-11-08 10:59:02 +1100
+Processing by ResourcesController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:7:in `fetch_user'
+  [1m[36mResource Load (0.6ms)[0m  [1m[34mSELECT "resources".* FROM "resources" WHERE "resources"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/resources_controller.rb:44:in `show'
+  Rendering resources/show.html.erb within layouts/application
+  [1m[36mFolder Load (0.8ms)[0m  [1m[34mSELECT "folders".* FROM "folders" INNER JOIN "folders_resources" ON "folders"."id" = "folders_resources"."folder_id" WHERE "folders_resources"."resource_id" = $1[0m  [["resource_id", 2]]
+  ↳ app/views/resources/show.html.erb:10
+  Rendered resources/show.html.erb within layouts/application (Duration: 4.7ms | Allocations: 1292)
+Completed 200 OK in 24ms (Views: 17.8ms | ActiveRecord: 1.8ms | Allocations: 7533)
+
+
+Started GET "/resources" for ::1 at 2019-11-08 10:59:05 +1100
+Processing by ResourcesController#index as HTML
+  [1m[36mUser Load (2.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:7:in `fetch_user'
+  Rendering resources/index.html.erb within layouts/application
+  [1m[36mResource Load (9.4ms)[0m  [1m[34mSELECT "resources".* FROM "resources"[0m
+  ↳ app/views/resources/index.html.erb:3
+  [1m[36mSubject Load (4.8ms)[0m  [1m[34mSELECT "subjects".* FROM "subjects" WHERE "subjects"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/resources/index.html.erb:7
+  [1m[36mCACHE Subject Load (0.0ms)[0m  [1m[34mSELECT "subjects".* FROM "subjects" WHERE "subjects"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/resources/index.html.erb:7
+  [1m[36mSubject Load (1.9ms)[0m  [1m[34mSELECT "subjects".* FROM "subjects" WHERE "subjects"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/resources/index.html.erb:7
+  [1m[36mCACHE Subject Load (0.0ms)[0m  [1m[34mSELECT "subjects".* FROM "subjects" WHERE "subjects"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/resources/index.html.erb:7
+  Rendered resources/index.html.erb within layouts/application (Duration: 57.6ms | Allocations: 3528)
+Completed 200 OK in 74ms (Views: 52.4ms | ActiveRecord: 18.1ms | Allocations: 9169)
+
+
+Started GET "/" for ::1 at 2019-11-08 11:26:32 +1100
+Processing by PagesController#home as HTML
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:7:in `fetch_user'
+  Rendering pages/home.html.erb within layouts/application
+  Rendered pages/home.html.erb within layouts/application (Duration: 0.1ms | Allocations: 8)
+Completed 200 OK in 32ms (Views: 21.8ms | ActiveRecord: 1.7ms | Allocations: 5795)
+
+
+Started GET "/" for ::1 at 2019-11-08 11:26:35 +1100
+Processing by PagesController#home as HTML
+  [1m[36mUser Load (3.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:7:in `fetch_user'
+  Rendering pages/home.html.erb within layouts/application
+  Rendered pages/home.html.erb within layouts/application (Duration: 0.4ms | Allocations: 7)
+Completed 200 OK in 21ms (Views: 14.1ms | ActiveRecord: 3.5ms | Allocations: 5653)
+
+
+Started DELETE "/login" for ::1 at 2019-11-08 11:26:37 +1100
+Processing by SessionController#destroy as HTML
+  Parameters: {"authenticity_token"=>"77y9iiqgjgo7bv2TXQHvhvGHITaxlmK0bl0yyT0I94ciVTKv/VB4+djPBIQnK+IihRsZxLGbhLaZG6X1Aecmnw=="}
+  [1m[36mUser Load (7.9ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:7:in `fetch_user'
+Redirected to http://localhost:3000/login
+Completed 302 Found in 13ms (ActiveRecord: 7.9ms | Allocations: 1266)
+
+
+Started GET "/login" for ::1 at 2019-11-08 11:26:37 +1100
+Processing by SessionController#new as HTML
+  Rendering session/new.html.erb within layouts/application
+  Rendered session/new.html.erb within layouts/application (Duration: 0.6ms | Allocations: 304)
+Completed 200 OK in 12ms (Views: 11.4ms | ActiveRecord: 0.0ms | Allocations: 5344)
+
+
+Started GET "/login" for ::1 at 2019-11-08 11:26:39 +1100
+Processing by SessionController#new as HTML
+  Rendering session/new.html.erb within layouts/application
+  Rendered session/new.html.erb within layouts/application (Duration: 0.8ms | Allocations: 285)
+Completed 200 OK in 16ms (Views: 14.6ms | ActiveRecord: 0.0ms | Allocations: 5319)
+
+
+Started GET "/users/new" for ::1 at 2019-11-08 11:26:41 +1100
+Processing by UsersController#new as HTML
+  Rendering users/new.html.erb within layouts/application
+  Rendered users/new.html.erb within layouts/application (Duration: 2.1ms | Allocations: 796)
+Completed 200 OK in 19ms (Views: 17.4ms | ActiveRecord: 0.0ms | Allocations: 5861)
+
+
+Started POST "/users" for ::1 at 2019-11-08 11:27:00 +1100
+Processing by UsersController#create as HTML
+  Parameters: {"authenticity_token"=>"Ny6KdaTKuSS/zP4E23tRYHKiNiIvvOpI9Qe7mjM7qKs2cptN94MvUjhV82fQ53PK3BnGWlR0t6PKKZaGpOho2w==", "user"=>{"email"=>"adony@ga.co", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "commit"=>"Sign Up"}
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/users_controller.rb:16:in `create'
+  [1m[36mUser Exists? (0.8ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "adony@ga.co"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:16:in `create'
+  [1m[36mUser Create (1.2ms)[0m  [1m[32mINSERT INTO "users" ("email", "password_digest", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["email", "adony@ga.co"], ["password_digest", "$2a$12$Ql.9KLXKhj7NPp56yCuc9ux9vwJ/cQp8Pn2TQ4J2MXNLKzI7sjnOi"], ["created_at", "2019-11-08 00:27:00.535051"], ["updated_at", "2019-11-08 00:27:00.535051"]]
+  ↳ app/controllers/users_controller.rb:16:in `create'
+  [1m[35m (1.6ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/users_controller.rb:16:in `create'
+Redirected to http://localhost:3000/
+Completed 302 Found in 326ms (ActiveRecord: 3.9ms | Allocations: 4397)
+
+
+Started GET "/" for ::1 at 2019-11-08 11:27:00 +1100
+Processing by PagesController#home as HTML
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:7:in `fetch_user'
+  Rendering pages/home.html.erb within layouts/application
+  Rendered pages/home.html.erb within layouts/application (Duration: 0.1ms | Allocations: 7)
+Completed 200 OK in 17ms (Views: 12.6ms | ActiveRecord: 0.7ms | Allocations: 5668)
+
+
+Started GET "/folders/new" for ::1 at 2019-11-08 11:27:02 +1100
+Processing by FoldersController#new as HTML
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:7:in `fetch_user'
+  Rendering folders/new.html.erb within layouts/application
+  [1m[35m (1.4ms)[0m  [1m[34mSELECT "resources"."title", "resources"."id" FROM "resources"[0m
+  ↳ app/views/folders/_form.html.erb:6
+  Rendered folders/_form.html.erb (Duration: 7.2ms | Allocations: 2265)
+  Rendered folders/new.html.erb within layouts/application (Duration: 8.5ms | Allocations: 2575)
+Completed 200 OK in 22ms (Views: 16.7ms | ActiveRecord: 2.1ms | Allocations: 8639)
+
+
+Started POST "/folders" for ::1 at 2019-11-08 11:27:11 +1100
+Processing by FoldersController#create as HTML
+  Parameters: {"authenticity_token"=>"bBEHjyjNwGigqV1hwrBCXJCnsYBMbS9oCUCrzrHk7yzaQNoqTz+RBs+Y53jO73TBE0SqY5SJV/dHz53BmM4Saw==", "folder"=>{"name"=>"Eng Poems", "resource_ids"=>"4"}, "commit"=>"Create Folder"}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:7:in `fetch_user'
+  [1m[36mResource Load (0.4ms)[0m  [1m[34mSELECT "resources".* FROM "resources" WHERE "resources"."id" = $1[0m  [["id", 4]]
+  ↳ app/controllers/folders_controller.rb:15:in `create'
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/folders_controller.rb:15:in `create'
+  [1m[36mFolder Create (2.8ms)[0m  [1m[32mINSERT INTO "folders" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", "Eng Poems"], ["created_at", "2019-11-08 00:27:11.171100"], ["updated_at", "2019-11-08 00:27:11.171100"]]
+  ↳ app/controllers/folders_controller.rb:15:in `create'
+  [1m[36mFolder::HABTM_Resources Create (0.8ms)[0m  [1m[32mINSERT INTO "folders_resources" ("folder_id", "resource_id") VALUES ($1, $2)[0m  [["folder_id", 5], ["resource_id", 4]]
+  ↳ app/controllers/folders_controller.rb:15:in `create'
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/folders_controller.rb:15:in `create'
+  [1m[36mResource Load (3.4ms)[0m  [1m[34mSELECT "resources".* FROM "resources" WHERE "resources"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/folders_controller.rb:16:in `create'
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/folders_controller.rb:17:in `create'
+  [1m[36mFolder::HABTM_Resources Create (0.8ms)[0m  [1m[32mINSERT INTO "folders_resources" ("folder_id", "resource_id") VALUES ($1, $2)[0m  [["folder_id", 5], ["resource_id", 4]]
+  ↳ app/controllers/folders_controller.rb:17:in `create'
+  [1m[35m (0.7ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/folders_controller.rb:17:in `create'
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/folders_controller.rb:18:in `create'
+  [1m[36mFolder Update (1.1ms)[0m  [1m[33mUPDATE "folders" SET "user_id" = $1, "updated_at" = $2 WHERE "folders"."id" = $3[0m  [["user_id", 5], ["updated_at", "2019-11-08 00:27:11.198041"], ["id", 5]]
+  ↳ app/controllers/folders_controller.rb:18:in `create'
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/folders_controller.rb:18:in `create'
+Redirected to http://localhost:3000/folders
+Completed 302 Found in 54ms (ActiveRecord: 20.9ms | Allocations: 14282)
+
+
+Started GET "/folders" for ::1 at 2019-11-08 11:27:11 +1100
+Processing by FoldersController#index as HTML
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:7:in `fetch_user'
+  Rendering folders/index.html.erb within layouts/application
+  [1m[36mFolder Load (2.9ms)[0m  [1m[34mSELECT "folders".* FROM "folders" WHERE "folders"."user_id" = $1[0m  [["user_id", 5]]
+  ↳ app/views/folders/index.html.erb:10
+  Rendered folders/index.html.erb within layouts/application (Duration: 7.4ms | Allocations: 1119)
+Completed 200 OK in 59ms (Views: 17.9ms | ActiveRecord: 3.7ms | Allocations: 6898)
+
+
+Started GET "/folders/5" for ::1 at 2019-11-08 11:27:12 +1100
+Processing by FoldersController#show as HTML
+  Parameters: {"id"=>"5"}
+  [1m[36mUser Load (3.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:7:in `fetch_user'
+  [1m[36mFolder Load (0.7ms)[0m  [1m[34mSELECT "folders".* FROM "folders" WHERE "folders"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/folders_controller.rb:33:in `show'
+  Rendering folders/show.html.erb within layouts/application
+  [1m[36mResource Load (9.1ms)[0m  [1m[34mSELECT "resources".* FROM "resources" INNER JOIN "folders_resources" ON "resources"."id" = "folders_resources"."resource_id" WHERE "folders_resources"."folder_id" = $1[0m  [["folder_id", 5]]
+  ↳ app/views/folders/show.html.erb:6
+  Rendered folders/show.html.erb within layouts/application (Duration: 15.2ms | Allocations: 1628)
+Completed 200 OK in 38ms (Views: 18.1ms | ActiveRecord: 13.0ms | Allocations: 8065)
+
+
+Started GET "/resources/4" for ::1 at 2019-11-08 11:27:14 +1100
+Processing by ResourcesController#show as HTML
+  Parameters: {"id"=>"4"}
+  [1m[36mUser Load (8.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:7:in `fetch_user'
+  [1m[36mResource Load (2.4ms)[0m  [1m[34mSELECT "resources".* FROM "resources" WHERE "resources"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/resources_controller.rb:44:in `show'
+  Rendering resources/show.html.erb within layouts/application
+  [1m[36mFolder Load (2.7ms)[0m  [1m[34mSELECT "folders".* FROM "folders" INNER JOIN "folders_resources" ON "folders"."id" = "folders_resources"."folder_id" WHERE "folders_resources"."resource_id" = $1[0m  [["resource_id", 4]]
+  ↳ app/views/resources/show.html.erb:10
+  Rendered resources/show.html.erb within layouts/application (Duration: 11.7ms | Allocations: 1065)
+Completed 200 OK in 39ms (Views: 21.2ms | ActiveRecord: 13.2ms | Allocations: 7278)
+
+
+Started GET "/folders" for ::1 at 2019-11-08 11:27:40 +1100
+Processing by FoldersController#index as HTML
+  [1m[36mUser Load (37.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:7:in `fetch_user'
+  Rendering folders/index.html.erb within layouts/application
+  [1m[36mFolder Load (21.8ms)[0m  [1m[34mSELECT "folders".* FROM "folders" WHERE "folders"."user_id" = $1[0m  [["user_id", 5]]
+  ↳ app/views/folders/index.html.erb:10
+  Rendered folders/index.html.erb within layouts/application (Duration: 24.4ms | Allocations: 779)
+Completed 200 OK in 77ms (Views: 14.3ms | ActiveRecord: 59.1ms | Allocations: 6419)
+
+
+Started GET "/folders/5" for ::1 at 2019-11-08 11:27:47 +1100
+Processing by FoldersController#show as HTML
+  Parameters: {"id"=>"5"}
+  [1m[36mUser Load (63.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:7:in `fetch_user'
+  [1m[36mFolder Load (0.7ms)[0m  [1m[34mSELECT "folders".* FROM "folders" WHERE "folders"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/folders_controller.rb:33:in `show'
+  Rendering folders/show.html.erb within layouts/application
+  [1m[36mResource Load (2.4ms)[0m  [1m[34mSELECT "resources".* FROM "resources" INNER JOIN "folders_resources" ON "resources"."id" = "folders_resources"."resource_id" WHERE "folders_resources"."folder_id" = $1[0m  [["folder_id", 5]]
+  ↳ app/views/folders/show.html.erb:6
+  Rendered folders/show.html.erb within layouts/application (Duration: 6.1ms | Allocations: 1088)
+Completed 200 OK in 88ms (Views: 16.1ms | ActiveRecord: 66.2ms | Allocations: 7268)
+
+
+Started GET "/resources/4" for ::1 at 2019-11-08 11:27:52 +1100
+Processing by ResourcesController#show as HTML
+  Parameters: {"id"=>"4"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:7:in `fetch_user'
+  [1m[36mResource Load (6.9ms)[0m  [1m[34mSELECT "resources".* FROM "resources" WHERE "resources"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/resources_controller.rb:44:in `show'
+  Rendering resources/show.html.erb within layouts/application
+  [1m[36mFolder Load (1.8ms)[0m  [1m[34mSELECT "folders".* FROM "folders" INNER JOIN "folders_resources" ON "folders"."id" = "folders_resources"."folder_id" WHERE "folders_resources"."resource_id" = $1[0m  [["resource_id", 4]]
+  ↳ app/views/resources/show.html.erb:10
+  Rendered resources/show.html.erb within layouts/application (Duration: 5.0ms | Allocations: 1062)
+Completed 200 OK in 31ms (Views: 17.1ms | ActiveRecord: 9.1ms | Allocations: 7261)
+
+
+Started GET "/folders" for ::1 at 2019-11-08 11:28:26 +1100
+Processing by FoldersController#index as HTML
+  [1m[36mUser Load (3.9ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:7:in `fetch_user'
+  Rendering folders/index.html.erb within layouts/application
+  [1m[36mFolder Load (0.7ms)[0m  [1m[34mSELECT "folders".* FROM "folders" WHERE "folders"."user_id" = $1[0m  [["user_id", 5]]
+  ↳ app/views/folders/index.html.erb:10
+  Rendered folders/index.html.erb within layouts/application (Duration: 3.3ms | Allocations: 779)
+Completed 200 OK in 26ms (Views: 18.4ms | ActiveRecord: 4.6ms | Allocations: 6416)
+
+
+Started GET "/folders/5" for ::1 at 2019-11-08 11:28:27 +1100
+Processing by FoldersController#show as HTML
+  Parameters: {"id"=>"5"}
+  [1m[36mUser Load (20.8ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:7:in `fetch_user'
+  [1m[36mFolder Load (7.5ms)[0m  [1m[34mSELECT "folders".* FROM "folders" WHERE "folders"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/folders_controller.rb:33:in `show'
+  Rendering folders/show.html.erb within layouts/application
+  [1m[36mResource Load (5.5ms)[0m  [1m[34mSELECT "resources".* FROM "resources" INNER JOIN "folders_resources" ON "resources"."id" = "folders_resources"."resource_id" WHERE "folders_resources"."folder_id" = $1[0m  [["folder_id", 5]]
+  ↳ app/views/folders/show.html.erb:6
+  Rendered folders/show.html.erb within layouts/application (Duration: 9.2ms | Allocations: 1088)
+Completed 200 OK in 53ms (Views: 15.2ms | ActiveRecord: 33.8ms | Allocations: 7285)
+
+
+Started GET "/resources/4" for ::1 at 2019-11-08 11:28:48 +1100
+Processing by ResourcesController#show as HTML
+  Parameters: {"id"=>"4"}
+  [1m[36mUser Load (26.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:7:in `fetch_user'
+  [1m[36mResource Load (1.5ms)[0m  [1m[34mSELECT "resources".* FROM "resources" WHERE "resources"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/resources_controller.rb:44:in `show'
+  Rendering resources/show.html.erb within layouts/application
+  [1m[36mFolder Load (0.7ms)[0m  [1m[34mSELECT "folders".* FROM "folders" INNER JOIN "folders_resources" ON "folders"."id" = "folders_resources"."folder_id" WHERE "folders_resources"."resource_id" = $1[0m  [["resource_id", 4]]
+  ↳ app/views/resources/show.html.erb:10
+  Rendered resources/show.html.erb within layouts/application (Duration: 3.2ms | Allocations: 1062)
+Completed 200 OK in 53ms (Views: 19.8ms | ActiveRecord: 28.5ms | Allocations: 7269)
+
+
+Started GET "/folders" for ::1 at 2019-11-08 11:29:45 +1100
+Processing by FoldersController#index as HTML
+  [1m[36mUser Load (3.7ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:7:in `fetch_user'
+  Rendering folders/index.html.erb within layouts/application
+  [1m[36mFolder Load (1.5ms)[0m  [1m[34mSELECT "folders".* FROM "folders" WHERE "folders"."user_id" = $1[0m  [["user_id", 5]]
+  ↳ app/views/folders/index.html.erb:10
+  Rendered folders/index.html.erb within layouts/application (Duration: 4.8ms | Allocations: 959)
+Completed 200 OK in 32ms (Views: 22.5ms | ActiveRecord: 5.2ms | Allocations: 7595)
+
+
+Started GET "/folders/5" for ::1 at 2019-11-08 11:29:47 +1100
+Processing by FoldersController#show as HTML
+  Parameters: {"id"=>"5"}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:7:in `fetch_user'
+  [1m[36mFolder Load (3.6ms)[0m  [1m[34mSELECT "folders".* FROM "folders" WHERE "folders"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/folders_controller.rb:33:in `show'
+  Rendering folders/show.html.erb within layouts/application
+  [1m[36mResource Load (0.6ms)[0m  [1m[34mSELECT "resources".* FROM "resources" INNER JOIN "folders_resources" ON "resources"."id" = "folders_resources"."resource_id" WHERE "folders_resources"."folder_id" = $1[0m  [["folder_id", 5]]
+  ↳ app/views/folders/show.html.erb:6
+  Rendered folders/show.html.erb within layouts/application (Duration: 4.0ms | Allocations: 1332)
+Completed 200 OK in 51ms (Views: 42.1ms | ActiveRecord: 4.8ms | Allocations: 7662)
+
+
+Started GET "/resources/4" for ::1 at 2019-11-08 11:29:55 +1100
+Processing by ResourcesController#show as HTML
+  Parameters: {"id"=>"4"}
+  [1m[36mUser Load (3.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:7:in `fetch_user'
+  [1m[36mResource Load (9.3ms)[0m  [1m[34mSELECT "resources".* FROM "resources" WHERE "resources"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/resources_controller.rb:44:in `show'
+  Rendering resources/show.html.erb within layouts/application
+  Rendered resources/show.html.erb within layouts/application (Duration: 1.2ms | Allocations: 423)
+Completed 200 OK in 35ms (Views: 16.1ms | ActiveRecord: 12.3ms | Allocations: 7034)
+
+
+Started GET "/folders" for ::1 at 2019-11-08 11:30:05 +1100
+Processing by FoldersController#index as HTML
+  [1m[36mUser Load (12.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:7:in `fetch_user'
+  Rendering folders/index.html.erb within layouts/application
+  [1m[36mFolder Load (24.3ms)[0m  [1m[34mSELECT "folders".* FROM "folders" WHERE "folders"."user_id" = $1[0m  [["user_id", 5]]
+  ↳ app/views/folders/index.html.erb:10
+  Rendered folders/index.html.erb within layouts/application (Duration: 27.0ms | Allocations: 785)
+Completed 200 OK in 58ms (Views: 17.2ms | ActiveRecord: 36.3ms | Allocations: 6432)
+
+
+Started GET "/folders/new" for ::1 at 2019-11-08 11:30:08 +1100
+Processing by FoldersController#new as HTML
+  [1m[36mUser Load (2.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:7:in `fetch_user'
+  Rendering folders/new.html.erb within layouts/application
+  [1m[35m (6.4ms)[0m  [1m[34mSELECT "resources"."title", "resources"."id" FROM "resources"[0m
+  ↳ app/views/folders/_form.html.erb:6
+  Rendered folders/_form.html.erb (Duration: 13.2ms | Allocations: 1857)
+  Rendered folders/new.html.erb within layouts/application (Duration: 14.8ms | Allocations: 2162)
+Completed 200 OK in 34ms (Views: 21.4ms | ActiveRecord: 8.9ms | Allocations: 7950)
+
+
+Started POST "/folders" for ::1 at 2019-11-08 11:30:15 +1100
+Processing by FoldersController#create as HTML
+  Parameters: {"authenticity_token"=>"wWTTylJdOHs+VStJ8A49wNM4lRu0z/KKBL6QZQy6S/N3NQ5vNa9pFVFkkVD8UQtdUNuO+GwrihVKMaZqJZC2tA==", "folder"=>{"name"=>"english Essay", "resource_ids"=>"2"}, "commit"=>"Create Folder"}
+  [1m[36mUser Load (23.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:7:in `fetch_user'
+  [1m[36mResource Load (0.5ms)[0m  [1m[34mSELECT "resources".* FROM "resources" WHERE "resources"."id" = $1[0m  [["id", 2]]
+  ↳ app/controllers/folders_controller.rb:15:in `create'
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/folders_controller.rb:15:in `create'
+  [1m[36mFolder Create (1.1ms)[0m  [1m[32mINSERT INTO "folders" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", "english Essay"], ["created_at", "2019-11-08 00:30:15.234286"], ["updated_at", "2019-11-08 00:30:15.234286"]]
+  ↳ app/controllers/folders_controller.rb:15:in `create'
+  [1m[36mFolder::HABTM_Resources Create (4.4ms)[0m  [1m[32mINSERT INTO "folders_resources" ("folder_id", "resource_id") VALUES ($1, $2)[0m  [["folder_id", 6], ["resource_id", 2]]
+  ↳ app/controllers/folders_controller.rb:15:in `create'
+  [1m[35m (2.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/folders_controller.rb:15:in `create'
+  [1m[36mResource Load (1.7ms)[0m  [1m[34mSELECT "resources".* FROM "resources" WHERE "resources"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/folders_controller.rb:16:in `create'
+  [1m[35m (0.7ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/folders_controller.rb:17:in `create'
+  [1m[36mFolder::HABTM_Resources Create (1.8ms)[0m  [1m[32mINSERT INTO "folders_resources" ("folder_id", "resource_id") VALUES ($1, $2)[0m  [["folder_id", 6], ["resource_id", 2]]
+  ↳ app/controllers/folders_controller.rb:17:in `create'
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/folders_controller.rb:17:in `create'
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/folders_controller.rb:18:in `create'
+  [1m[36mFolder Update (0.5ms)[0m  [1m[33mUPDATE "folders" SET "user_id" = $1, "updated_at" = $2 WHERE "folders"."id" = $3[0m  [["user_id", 5], ["updated_at", "2019-11-08 00:30:15.261536"], ["id", 6]]
+  ↳ app/controllers/folders_controller.rb:18:in `create'
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/folders_controller.rb:18:in `create'
+Redirected to http://localhost:3000/folders
+Completed 302 Found in 63ms (ActiveRecord: 37.5ms | Allocations: 11833)
+
+
+Started GET "/folders" for ::1 at 2019-11-08 11:30:15 +1100
+Processing by FoldersController#index as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:7:in `fetch_user'
+  Rendering folders/index.html.erb within layouts/application
+  [1m[36mFolder Load (3.4ms)[0m  [1m[34mSELECT "folders".* FROM "folders" WHERE "folders"."user_id" = $1[0m  [["user_id", 5]]
+  ↳ app/views/folders/index.html.erb:10
+  Rendered folders/index.html.erb within layouts/application (Duration: 6.1ms | Allocations: 828)
+Completed 200 OK in 19ms (Views: 13.6ms | ActiveRecord: 3.7ms | Allocations: 6470)
+
+
+Started GET "/folders/6" for ::1 at 2019-11-08 11:30:20 +1100
+Processing by FoldersController#show as HTML
+  Parameters: {"id"=>"6"}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:7:in `fetch_user'
+  [1m[36mFolder Load (24.2ms)[0m  [1m[34mSELECT "folders".* FROM "folders" WHERE "folders"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/folders_controller.rb:33:in `show'
+  Rendering folders/show.html.erb within layouts/application
+  [1m[36mResource Load (7.3ms)[0m  [1m[34mSELECT "resources".* FROM "resources" INNER JOIN "folders_resources" ON "resources"."id" = "folders_resources"."resource_id" WHERE "folders_resources"."folder_id" = $1[0m  [["folder_id", 6]]
+  ↳ app/views/folders/show.html.erb:6
+  Rendered folders/show.html.erb within layouts/application (Duration: 11.0ms | Allocations: 1094)
+Completed 200 OK in 53ms (Views: 17.7ms | ActiveRecord: 31.9ms | Allocations: 7273)
+
+
+  [1m[35m (1.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mUser Load (0.9ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Destroy (0.6ms)[0m  [1m[31mDELETE FROM "users" WHERE "users"."id" = $1[0m  [["id", 1]]
+  [1m[35m (2.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Destroy (0.3ms)[0m  [1m[31mDELETE FROM "users" WHERE "users"."id" = $1[0m  [["id", 2]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Destroy (0.3ms)[0m  [1m[31mDELETE FROM "users" WHERE "users"."id" = $1[0m  [["id", 3]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Destroy (0.3ms)[0m  [1m[31mDELETE FROM "users" WHERE "users"."id" = $1[0m  [["id", 4]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Destroy (0.3ms)[0m  [1m[31mDELETE FROM "users" WHERE "users"."id" = $1[0m  [["id", 5]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Exists? (0.5ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "jonesy@ga.co"], ["LIMIT", 1]]
+  [1m[36mUser Create (0.6ms)[0m  [1m[32mINSERT INTO "users" ("email", "password_digest", "teacher", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["email", "jonesy@ga.co"], ["password_digest", "$2a$12$VbEi6Ddu6OkOU9h/x.mWpO6cVJHaUymFkiGu9Dwo/Ytx8F8P83QIS"], ["teacher", true], ["created_at", "2019-11-08 00:30:54.094356"], ["updated_at", "2019-11-08 00:30:54.094356"]]
+  [1m[35m (1.6ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Exists? (0.4ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "sia@ga.co"], ["LIMIT", 1]]
+  [1m[36mUser Create (0.6ms)[0m  [1m[32mINSERT INTO "users" ("email", "password_digest", "teacher", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["email", "sia@ga.co"], ["password_digest", "$2a$12$8X/CXvbs9kb9LPK2azGsAuqc/RJI28.HqD7Me9YPYPN9fMj/BKLt2"], ["teacher", true], ["created_at", "2019-11-08 00:30:54.336312"], ["updated_at", "2019-11-08 00:30:54.336312"]]
+  [1m[35m (1.9ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Exists? (0.6ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "craigsy@ga.co"], ["LIMIT", 1]]
+  [1m[36mUser Create (0.8ms)[0m  [1m[32mINSERT INTO "users" ("email", "password_digest", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["email", "craigsy@ga.co"], ["password_digest", "$2a$12$cSLA81YMPEtNudk8pKgYVOg1j45ljr2n.UqFu7TjekqxbARJfBpXG"], ["created_at", "2019-11-08 00:30:54.580339"], ["updated_at", "2019-11-08 00:30:54.580339"]]
+  [1m[35m (0.7ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Exists? (0.4ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "liz@ga.co"], ["LIMIT", 1]]
+  [1m[36mUser Create (0.4ms)[0m  [1m[32mINSERT INTO "users" ("email", "password_digest", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["email", "liz@ga.co"], ["password_digest", "$2a$12$QOKDgAU6osv/BfsY1VoI8OQVObOyWRG60y4xXgmzM/FKlU37u2P82"], ["created_at", "2019-11-08 00:30:54.825361"], ["updated_at", "2019-11-08 00:30:54.825361"]]
+  [1m[35m (1.7ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT COUNT(*) FROM "users"[0m
+  [1m[36mResource Load (3.2ms)[0m  [1m[34mSELECT "resources".* FROM "resources"[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mResource::HABTM_Topics Destroy (1.2ms)[0m  [1m[31mDELETE FROM "resources_topics" WHERE "resources_topics"."resource_id" = $1[0m  [["resource_id", 1]]
+  [1m[36mResource::HABTM_Folders Destroy (0.4ms)[0m  [1m[31mDELETE FROM "folders_resources" WHERE "folders_resources"."resource_id" = $1[0m  [["resource_id", 1]]
+  [1m[36mResource Destroy (0.4ms)[0m  [1m[31mDELETE FROM "resources" WHERE "resources"."id" = $1[0m  [["id", 1]]
+  [1m[35m (0.7ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mResource::HABTM_Topics Destroy (0.3ms)[0m  [1m[31mDELETE FROM "resources_topics" WHERE "resources_topics"."resource_id" = $1[0m  [["resource_id", 3]]
+  [1m[36mResource::HABTM_Folders Destroy (0.4ms)[0m  [1m[31mDELETE FROM "folders_resources" WHERE "folders_resources"."resource_id" = $1[0m  [["resource_id", 3]]
+  [1m[36mResource Destroy (0.5ms)[0m  [1m[31mDELETE FROM "resources" WHERE "resources"."id" = $1[0m  [["id", 3]]
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mResource::HABTM_Topics Destroy (0.3ms)[0m  [1m[31mDELETE FROM "resources_topics" WHERE "resources_topics"."resource_id" = $1[0m  [["resource_id", 4]]
+  [1m[36mResource::HABTM_Folders Destroy (0.5ms)[0m  [1m[31mDELETE FROM "folders_resources" WHERE "folders_resources"."resource_id" = $1[0m  [["resource_id", 4]]
+  [1m[36mResource Destroy (0.3ms)[0m  [1m[31mDELETE FROM "resources" WHERE "resources"."id" = $1[0m  [["id", 4]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mResource::HABTM_Topics Destroy (0.3ms)[0m  [1m[31mDELETE FROM "resources_topics" WHERE "resources_topics"."resource_id" = $1[0m  [["resource_id", 2]]
+  [1m[36mResource::HABTM_Folders Destroy (0.4ms)[0m  [1m[31mDELETE FROM "folders_resources" WHERE "folders_resources"."resource_id" = $1[0m  [["resource_id", 2]]
+  [1m[36mResource Destroy (0.5ms)[0m  [1m[31mDELETE FROM "resources" WHERE "resources"."id" = $1[0m  [["id", 2]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mResource Create (0.9ms)[0m  [1m[32mINSERT INTO "resources" ("title", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["title", "Maths Sheet"], ["created_at", "2019-11-08 00:30:54.933425"], ["updated_at", "2019-11-08 00:30:54.933425"]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mResource Create (0.4ms)[0m  [1m[32mINSERT INTO "resources" ("title", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["title", "English Essay"], ["created_at", "2019-11-08 00:30:54.937852"], ["updated_at", "2019-11-08 00:30:54.937852"]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mResource Create (0.4ms)[0m  [1m[32mINSERT INTO "resources" ("title", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["title", "Maths Puzzle"], ["created_at", "2019-11-08 00:30:54.941497"], ["updated_at", "2019-11-08 00:30:54.941497"]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mResource Create (0.5ms)[0m  [1m[32mINSERT INTO "resources" ("title", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["title", "English Poem"], ["created_at", "2019-11-08 00:30:54.945536"], ["updated_at", "2019-11-08 00:30:54.945536"]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "resources"[0m
+  [1m[36mSubject Load (0.7ms)[0m  [1m[34mSELECT "subjects".* FROM "subjects"[0m
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mSubject Destroy (0.5ms)[0m  [1m[31mDELETE FROM "subjects" WHERE "subjects"."id" = $1[0m  [["id", 1]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mSubject Destroy (0.8ms)[0m  [1m[31mDELETE FROM "subjects" WHERE "subjects"."id" = $1[0m  [["id", 2]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mSubject Create (0.5ms)[0m  [1m[32mINSERT INTO "subjects" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", "Maths"], ["created_at", "2019-11-08 00:30:54.971608"], ["updated_at", "2019-11-08 00:30:54.971608"]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mSubject Create (0.5ms)[0m  [1m[32mINSERT INTO "subjects" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", "English"], ["created_at", "2019-11-08 00:30:54.975821"], ["updated_at", "2019-11-08 00:30:54.975821"]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT COUNT(*) FROM "subjects"[0m
+  [1m[36mTopic Load (0.7ms)[0m  [1m[34mSELECT "topics".* FROM "topics"[0m
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mTopic::HABTM_Resources Destroy (0.3ms)[0m  [1m[31mDELETE FROM "resources_topics" WHERE "resources_topics"."topic_id" = $1[0m  [["topic_id", 1]]
+  [1m[36mTopic Destroy (0.5ms)[0m  [1m[31mDELETE FROM "topics" WHERE "topics"."id" = $1[0m  [["id", 1]]
+  [1m[35m (0.6ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.7ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mTopic::HABTM_Resources Destroy (0.8ms)[0m  [1m[31mDELETE FROM "resources_topics" WHERE "resources_topics"."topic_id" = $1[0m  [["topic_id", 2]]
+  [1m[36mTopic Destroy (0.5ms)[0m  [1m[31mDELETE FROM "topics" WHERE "topics"."id" = $1[0m  [["id", 2]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mTopic::HABTM_Resources Destroy (0.5ms)[0m  [1m[31mDELETE FROM "resources_topics" WHERE "resources_topics"."topic_id" = $1[0m  [["topic_id", 3]]
+  [1m[36mTopic Destroy (0.5ms)[0m  [1m[31mDELETE FROM "topics" WHERE "topics"."id" = $1[0m  [["id", 3]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mTopic::HABTM_Resources Destroy (0.5ms)[0m  [1m[31mDELETE FROM "resources_topics" WHERE "resources_topics"."topic_id" = $1[0m  [["topic_id", 4]]
+  [1m[36mTopic Destroy (0.3ms)[0m  [1m[31mDELETE FROM "topics" WHERE "topics"."id" = $1[0m  [["id", 4]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mTopic::HABTM_Resources Destroy (0.3ms)[0m  [1m[31mDELETE FROM "resources_topics" WHERE "resources_topics"."topic_id" = $1[0m  [["topic_id", 5]]
+  [1m[36mTopic Destroy (0.3ms)[0m  [1m[31mDELETE FROM "topics" WHERE "topics"."id" = $1[0m  [["id", 5]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mTopic::HABTM_Resources Destroy (0.4ms)[0m  [1m[31mDELETE FROM "resources_topics" WHERE "resources_topics"."topic_id" = $1[0m  [["topic_id", 6]]
+  [1m[36mTopic Destroy (0.6ms)[0m  [1m[31mDELETE FROM "topics" WHERE "topics"."id" = $1[0m  [["id", 6]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mTopic::HABTM_Resources Destroy (0.3ms)[0m  [1m[31mDELETE FROM "resources_topics" WHERE "resources_topics"."topic_id" = $1[0m  [["topic_id", 7]]
+  [1m[36mTopic Destroy (0.3ms)[0m  [1m[31mDELETE FROM "topics" WHERE "topics"."id" = $1[0m  [["id", 7]]
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mTopic::HABTM_Resources Destroy (0.3ms)[0m  [1m[31mDELETE FROM "resources_topics" WHERE "resources_topics"."topic_id" = $1[0m  [["topic_id", 8]]
+  [1m[36mTopic Destroy (0.5ms)[0m  [1m[31mDELETE FROM "topics" WHERE "topics"."id" = $1[0m  [["id", 8]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mTopic Create (0.5ms)[0m  [1m[32mINSERT INTO "topics" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", "Algebra"], ["created_at", "2019-11-08 00:30:55.039334"], ["updated_at", "2019-11-08 00:30:55.039334"]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mTopic Create (0.5ms)[0m  [1m[32mINSERT INTO "topics" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", "Fractions"], ["created_at", "2019-11-08 00:30:55.043700"], ["updated_at", "2019-11-08 00:30:55.043700"]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mTopic Create (0.6ms)[0m  [1m[32mINSERT INTO "topics" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", "Geometry"], ["created_at", "2019-11-08 00:30:55.047234"], ["updated_at", "2019-11-08 00:30:55.047234"]]
+  [1m[35m (0.6ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mTopic Create (0.4ms)[0m  [1m[32mINSERT INTO "topics" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", "Trigonometry"], ["created_at", "2019-11-08 00:30:55.064621"], ["updated_at", "2019-11-08 00:30:55.064621"]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mTopic Create (0.6ms)[0m  [1m[32mINSERT INTO "topics" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", "Primitives"], ["created_at", "2019-11-08 00:30:55.068989"], ["updated_at", "2019-11-08 00:30:55.068989"]]
+  [1m[35m (0.6ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mTopic Create (0.4ms)[0m  [1m[32mINSERT INTO "topics" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", "Derivatives"], ["created_at", "2019-11-08 00:30:55.074422"], ["updated_at", "2019-11-08 00:30:55.074422"]]
+  [1m[35m (0.7ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.4ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mTopic Create (1.2ms)[0m  [1m[32mINSERT INTO "topics" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", "Othello"], ["created_at", "2019-11-08 00:30:55.080067"], ["updated_at", "2019-11-08 00:30:55.080067"]]
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.5ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mTopic Create (0.6ms)[0m  [1m[32mINSERT INTO "topics" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", "Robert Frost"], ["created_at", "2019-11-08 00:30:55.086272"], ["updated_at", "2019-11-08 00:30:55.086272"]]
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT COUNT(*) FROM "topics"[0m
+  [1m[36mFolder Load (0.8ms)[0m  [1m[34mSELECT "folders".* FROM "folders"[0m
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mFolder::HABTM_Resources Destroy (0.5ms)[0m  [1m[31mDELETE FROM "folders_resources" WHERE "folders_resources"."folder_id" = $1[0m  [["folder_id", 1]]
+  [1m[36mFolder Destroy (0.5ms)[0m  [1m[31mDELETE FROM "folders" WHERE "folders"."id" = $1[0m  [["id", 1]]
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mFolder::HABTM_Resources Destroy (0.5ms)[0m  [1m[31mDELETE FROM "folders_resources" WHERE "folders_resources"."folder_id" = $1[0m  [["folder_id", 2]]
+  [1m[36mFolder Destroy (0.5ms)[0m  [1m[31mDELETE FROM "folders" WHERE "folders"."id" = $1[0m  [["id", 2]]
+  [1m[35m (0.6ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mFolder::HABTM_Resources Destroy (0.3ms)[0m  [1m[31mDELETE FROM "folders_resources" WHERE "folders_resources"."folder_id" = $1[0m  [["folder_id", 3]]
+  [1m[36mFolder Destroy (0.5ms)[0m  [1m[31mDELETE FROM "folders" WHERE "folders"."id" = $1[0m  [["id", 3]]
+  [1m[35m (0.7ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mFolder::HABTM_Resources Destroy (0.7ms)[0m  [1m[31mDELETE FROM "folders_resources" WHERE "folders_resources"."folder_id" = $1[0m  [["folder_id", 4]]
+  [1m[36mFolder Destroy (2.5ms)[0m  [1m[31mDELETE FROM "folders" WHERE "folders"."id" = $1[0m  [["id", 4]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mFolder::HABTM_Resources Destroy (0.5ms)[0m  [1m[31mDELETE FROM "folders_resources" WHERE "folders_resources"."folder_id" = $1[0m  [["folder_id", 5]]
+  [1m[36mFolder Destroy (0.4ms)[0m  [1m[31mDELETE FROM "folders" WHERE "folders"."id" = $1[0m  [["id", 5]]
+  [1m[35m (1.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.5ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mFolder::HABTM_Resources Destroy (1.0ms)[0m  [1m[31mDELETE FROM "folders_resources" WHERE "folders_resources"."folder_id" = $1[0m  [["folder_id", 6]]
+  [1m[36mFolder Destroy (0.4ms)[0m  [1m[31mDELETE FROM "folders" WHERE "folders"."id" = $1[0m  [["id", 6]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.7ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mFolder Create (1.3ms)[0m  [1m[32mINSERT INTO "folders" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", "Craigsy Algebra"], ["created_at", "2019-11-08 00:30:55.158011"], ["updated_at", "2019-11-08 00:30:55.158011"]]
+  [1m[35m (1.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.4ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mFolder Create (6.3ms)[0m  [1m[32mINSERT INTO "folders" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", "Craigsy Fractions"], ["created_at", "2019-11-08 00:30:55.165512"], ["updated_at", "2019-11-08 00:30:55.165512"]]
+  [1m[35m (3.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mFolder Create (0.9ms)[0m  [1m[32mINSERT INTO "folders" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", "Lizzys Poems"], ["created_at", "2019-11-08 00:30:55.179433"], ["updated_at", "2019-11-08 00:30:55.179433"]]
+  [1m[35m (1.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (2.4ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mFolder Create (1.2ms)[0m  [1m[32mINSERT INTO "folders" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", "Lizzys Misc"], ["created_at", "2019-11-08 00:30:55.185585"], ["updated_at", "2019-11-08 00:30:55.185585"]]
+  [1m[35m (0.9ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (1.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "folders"[0m
+  [1m[35m (2.5ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mResource Update (1.5ms)[0m  [1m[33mUPDATE "resources" SET "subject_id" = $1, "updated_at" = $2 WHERE "resources"."id" = $3[0m  [["subject_id", 3], ["updated_at", "2019-11-08 00:30:55.198987"], ["id", 5]]
+  [1m[35m (7.0ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (6.7ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mResource Update (2.0ms)[0m  [1m[33mUPDATE "resources" SET "subject_id" = $1, "updated_at" = $2 WHERE "resources"."id" = $3[0m  [["subject_id", 3], ["updated_at", "2019-11-08 00:30:55.215834"], ["id", 7]]
+  [1m[35m (5.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (2.4ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mResource Update (1.2ms)[0m  [1m[33mUPDATE "resources" SET "subject_id" = $1, "updated_at" = $2 WHERE "resources"."id" = $3[0m  [["subject_id", 4], ["updated_at", "2019-11-08 00:30:55.233871"], ["id", 6]]
+  [1m[35m (1.0ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mResource Update (0.6ms)[0m  [1m[33mUPDATE "resources" SET "subject_id" = $1, "updated_at" = $2 WHERE "resources"."id" = $3[0m  [["subject_id", 4], ["updated_at", "2019-11-08 00:30:55.243598"], ["id", 8]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.4ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mResource::HABTM_Topics Create (0.5ms)[0m  [1m[32mINSERT INTO "resources_topics" ("topic_id", "resource_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4)[0m  [["topic_id", 9], ["resource_id", 5], ["created_at", "2019-11-08 00:30:55.254910"], ["updated_at", "2019-11-08 00:30:55.254910"]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.4ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mResource::HABTM_Topics Create (0.9ms)[0m  [1m[32mINSERT INTO "resources_topics" ("topic_id", "resource_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4)[0m  [["topic_id", 15], ["resource_id", 6], ["created_at", "2019-11-08 00:30:55.277274"], ["updated_at", "2019-11-08 00:30:55.277274"]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mResource::HABTM_Topics Create (0.3ms)[0m  [1m[32mINSERT INTO "resources_topics" ("topic_id", "resource_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4)[0m  [["topic_id", 12], ["resource_id", 7], ["created_at", "2019-11-08 00:30:55.284628"], ["updated_at", "2019-11-08 00:30:55.284628"]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mResource::HABTM_Topics Create (0.3ms)[0m  [1m[32mINSERT INTO "resources_topics" ("topic_id", "resource_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4)[0m  [["topic_id", 12], ["resource_id", 7], ["created_at", "2019-11-08 00:30:55.289924"], ["updated_at", "2019-11-08 00:30:55.289924"]]
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mResource::HABTM_Topics Create (0.3ms)[0m  [1m[32mINSERT INTO "resources_topics" ("topic_id", "resource_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4)[0m  [["topic_id", 16], ["resource_id", 8], ["created_at", "2019-11-08 00:30:55.295540"], ["updated_at", "2019-11-08 00:30:55.295540"]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mFolder::HABTM_Resources Create (0.4ms)[0m  [1m[32mINSERT INTO "folders_resources" ("folder_id", "resource_id") VALUES ($1, $2)[0m  [["folder_id", 7], ["resource_id", 5]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mFolder::HABTM_Resources Create (0.4ms)[0m  [1m[32mINSERT INTO "folders_resources" ("folder_id", "resource_id") VALUES ($1, $2)[0m  [["folder_id", 7], ["resource_id", 7]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mFolder::HABTM_Resources Create (0.7ms)[0m  [1m[32mINSERT INTO "folders_resources" ("folder_id", "resource_id") VALUES ($1, $2)[0m  [["folder_id", 8], ["resource_id", 7]]
+  [1m[35m (2.7ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mFolder::HABTM_Resources Create (0.3ms)[0m  [1m[32mINSERT INTO "folders_resources" ("folder_id", "resource_id") VALUES ($1, $2)[0m  [["folder_id", 9], ["resource_id", 8]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mFolder::HABTM_Resources Create (0.7ms)[0m  [1m[32mINSERT INTO "folders_resources" ("folder_id", "resource_id") VALUES ($1, $2)[0m  [["folder_id", 10], ["resource_id", 8]]
+  [1m[35m (0.6ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mFolder::HABTM_Resources Create (0.5ms)[0m  [1m[32mINSERT INTO "folders_resources" ("folder_id", "resource_id") VALUES ($1, $2)[0m  [["folder_id", 10], ["resource_id", 7]]
+  [1m[35m (0.6ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mFolder::HABTM_Resources Create (0.4ms)[0m  [1m[32mINSERT INTO "folders_resources" ("folder_id", "resource_id") VALUES ($1, $2)[0m  [["folder_id", 10], ["resource_id", 6]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mFolder::HABTM_Resources Create (0.3ms)[0m  [1m[32mINSERT INTO "folders_resources" ("folder_id", "resource_id") VALUES ($1, $2)[0m  [["folder_id", 10], ["resource_id", 5]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mFolder Update (0.5ms)[0m  [1m[33mUPDATE "folders" SET "user_id" = $1, "updated_at" = $2 WHERE "folders"."id" = $3[0m  [["user_id", 8], ["updated_at", "2019-11-08 00:30:55.354980"], ["id", 7]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mFolder Update (0.5ms)[0m  [1m[33mUPDATE "folders" SET "user_id" = $1, "updated_at" = $2 WHERE "folders"."id" = $3[0m  [["user_id", 8], ["updated_at", "2019-11-08 00:30:55.359894"], ["id", 8]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mFolder Update (1.0ms)[0m  [1m[33mUPDATE "folders" SET "user_id" = $1, "updated_at" = $2 WHERE "folders"."id" = $3[0m  [["user_id", 9], ["updated_at", "2019-11-08 00:30:55.365069"], ["id", 9]]
+  [1m[35m (2.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mFolder Update (0.5ms)[0m  [1m[33mUPDATE "folders" SET "user_id" = $1, "updated_at" = $2 WHERE "folders"."id" = $3[0m  [["user_id", 9], ["updated_at", "2019-11-08 00:30:55.372900"], ["id", 10]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+Started GET "/" for ::1 at 2019-11-08 11:31:13 +1100
+  [1m[35m (1.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by PagesController#home as HTML
+  [1m[36mUser Load (1.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:7:in `fetch_user'
+  Rendering pages/home.html.erb within layouts/application
+  Rendered pages/home.html.erb within layouts/application (Duration: 3.1ms | Allocations: 238)
+Completed 200 OK in 95ms (Views: 27.7ms | ActiveRecord: 16.0ms | Allocations: 10592)
+
+
+Started GET "/login" for ::1 at 2019-11-08 11:31:18 +1100
+Processing by SessionController#new as HTML
+  Rendering session/new.html.erb within layouts/application
+  Rendered session/new.html.erb within layouts/application (Duration: 3.3ms | Allocations: 551)
+Completed 200 OK in 31ms (Views: 29.3ms | ActiveRecord: 0.0ms | Allocations: 5975)
+
+
+Started POST "/login" for ::1 at 2019-11-08 11:31:27 +1100
+Processing by SessionController#create as HTML
+  Parameters: {"authenticity_token"=>"Glcge74twB1YJ6J4hjjoGlvcNENbeC3MAdXSRBqHlC6+ybZ0rhwi6Zz+hX2H7YUkgF94MO3z6WQm5r5ITvCA/g==", "email"=>"sia@ga.co", "password"=>"[FILTERED]", "commit"=>"Sign in"}
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "sia@ga.co"], ["LIMIT", 1]]
+  ↳ app/controllers/session_controller.rb:7:in `create'
+Redirected to http://localhost:3000/
+Completed 302 Found in 297ms (ActiveRecord: 20.2ms | Allocations: 5035)
+
+
+Started GET "/" for ::1 at 2019-11-08 11:31:27 +1100
+Processing by PagesController#home as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:7:in `fetch_user'
+  Rendering pages/home.html.erb within layouts/application
+  Rendered pages/home.html.erb within layouts/application (Duration: 0.1ms | Allocations: 9)
+Completed 200 OK in 13ms (Views: 10.8ms | ActiveRecord: 0.4ms | Allocations: 5678)
+
+
+Started GET "/resources/new" for ::1 at 2019-11-08 11:31:29 +1100
+Processing by ResourcesController#new as HTML
+  [1m[36mUser Load (4.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:7:in `fetch_user'
+  Rendering resources/new.html.erb within layouts/application
+  [1m[35m (1.1ms)[0m  [1m[34mSELECT "subjects"."name", "subjects"."id" FROM "subjects"[0m
+  ↳ app/views/resources/_form.html.erb:11
+  Rendered resources/_form.html.erb (Duration: 575.7ms | Allocations: 148855)
+  Rendered resources/new.html.erb within layouts/application (Duration: 580.4ms | Allocations: 149175)
+Completed 200 OK in 641ms (Views: 588.9ms | ActiveRecord: 17.6ms | Allocations: 164914)
+
+
+Started GET "/resources" for ::1 at 2019-11-08 11:31:31 +1100
+Processing by ResourcesController#index as HTML
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:7:in `fetch_user'
+  Rendering resources/index.html.erb within layouts/application
+  [1m[36mResource Load (1.1ms)[0m  [1m[34mSELECT "resources".* FROM "resources"[0m
+  ↳ app/views/resources/index.html.erb:3
+  [1m[36mSubject Load (0.5ms)[0m  [1m[34mSELECT "subjects".* FROM "subjects" WHERE "subjects"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/views/resources/index.html.erb:7
+  [1m[36mCACHE Subject Load (0.0ms)[0m  [1m[34mSELECT "subjects".* FROM "subjects" WHERE "subjects"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/views/resources/index.html.erb:7
+  [1m[36mSubject Load (0.7ms)[0m  [1m[34mSELECT "subjects".* FROM "subjects" WHERE "subjects"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/views/resources/index.html.erb:7
+  [1m[36mCACHE Subject Load (0.0ms)[0m  [1m[34mSELECT "subjects".* FROM "subjects" WHERE "subjects"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/views/resources/index.html.erb:7
+  Rendered resources/index.html.erb within layouts/application (Duration: 56.1ms | Allocations: 7767)
+Completed 200 OK in 78ms (Views: 47.3ms | ActiveRecord: 25.6ms | Allocations: 13624)
+
+
+Started GET "/resources/6" for ::1 at 2019-11-08 11:31:34 +1100
+Processing by ResourcesController#show as HTML
+  Parameters: {"id"=>"6"}
+  [1m[36mUser Load (2.7ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:7:in `fetch_user'
+  [1m[36mResource Load (0.5ms)[0m  [1m[34mSELECT "resources".* FROM "resources" WHERE "resources"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/resources_controller.rb:44:in `show'
+  Rendering resources/show.html.erb within layouts/application
+  [1m[36mFolder Load (1.1ms)[0m  [1m[34mSELECT "folders".* FROM "folders" INNER JOIN "folders_resources" ON "folders"."id" = "folders_resources"."folder_id" WHERE "folders_resources"."resource_id" = $1[0m  [["resource_id", 6]]
+  ↳ app/views/resources/show.html.erb:11
+  Rendered resources/show.html.erb within layouts/application (Duration: 35.7ms | Allocations: 9970)
+Completed 200 OK in 57ms (Views: 36.1ms | ActiveRecord: 15.2ms | Allocations: 16324)
+
+
+Started GET "/resources/6/edit" for ::1 at 2019-11-08 11:31:39 +1100
+Processing by ResourcesController#edit as HTML
+  Parameters: {"id"=>"6"}
+  [1m[36mUser Load (4.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:7:in `fetch_user'
+  [1m[36mResource Load (6.3ms)[0m  [1m[34mSELECT "resources".* FROM "resources" WHERE "resources"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/resources_controller.rb:16:in `edit'
+  Rendering resources/edit.html.erb within layouts/application
+  [1m[35m (11.9ms)[0m  [1m[34mSELECT "subjects"."name", "subjects"."id" FROM "subjects"[0m
+  ↳ app/views/resources/_form.html.erb:11
+  Rendered resources/_form.html.erb (Duration: 17.5ms | Allocations: 2028)
+  Rendered resources/edit.html.erb within layouts/application (Duration: 19.0ms | Allocations: 2200)
+Completed 200 OK in 47ms (Views: 20.1ms | ActiveRecord: 22.3ms | Allocations: 8555)
+
+
+Started PATCH "/resources/6" for ::1 at 2019-11-08 11:31:50 +1100
+Processing by ResourcesController#update as HTML
+  Parameters: {"authenticity_token"=>"kZQ+sx0yNRZBJRxK5x0gd9hw/gwOs4XoOQN7OA0h+x7KEs4jcXdRDw8mu5csXbDEd81DDFvY1Y8jZRRHP0SNmQ==", "resource"=>{"title"=>"English Essay", "kind"=>"Book of Resources", "subject_id"=>"4"}, "file"=>#<ActionDispatch::Http::UploadedFile:0x00007f99aae4b790 @tempfile=#<Tempfile:/var/folders/4v/z4x_mksx7c37jhm6ls3lhjrc0000gn/T/RackMultipart20191108-75099-19ttxv0.jpg>, @original_filename="eng essay.jpg", @content_type="image/jpeg", @headers="Content-Disposition: form-data; name=\"file\"; filename=\"eng essay.jpg\"\r\nContent-Type: image/jpeg\r\n">, "commit"=>"Update Resource", "id"=>"6"}
+  [1m[36mUser Load (4.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:7:in `fetch_user'
+  [1m[36mResource Load (0.7ms)[0m  [1m[34mSELECT "resources".* FROM "resources" WHERE "resources"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/resources_controller.rb:20:in `update'
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/resources_controller.rb:21:in `update'
+  [1m[36mResource Update (0.8ms)[0m  [1m[33mUPDATE "resources" SET "kind" = $1, "updated_at" = $2 WHERE "resources"."id" = $3[0m  [["kind", "Book of Resources"], ["updated_at", "2019-11-08 00:31:50.658457"], ["id", 6]]
+  ↳ app/controllers/resources_controller.rb:21:in `update'
+  [1m[35m (0.8ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/resources_controller.rb:21:in `update'
+DEPRECATION WARNING: update_attributes is deprecated and will be removed from Rails 6.1 (please, use update instead) (called from update at /Users/adony/projects/project02/student_portal_rails/app/controllers/resources_controller.rb:26)
+  [1m[35m (0.5ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/resources_controller.rb:26:in `update'
+  [1m[36mResource Update (0.6ms)[0m  [1m[33mUPDATE "resources" SET "image" = $1, "updated_at" = $2 WHERE "resources"."id" = $3[0m  [["image", "j6vi2d12oekwhncxvvx5"], ["updated_at", "2019-11-08 00:31:53.362392"], ["id", 6]]
+  ↳ app/controllers/resources_controller.rb:26:in `update'
+  [1m[35m (0.7ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/resources_controller.rb:26:in `update'
+Redirected to http://localhost:3000/resources/6
+Completed 302 Found in 2721ms (ActiveRecord: 8.5ms | Allocations: 10766)
+
+
+Started GET "/resources/6" for ::1 at 2019-11-08 11:31:53 +1100
+Processing by ResourcesController#show as HTML
+  Parameters: {"id"=>"6"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:7:in `fetch_user'
+  [1m[36mResource Load (1.2ms)[0m  [1m[34mSELECT "resources".* FROM "resources" WHERE "resources"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/resources_controller.rb:44:in `show'
+  Rendering resources/show.html.erb within layouts/application
+  [1m[36mFolder Load (0.6ms)[0m  [1m[34mSELECT "folders".* FROM "folders" INNER JOIN "folders_resources" ON "folders"."id" = "folders_resources"."folder_id" WHERE "folders_resources"."resource_id" = $1[0m  [["resource_id", 6]]
+  ↳ app/views/resources/show.html.erb:11
+  Rendered resources/show.html.erb within layouts/application (Duration: 3.8ms | Allocations: 1244)
+Completed 200 OK in 21ms (Views: 14.4ms | ActiveRecord: 2.2ms | Allocations: 7448)
+
+
+Started GET "/resources" for ::1 at 2019-11-08 11:31:57 +1100
+Processing by ResourcesController#index as HTML
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:7:in `fetch_user'
+  Rendering resources/index.html.erb within layouts/application
+  [1m[36mResource Load (9.4ms)[0m  [1m[34mSELECT "resources".* FROM "resources"[0m
+  ↳ app/views/resources/index.html.erb:3
+  [1m[36mSubject Load (0.7ms)[0m  [1m[34mSELECT "subjects".* FROM "subjects" WHERE "subjects"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/views/resources/index.html.erb:7
+  [1m[36mCACHE Subject Load (0.0ms)[0m  [1m[34mSELECT "subjects".* FROM "subjects" WHERE "subjects"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/views/resources/index.html.erb:7
+  [1m[36mSubject Load (0.8ms)[0m  [1m[34mSELECT "subjects".* FROM "subjects" WHERE "subjects"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/views/resources/index.html.erb:7
+  [1m[36mCACHE Subject Load (0.0ms)[0m  [1m[34mSELECT "subjects".* FROM "subjects" WHERE "subjects"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/views/resources/index.html.erb:7
+  Rendered resources/index.html.erb within layouts/application (Duration: 56.6ms | Allocations: 3518)
+Completed 200 OK in 72ms (Views: 57.7ms | ActiveRecord: 11.4ms | Allocations: 9171)
+
+
+Started DELETE "/login" for ::1 at 2019-11-08 11:32:04 +1100
+Processing by SessionController#destroy as HTML
+  Parameters: {"authenticity_token"=>"DShSIf8EwxI1V54zdisu3SrrscwxAnaWi6q05rBqrtnAwd0EKPQ14db2ZyQMASN5XneJPjEPkJR87CPajIV/wQ=="}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:7:in `fetch_user'
+Redirected to http://localhost:3000/login
+Completed 302 Found in 3ms (ActiveRecord: 0.5ms | Allocations: 1268)
+
+
+Started GET "/login" for ::1 at 2019-11-08 11:32:04 +1100
+Processing by SessionController#new as HTML
+  Rendering session/new.html.erb within layouts/application
+  Rendered session/new.html.erb within layouts/application (Duration: 0.8ms | Allocations: 302)
+Completed 200 OK in 15ms (Views: 13.9ms | ActiveRecord: 0.0ms | Allocations: 5350)
+
+
+Started POST "/login" for ::1 at 2019-11-08 11:32:13 +1100
+Processing by SessionController#create as HTML
+  Parameters: {"authenticity_token"=>"Mchm87bElqaXSdcQ0fsp25T73fKV1z3QuI8G64nKwtf8IenWYTRgVXToLger0SR/4GflAJXa29JPyZHXtSUTzw==", "email"=>"liz@ga.co", "password"=>"[FILTERED]", "commit"=>"Sign in"}
+  [1m[36mUser Load (4.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "liz@ga.co"], ["LIMIT", 1]]
+  ↳ app/controllers/session_controller.rb:7:in `create'
+Redirected to http://localhost:3000/
+Completed 302 Found in 278ms (ActiveRecord: 4.3ms | Allocations: 1289)
+
+
+Started GET "/" for ::1 at 2019-11-08 11:32:13 +1100
+Processing by PagesController#home as HTML
+  [1m[36mUser Load (0.9ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 9], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:7:in `fetch_user'
+  Rendering pages/home.html.erb within layouts/application
+  Rendered pages/home.html.erb within layouts/application (Duration: 0.1ms | Allocations: 8)
+Completed 200 OK in 16ms (Views: 11.3ms | ActiveRecord: 1.1ms | Allocations: 5794)
+
+
+Started GET "/folders" for ::1 at 2019-11-08 11:32:16 +1100
+Processing by FoldersController#index as HTML
+  [1m[36mUser Load (2.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 9], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:7:in `fetch_user'
+  Rendering folders/index.html.erb within layouts/application
+  [1m[36mFolder Load (0.7ms)[0m  [1m[34mSELECT "folders".* FROM "folders" WHERE "folders"."user_id" = $1[0m  [["user_id", 9]]
+  ↳ app/views/folders/index.html.erb:10
+  Rendered folders/index.html.erb within layouts/application (Duration: 15.3ms | Allocations: 2293)
+Completed 200 OK in 37ms (Views: 30.1ms | ActiveRecord: 3.2ms | Allocations: 8300)
+
+
+Started GET "/folders/10" for ::1 at 2019-11-08 11:32:18 +1100
+Processing by FoldersController#show as HTML
+  Parameters: {"id"=>"10"}
+  [1m[36mUser Load (9.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 9], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:7:in `fetch_user'
+  [1m[36mFolder Load (1.0ms)[0m  [1m[34mSELECT "folders".* FROM "folders" WHERE "folders"."id" = $1 LIMIT $2[0m  [["id", 10], ["LIMIT", 1]]
+  ↳ app/controllers/folders_controller.rb:33:in `show'
+  Rendering folders/show.html.erb within layouts/application
+  [1m[36mResource Load (1.5ms)[0m  [1m[34mSELECT "resources".* FROM "resources" INNER JOIN "folders_resources" ON "resources"."id" = "folders_resources"."resource_id" WHERE "folders_resources"."folder_id" = $1[0m  [["folder_id", 10]]
+  ↳ app/views/folders/show.html.erb:6
+  Rendered folders/show.html.erb within layouts/application (Duration: 10.5ms | Allocations: 1839)
+Completed 200 OK in 37ms (Views: 19.8ms | ActiveRecord: 11.6ms | Allocations: 8262)
+
+
+Started GET "/resources/6" for ::1 at 2019-11-08 11:32:19 +1100
+Processing by ResourcesController#show as HTML
+  Parameters: {"id"=>"6"}
+  [1m[36mUser Load (14.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 9], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:7:in `fetch_user'
+  [1m[36mResource Load (0.6ms)[0m  [1m[34mSELECT "resources".* FROM "resources" WHERE "resources"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/resources_controller.rb:44:in `show'
+  Rendering resources/show.html.erb within layouts/application
+  Rendered resources/show.html.erb within layouts/application (Duration: 0.5ms | Allocations: 208)
+Completed 200 OK in 34ms (Views: 13.0ms | ActiveRecord: 15.1ms | Allocations: 6455)
+
+
+Started GET "/folders" for ::1 at 2019-11-08 11:32:24 +1100
+Processing by FoldersController#index as HTML
+  [1m[36mUser Load (1.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 9], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:7:in `fetch_user'
+  Rendering folders/index.html.erb within layouts/application
+  [1m[36mFolder Load (0.5ms)[0m  [1m[34mSELECT "folders".* FROM "folders" WHERE "folders"."user_id" = $1[0m  [["user_id", 9]]
+  ↳ app/views/folders/index.html.erb:10
+  Rendered folders/index.html.erb within layouts/application (Duration: 3.1ms | Allocations: 826)
+Completed 200 OK in 25ms (Views: 20.4ms | ActiveRecord: 1.7ms | Allocations: 6466)
+
+
+Started GET "/folders/10" for ::1 at 2019-11-08 11:32:26 +1100
+Processing by FoldersController#show as HTML
+  Parameters: {"id"=>"10"}
+  [1m[36mUser Load (8.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 9], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:7:in `fetch_user'
+  [1m[36mFolder Load (1.0ms)[0m  [1m[34mSELECT "folders".* FROM "folders" WHERE "folders"."id" = $1 LIMIT $2[0m  [["id", 10], ["LIMIT", 1]]
+  ↳ app/controllers/folders_controller.rb:33:in `show'
+  Rendering folders/show.html.erb within layouts/application
+  [1m[36mResource Load (15.5ms)[0m  [1m[34mSELECT "resources".* FROM "resources" INNER JOIN "folders_resources" ON "resources"."id" = "folders_resources"."resource_id" WHERE "folders_resources"."folder_id" = $1[0m  [["folder_id", 10]]
+  ↳ app/views/folders/show.html.erb:6
+  Rendered folders/show.html.erb within layouts/application (Duration: 30.1ms | Allocations: 1163)
+Completed 200 OK in 58ms (Views: 27.7ms | ActiveRecord: 25.2ms | Allocations: 7358)
+
+
+Started GET "/folders/new" for ::1 at 2019-11-08 11:32:34 +1100
+Processing by FoldersController#new as HTML
+  [1m[36mUser Load (24.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 9], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:7:in `fetch_user'
+  Rendering folders/new.html.erb within layouts/application
+  [1m[35m (13.9ms)[0m  [1m[34mSELECT "resources"."title", "resources"."id" FROM "resources"[0m
+  ↳ app/views/folders/_form.html.erb:6
+  Rendered folders/_form.html.erb (Duration: 34.8ms | Allocations: 4995)
+  Rendered folders/new.html.erb within layouts/application (Duration: 36.5ms | Allocations: 5297)
+Completed 200 OK in 80ms (Views: 38.8ms | ActiveRecord: 38.2ms | Allocations: 11007)
+
+
+Started POST "/folders" for ::1 at 2019-11-08 11:32:43 +1100
+Processing by FoldersController#create as HTML
+  Parameters: {"authenticity_token"=>"PMEzVj1gtDHkXhPXfdjbaDCw1C50qI8d0XxeK4/fYxWKkO7zWpLlX4tvqc5xh+31s1PPzaxM94Kf82gkpvWeUg==", "folder"=>{"name"=>"Liz's Essays", "resource_ids"=>"6"}, "commit"=>"Create Folder"}
+  [1m[36mUser Load (3.9ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 9], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:7:in `fetch_user'
+  [1m[36mResource Load (0.5ms)[0m  [1m[34mSELECT "resources".* FROM "resources" WHERE "resources"."id" = $1[0m  [["id", 6]]
+  ↳ app/controllers/folders_controller.rb:15:in `create'
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/folders_controller.rb:15:in `create'
+  [1m[36mFolder Create (2.0ms)[0m  [1m[32mINSERT INTO "folders" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", "Liz's Essays"], ["created_at", "2019-11-08 00:32:43.108479"], ["updated_at", "2019-11-08 00:32:43.108479"]]
+  ↳ app/controllers/folders_controller.rb:15:in `create'
+  [1m[36mFolder::HABTM_Resources Create (0.4ms)[0m  [1m[32mINSERT INTO "folders_resources" ("folder_id", "resource_id") VALUES ($1, $2)[0m  [["folder_id", 11], ["resource_id", 6]]
+  ↳ app/controllers/folders_controller.rb:15:in `create'
+  [1m[35m (2.0ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/folders_controller.rb:15:in `create'
+  [1m[36mResource Load (1.5ms)[0m  [1m[34mSELECT "resources".* FROM "resources" WHERE "resources"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/folders_controller.rb:16:in `create'
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/folders_controller.rb:17:in `create'
+  [1m[36mFolder::HABTM_Resources Create (0.3ms)[0m  [1m[32mINSERT INTO "folders_resources" ("folder_id", "resource_id") VALUES ($1, $2)[0m  [["folder_id", 11], ["resource_id", 6]]
+  ↳ app/controllers/folders_controller.rb:17:in `create'
+  [1m[35m (1.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/folders_controller.rb:17:in `create'
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/folders_controller.rb:18:in `create'
+  [1m[36mFolder Update (0.7ms)[0m  [1m[33mUPDATE "folders" SET "user_id" = $1, "updated_at" = $2 WHERE "folders"."id" = $3[0m  [["user_id", 9], ["updated_at", "2019-11-08 00:32:43.130974"], ["id", 11]]
+  ↳ app/controllers/folders_controller.rb:18:in `create'
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/folders_controller.rb:18:in `create'
+Redirected to http://localhost:3000/folders
+Completed 302 Found in 55ms (ActiveRecord: 23.2ms | Allocations: 13486)
+
+
+Started GET "/folders" for ::1 at 2019-11-08 11:32:43 +1100
+Processing by FoldersController#index as HTML
+  [1m[36mUser Load (1.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 9], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:7:in `fetch_user'
+  Rendering folders/index.html.erb within layouts/application
+  [1m[36mFolder Load (1.0ms)[0m  [1m[34mSELECT "folders".* FROM "folders" WHERE "folders"."user_id" = $1[0m  [["user_id", 9]]
+  ↳ app/views/folders/index.html.erb:10
+  Rendered folders/index.html.erb within layouts/application (Duration: 3.4ms | Allocations: 875)
+Completed 200 OK in 18ms (Views: 13.7ms | ActiveRecord: 2.2ms | Allocations: 6511)
+
+
+Started GET "/folders/11" for ::1 at 2019-11-08 11:32:45 +1100
+Processing by FoldersController#show as HTML
+  Parameters: {"id"=>"11"}
+  [1m[36mUser Load (26.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 9], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:7:in `fetch_user'
+  [1m[36mFolder Load (6.6ms)[0m  [1m[34mSELECT "folders".* FROM "folders" WHERE "folders"."id" = $1 LIMIT $2[0m  [["id", 11], ["LIMIT", 1]]
+  ↳ app/controllers/folders_controller.rb:33:in `show'
+  Rendering folders/show.html.erb within layouts/application
+  [1m[36mResource Load (0.9ms)[0m  [1m[34mSELECT "resources".* FROM "resources" INNER JOIN "folders_resources" ON "resources"."id" = "folders_resources"."resource_id" WHERE "folders_resources"."folder_id" = $1[0m  [["folder_id", 11]]
+  ↳ app/views/folders/show.html.erb:6
+  Rendered folders/show.html.erb within layouts/application (Duration: 4.5ms | Allocations: 1094)
+Completed 200 OK in 95ms (Views: 23.0ms | ActiveRecord: 34.1ms | Allocations: 7276)
+
+
+Started GET "/resources/6" for ::1 at 2019-11-08 11:32:46 +1100
+Processing by ResourcesController#show as HTML
+  Parameters: {"id"=>"6"}
+  [1m[36mUser Load (15.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 9], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:7:in `fetch_user'
+  [1m[36mResource Load (3.9ms)[0m  [1m[34mSELECT "resources".* FROM "resources" WHERE "resources"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/resources_controller.rb:44:in `show'
+  Rendering resources/show.html.erb within layouts/application
+  Rendered resources/show.html.erb within layouts/application (Duration: 0.6ms | Allocations: 208)
+Completed 200 OK in 37ms (Views: 12.5ms | ActiveRecord: 19.2ms | Allocations: 6431)
+
+
+Started GET "/folders" for ::1 at 2019-11-08 11:32:50 +1100
+Processing by FoldersController#index as HTML
+  [1m[36mUser Load (22.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 9], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:7:in `fetch_user'
+  Rendering folders/index.html.erb within layouts/application
+  [1m[36mFolder Load (25.7ms)[0m  [1m[34mSELECT "folders".* FROM "folders" WHERE "folders"."user_id" = $1[0m  [["user_id", 9]]
+  ↳ app/views/folders/index.html.erb:10
+  Rendered folders/index.html.erb within layouts/application (Duration: 29.4ms | Allocations: 873)
+Completed 200 OK in 69ms (Views: 17.2ms | ActiveRecord: 48.3ms | Allocations: 6522)
+
+
+Started GET "/folders/11" for ::1 at 2019-11-08 11:32:52 +1100
+Processing by FoldersController#show as HTML
+  Parameters: {"id"=>"11"}
+  [1m[36mUser Load (32.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 9], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:7:in `fetch_user'
+  [1m[36mFolder Load (0.9ms)[0m  [1m[34mSELECT "folders".* FROM "folders" WHERE "folders"."id" = $1 LIMIT $2[0m  [["id", 11], ["LIMIT", 1]]
+  ↳ app/controllers/folders_controller.rb:33:in `show'
+  Rendering folders/show.html.erb within layouts/application
+  [1m[36mResource Load (0.9ms)[0m  [1m[34mSELECT "resources".* FROM "resources" INNER JOIN "folders_resources" ON "resources"."id" = "folders_resources"."resource_id" WHERE "folders_resources"."folder_id" = $1[0m  [["folder_id", 11]]
+  ↳ app/views/folders/show.html.erb:6
+  Rendered folders/show.html.erb within layouts/application (Duration: 4.4ms | Allocations: 1092)
+Completed 200 OK in 65ms (Views: 24.9ms | ActiveRecord: 34.2ms | Allocations: 7284)
+
+
+Started GET "/folders/11" for ::1 at 2019-11-08 11:35:12 +1100
+Processing by FoldersController#show as HTML
+  Parameters: {"id"=>"11"}
+  [1m[36mUser Load (6.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 9], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:7:in `fetch_user'
+  [1m[36mFolder Load (8.8ms)[0m  [1m[34mSELECT "folders".* FROM "folders" WHERE "folders"."id" = $1 LIMIT $2[0m  [["id", 11], ["LIMIT", 1]]
+  ↳ app/controllers/folders_controller.rb:33:in `show'
+  Rendering folders/show.html.erb within layouts/application
+  [1m[36mResource Load (9.5ms)[0m  [1m[34mSELECT "resources".* FROM "resources" INNER JOIN "folders_resources" ON "resources"."id" = "folders_resources"."resource_id" WHERE "folders_resources"."folder_id" = $1[0m  [["folder_id", 11]]
+  ↳ app/views/folders/show.html.erb:6
+  Rendered folders/show.html.erb within layouts/application (Duration: 14.0ms | Allocations: 1775)
+Completed 200 OK in 50ms (Views: 19.8ms | ActiveRecord: 25.0ms | Allocations: 8956)
+
+
+Started GET "/folders" for ::1 at 2019-11-08 11:35:14 +1100
+Processing by FoldersController#index as HTML
+  [1m[36mUser Load (18.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 9], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:7:in `fetch_user'
+  Rendering folders/index.html.erb within layouts/application
+  [1m[36mFolder Load (1.9ms)[0m  [1m[34mSELECT "folders".* FROM "folders" WHERE "folders"."user_id" = $1[0m  [["user_id", 9]]
+  ↳ app/views/folders/index.html.erb:10
+  Rendered folders/index.html.erb within layouts/application (Duration: 5.4ms | Allocations: 1053)
+Completed 200 OK in 40ms (Views: 16.3ms | ActiveRecord: 20.4ms | Allocations: 6839)
+
+
+Started GET "/folders/11" for ::1 at 2019-11-08 11:35:15 +1100
+Processing by FoldersController#show as HTML
+  Parameters: {"id"=>"11"}
+  [1m[36mUser Load (3.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 9], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:7:in `fetch_user'
+  [1m[36mFolder Load (3.8ms)[0m  [1m[34mSELECT "folders".* FROM "folders" WHERE "folders"."id" = $1 LIMIT $2[0m  [["id", 11], ["LIMIT", 1]]
+  ↳ app/controllers/folders_controller.rb:33:in `show'
+  Rendering folders/show.html.erb within layouts/application
+  [1m[36mResource Load (3.3ms)[0m  [1m[34mSELECT "resources".* FROM "resources" INNER JOIN "folders_resources" ON "resources"."id" = "folders_resources"."resource_id" WHERE "folders_resources"."folder_id" = $1[0m  [["folder_id", 11]]
+  ↳ app/views/folders/show.html.erb:6
+  Rendered folders/show.html.erb within layouts/application (Duration: 6.3ms | Allocations: 1201)
+Completed 200 OK in 30ms (Views: 15.6ms | ActiveRecord: 10.2ms | Allocations: 7381)
+
+
+Started GET "/folders/11" for ::1 at 2019-11-08 11:35:22 +1100
+Processing by FoldersController#show as HTML
+  Parameters: {"id"=>"11"}
+  [1m[36mUser Load (12.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 9], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:7:in `fetch_user'
+  [1m[36mFolder Load (0.5ms)[0m  [1m[34mSELECT "folders".* FROM "folders" WHERE "folders"."id" = $1 LIMIT $2[0m  [["id", 11], ["LIMIT", 1]]
+  ↳ app/controllers/folders_controller.rb:33:in `show'
+  Rendering folders/show.html.erb within layouts/application
+  [1m[36mResource Load (5.7ms)[0m  [1m[34mSELECT "resources".* FROM "resources" INNER JOIN "folders_resources" ON "resources"."id" = "folders_resources"."resource_id" WHERE "folders_resources"."folder_id" = $1[0m  [["folder_id", 11]]
+  ↳ app/views/folders/show.html.erb:6
+  Rendered folders/show.html.erb within layouts/application (Duration: 9.8ms | Allocations: 1443)
+Completed 200 OK in 45ms (Views: 21.3ms | ActiveRecord: 18.1ms | Allocations: 8615)
+
+
+Started GET "/folders/11" for ::1 at 2019-11-08 11:35:24 +1100
+Processing by FoldersController#show as HTML
+  Parameters: {"id"=>"11"}
+  [1m[36mUser Load (0.9ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 9], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:7:in `fetch_user'
+  [1m[36mFolder Load (0.5ms)[0m  [1m[34mSELECT "folders".* FROM "folders" WHERE "folders"."id" = $1 LIMIT $2[0m  [["id", 11], ["LIMIT", 1]]
+  ↳ app/controllers/folders_controller.rb:33:in `show'
+  Rendering folders/show.html.erb within layouts/application
+  [1m[36mResource Load (4.4ms)[0m  [1m[34mSELECT "resources".* FROM "resources" INNER JOIN "folders_resources" ON "resources"."id" = "folders_resources"."resource_id" WHERE "folders_resources"."folder_id" = $1[0m  [["folder_id", 11]]
+  ↳ app/views/folders/show.html.erb:6
+  Rendered folders/show.html.erb within layouts/application (Duration: 7.5ms | Allocations: 1202)
+Completed 200 OK in 27ms (Views: 16.7ms | ActiveRecord: 5.8ms | Allocations: 7382)
+
+
+Started GET "/folders/11" for ::1 at 2019-11-08 11:35:34 +1100
+Processing by FoldersController#show as HTML
+  Parameters: {"id"=>"11"}
+  [1m[36mUser Load (1.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 9], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:7:in `fetch_user'
+  [1m[36mFolder Load (0.4ms)[0m  [1m[34mSELECT "folders".* FROM "folders" WHERE "folders"."id" = $1 LIMIT $2[0m  [["id", 11], ["LIMIT", 1]]
+  ↳ app/controllers/folders_controller.rb:33:in `show'
+  Rendering folders/show.html.erb within layouts/application
+  [1m[36mResource Load (4.9ms)[0m  [1m[34mSELECT "resources".* FROM "resources" INNER JOIN "folders_resources" ON "resources"."id" = "folders_resources"."resource_id" WHERE "folders_resources"."folder_id" = $1[0m  [["folder_id", 11]]
+  ↳ app/views/folders/show.html.erb:6
+  Rendered folders/show.html.erb within layouts/application (Duration: 7.8ms | Allocations: 1336)
+Completed 200 OK in 26ms (Views: 14.9ms | ActiveRecord: 6.9ms | Allocations: 8508)
+
+
+Started GET "/resources/6" for ::1 at 2019-11-08 11:35:38 +1100
+Processing by ResourcesController#show as HTML
+  Parameters: {"id"=>"6"}
+  [1m[36mUser Load (1.9ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 9], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:7:in `fetch_user'
+  [1m[36mResource Load (5.2ms)[0m  [1m[34mSELECT "resources".* FROM "resources" WHERE "resources"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/resources_controller.rb:44:in `show'
+  Rendering resources/show.html.erb within layouts/application
+  Rendered resources/show.html.erb within layouts/application (Duration: 1.1ms | Allocations: 516)
+Completed 200 OK in 22ms (Views: 11.0ms | ActiveRecord: 7.1ms | Allocations: 7121)
+
+
+Started GET "/folders" for ::1 at 2019-11-08 11:35:42 +1100
+Processing by FoldersController#index as HTML
+  [1m[36mUser Load (1.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 9], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:7:in `fetch_user'
+  Rendering folders/index.html.erb within layouts/application
+  [1m[36mFolder Load (0.7ms)[0m  [1m[34mSELECT "folders".* FROM "folders" WHERE "folders"."user_id" = $1[0m  [["user_id", 9]]
+  ↳ app/views/folders/index.html.erb:10
+  Rendered folders/index.html.erb within layouts/application (Duration: 4.4ms | Allocations: 1053)
+Completed 200 OK in 59ms (Views: 53.3ms | ActiveRecord: 1.8ms | Allocations: 6843)
+
+
+Started GET "/folders/11" for ::1 at 2019-11-08 11:35:43 +1100
+Processing by FoldersController#show as HTML
+  Parameters: {"id"=>"11"}
+  [1m[36mUser Load (5.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 9], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:7:in `fetch_user'
+  [1m[36mFolder Load (3.7ms)[0m  [1m[34mSELECT "folders".* FROM "folders" WHERE "folders"."id" = $1 LIMIT $2[0m  [["id", 11], ["LIMIT", 1]]
+  ↳ app/controllers/folders_controller.rb:33:in `show'
+  Rendering folders/show.html.erb within layouts/application
+  [1m[36mResource Load (0.6ms)[0m  [1m[34mSELECT "resources".* FROM "resources" INNER JOIN "folders_resources" ON "resources"."id" = "folders_resources"."resource_id" WHERE "folders_resources"."folder_id" = $1[0m  [["folder_id", 11]]
+  ↳ app/views/folders/show.html.erb:6
+  Rendered folders/show.html.erb within layouts/application (Duration: 3.6ms | Allocations: 1094)
+Completed 200 OK in 33ms (Views: 19.0ms | ActiveRecord: 9.3ms | Allocations: 7284)
+
+
+Started GET "/folders/new" for ::1 at 2019-11-08 11:36:06 +1100
+Processing by FoldersController#new as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 9], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:7:in `fetch_user'
+  Rendering folders/new.html.erb within layouts/application
+  [1m[35m (1.1ms)[0m  [1m[34mSELECT "resources"."title", "resources"."id" FROM "resources"[0m
+  ↳ app/views/folders/_form.html.erb:6
+  Rendered folders/_form.html.erb (Duration: 6.8ms | Allocations: 1857)
+  Rendered folders/new.html.erb within layouts/application (Duration: 8.3ms | Allocations: 2167)
+Completed 200 OK in 26ms (Views: 21.1ms | ActiveRecord: 1.5ms | Allocations: 7961)
+
+
+Started POST "/folders" for ::1 at 2019-11-08 11:36:51 +1100
+Processing by FoldersController#create as HTML
+  Parameters: {"authenticity_token"=>"/4MLvIp1zCyV7Ma4n5119bZkGoDX/Lz5TNLeFVeaYH1J0tYZ7YedQvrdfKGTwkNoNYcBYw8YxGYCXegafrCdOg==", "folder"=>{"name"=>"test Folder", "resource_ids"=>"5"}, "commit"=>"Create Folder"}
+  [1m[36mUser Load (2.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 9], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:7:in `fetch_user'
+  [1m[36mResource Load (10.5ms)[0m  [1m[34mSELECT "resources".* FROM "resources" WHERE "resources"."id" = $1[0m  [["id", 5]]
+  ↳ app/controllers/folders_controller.rb:15:in `create'
+  [1m[35m (0.4ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/folders_controller.rb:15:in `create'
+  [1m[36mFolder Create (0.7ms)[0m  [1m[32mINSERT INTO "folders" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", "test Folder"], ["created_at", "2019-11-08 00:36:51.617718"], ["updated_at", "2019-11-08 00:36:51.617718"]]
+  ↳ app/controllers/folders_controller.rb:15:in `create'
+  [1m[36mFolder::HABTM_Resources Create (2.9ms)[0m  [1m[32mINSERT INTO "folders_resources" ("folder_id", "resource_id") VALUES ($1, $2)[0m  [["folder_id", 12], ["resource_id", 5]]
+  ↳ app/controllers/folders_controller.rb:15:in `create'
+  [1m[35m (0.8ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/folders_controller.rb:15:in `create'
+  [1m[36mResource Load (0.4ms)[0m  [1m[34mSELECT "resources".* FROM "resources" WHERE "resources"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/folders_controller.rb:16:in `create'
+  [1m[35m (1.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/folders_controller.rb:17:in `create'
+  [1m[36mFolder::HABTM_Resources Create (0.8ms)[0m  [1m[32mINSERT INTO "folders_resources" ("folder_id", "resource_id") VALUES ($1, $2)[0m  [["folder_id", 12], ["resource_id", 5]]
+  ↳ app/controllers/folders_controller.rb:17:in `create'
+  [1m[35m (0.6ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/folders_controller.rb:17:in `create'
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/folders_controller.rb:18:in `create'
+  [1m[36mFolder Update (3.0ms)[0m  [1m[33mUPDATE "folders" SET "user_id" = $1, "updated_at" = $2 WHERE "folders"."id" = $3[0m  [["user_id", 9], ["updated_at", "2019-11-08 00:36:51.637030"], ["id", 12]]
+  ↳ app/controllers/folders_controller.rb:18:in `create'
+  [1m[35m (2.0ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/folders_controller.rb:18:in `create'
+Redirected to http://localhost:3000/folders
+Completed 302 Found in 49ms (ActiveRecord: 25.8ms | Allocations: 11835)
+
+
+Started GET "/folders" for ::1 at 2019-11-08 11:36:51 +1100
+Processing by FoldersController#index as HTML
+  [1m[36mUser Load (1.7ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 9], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:7:in `fetch_user'
+  Rendering folders/index.html.erb within layouts/application
+  [1m[36mFolder Load (0.4ms)[0m  [1m[34mSELECT "folders".* FROM "folders" WHERE "folders"."user_id" = $1[0m  [["user_id", 9]]
+  ↳ app/views/folders/index.html.erb:10
+  Rendered folders/index.html.erb within layouts/application (Duration: 2.6ms | Allocations: 923)
+Completed 200 OK in 19ms (Views: 14.3ms | ActiveRecord: 2.2ms | Allocations: 6563)
+
+
+Started GET "/folders/12" for ::1 at 2019-11-08 11:36:53 +1100
+Processing by FoldersController#show as HTML
+  Parameters: {"id"=>"12"}
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 9], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:7:in `fetch_user'
+  [1m[36mFolder Load (0.3ms)[0m  [1m[34mSELECT "folders".* FROM "folders" WHERE "folders"."id" = $1 LIMIT $2[0m  [["id", 12], ["LIMIT", 1]]
+  ↳ app/controllers/folders_controller.rb:33:in `show'
+  Rendering folders/show.html.erb within layouts/application
+  [1m[36mResource Load (0.5ms)[0m  [1m[34mSELECT "resources".* FROM "resources" INNER JOIN "folders_resources" ON "resources"."id" = "folders_resources"."resource_id" WHERE "folders_resources"."folder_id" = $1[0m  [["folder_id", 12]]
+  ↳ app/views/folders/show.html.erb:6
+  Rendered folders/show.html.erb within layouts/application (Duration: 3.2ms | Allocations: 1090)
+Completed 200 OK in 20ms (Views: 15.2ms | ActiveRecord: 1.4ms | Allocations: 7281)
+
+
+Started GET "/folders/new" for ::1 at 2019-11-08 11:37:44 +1100
+Processing by FoldersController#new as HTML
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 9], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:7:in `fetch_user'
+  Rendering folders/new.html.erb within layouts/application
+  [1m[35m (5.0ms)[0m  [1m[34mSELECT "resources"."title", "resources"."id" FROM "resources"[0m
+  ↳ app/views/folders/_form.html.erb:6
+  Rendered folders/_form.html.erb (Duration: 10.9ms | Allocations: 1666)
+  Rendered folders/new.html.erb within layouts/application (Duration: 11.2ms | Allocations: 1736)
+Completed 200 OK in 29ms (Views: 18.9ms | ActiveRecord: 5.5ms | Allocations: 7397)
+
+
+Started POST "/folders" for ::1 at 2019-11-08 11:37:54 +1100
+Processing by FoldersController#create as HTML
+  Parameters: {"authenticity_token"=>"fKWe7ERCxXZCs1Wi3rMfKcThkwR2qD67OLSrV5UlVF3K9ENJI7CUGC2C77vS7Cm0RwKI565MRiR2O51YvA+pGg==", "folder"=>{"name"=>"johns maths", "resource_ids"=>"7"}, "commit"=>"Create Folder"}
+  [1m[36mUser Load (3.7ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 9], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:7:in `fetch_user'
+  [1m[36mResource Load (1.2ms)[0m  [1m[34mSELECT "resources".* FROM "resources" WHERE "resources"."id" = $1[0m  [["id", 7]]
+  ↳ app/controllers/folders_controller.rb:15:in `create'
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/folders_controller.rb:15:in `create'
+  [1m[36mFolder Create (0.5ms)[0m  [1m[32mINSERT INTO "folders" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", "johns maths"], ["created_at", "2019-11-08 00:37:54.862553"], ["updated_at", "2019-11-08 00:37:54.862553"]]
+  ↳ app/controllers/folders_controller.rb:15:in `create'
+  [1m[36mFolder::HABTM_Resources Create (1.3ms)[0m  [1m[32mINSERT INTO "folders_resources" ("folder_id", "resource_id") VALUES ($1, $2)[0m  [["folder_id", 13], ["resource_id", 7]]
+  ↳ app/controllers/folders_controller.rb:15:in `create'
+  [1m[35m (3.1ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/folders_controller.rb:15:in `create'
+  [1m[36mResource Load (0.6ms)[0m  [1m[34mSELECT "resources".* FROM "resources" WHERE "resources"."id" = $1 LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/controllers/folders_controller.rb:16:in `create'
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/folders_controller.rb:17:in `create'
+  [1m[36mFolder::HABTM_Resources Create (0.4ms)[0m  [1m[32mINSERT INTO "folders_resources" ("folder_id", "resource_id") VALUES ($1, $2)[0m  [["folder_id", 13], ["resource_id", 7]]
+  ↳ app/controllers/folders_controller.rb:17:in `create'
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/folders_controller.rb:17:in `create'
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/folders_controller.rb:18:in `create'
+  [1m[36mFolder Update (0.7ms)[0m  [1m[33mUPDATE "folders" SET "user_id" = $1, "updated_at" = $2 WHERE "folders"."id" = $3[0m  [["user_id", 9], ["updated_at", "2019-11-08 00:37:54.883694"], ["id", 13]]
+  ↳ app/controllers/folders_controller.rb:18:in `create'
+  [1m[35m (1.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/folders_controller.rb:18:in `create'
+Redirected to http://localhost:3000/folders
+Completed 302 Found in 40ms (ActiveRecord: 14.0ms | Allocations: 11825)
+
+
+Started GET "/folders" for ::1 at 2019-11-08 11:37:54 +1100
+Processing by FoldersController#index as HTML
+  [1m[36mUser Load (2.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 9], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:7:in `fetch_user'
+  Rendering folders/index.html.erb within layouts/application
+  [1m[36mFolder Load (5.2ms)[0m  [1m[34mSELECT "folders".* FROM "folders" WHERE "folders"."user_id" = $1[0m  [["user_id", 9]]
+  ↳ app/views/folders/index.html.erb:10
+  Rendered folders/index.html.erb within layouts/application (Duration: 7.7ms | Allocations: 968)
+Completed 200 OK in 23ms (Views: 13.1ms | ActiveRecord: 7.7ms | Allocations: 6601)
+
+
+Started GET "/folders/13" for ::1 at 2019-11-08 11:37:57 +1100
+Processing by FoldersController#show as HTML
+  Parameters: {"id"=>"13"}
+  [1m[36mUser Load (13.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 9], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:7:in `fetch_user'
+  [1m[36mFolder Load (4.6ms)[0m  [1m[34mSELECT "folders".* FROM "folders" WHERE "folders"."id" = $1 LIMIT $2[0m  [["id", 13], ["LIMIT", 1]]
+  ↳ app/controllers/folders_controller.rb:33:in `show'
+  Rendering folders/show.html.erb within layouts/application
+  [1m[36mResource Load (2.6ms)[0m  [1m[34mSELECT "resources".* FROM "resources" INNER JOIN "folders_resources" ON "resources"."id" = "folders_resources"."resource_id" WHERE "folders_resources"."folder_id" = $1[0m  [["folder_id", 13]]
+  ↳ app/views/folders/show.html.erb:6
+  Rendered folders/show.html.erb within layouts/application (Duration: 5.8ms | Allocations: 1088)
+Completed 200 OK in 40ms (Views: 14.9ms | ActiveRecord: 20.6ms | Allocations: 7275)
+
+
+Started GET "/folders/13/edit" for ::1 at 2019-11-08 11:39:50 +1100
+Processing by FoldersController#edit as HTML
+  Parameters: {"id"=>"13"}
+  [1m[36mUser Load (17.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 9], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:7:in `fetch_user'
+  [1m[36mFolder Load (0.4ms)[0m  [1m[34mSELECT "folders".* FROM "folders" WHERE "folders"."id" = $1 LIMIT $2[0m  [["id", 13], ["LIMIT", 1]]
+  ↳ app/controllers/folders_controller.rb:23:in `edit'
+  Rendering folders/edit.html.erb within layouts/application
+  [1m[35m (8.8ms)[0m  [1m[34mSELECT "resources"."title", "resources"."id" FROM "resources"[0m
+  ↳ app/views/folders/_form.html.erb:6
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT "resources"."id" FROM "resources" INNER JOIN "folders_resources" ON "resources"."id" = "folders_resources"."resource_id" WHERE "folders_resources"."folder_id" = $1[0m  [["folder_id", 13]]
+  ↳ app/views/folders/_form.html.erb:6
+  Rendered folders/_form.html.erb (Duration: 23.3ms | Allocations: 2403)
+  Rendered folders/edit.html.erb within layouts/application (Duration: 24.1ms | Allocations: 2571)
+Completed 200 OK in 57ms (Views: 25.9ms | ActiveRecord: 26.9ms | Allocations: 8894)
+
+
+Started PATCH "/folders/13" for ::1 at 2019-11-08 11:40:03 +1100
+Processing by FoldersController#update as HTML
+  Parameters: {"authenticity_token"=>"5+OgyHqnBrj4zQbIlPJ/WH3Vrqzzk9X75nqap4QHWyE+5MLHa95gqc8blhlDAk6COz913POk9I7AGqtdqb8+vg==", "folder"=>{"name"=>"johns maths", "resource_ids"=>"8"}, "commit"=>"Update Folder", "id"=>"13"}
+  [1m[36mUser Load (0.9ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 9], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:7:in `fetch_user'
+  [1m[36mFolder Load (0.3ms)[0m  [1m[34mSELECT "folders".* FROM "folders" WHERE "folders"."id" = $1 LIMIT $2[0m  [["id", 13], ["LIMIT", 1]]
+  ↳ app/controllers/folders_controller.rb:27:in `update'
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/folders_controller.rb:28:in `update'
+  [1m[36mResource Load (0.4ms)[0m  [1m[34mSELECT "resources".* FROM "resources" WHERE "resources"."id" = $1[0m  [["id", 8]]
+  ↳ app/controllers/folders_controller.rb:28:in `update'
+  [1m[36mResource Load (0.4ms)[0m  [1m[34mSELECT "resources".* FROM "resources" INNER JOIN "folders_resources" ON "resources"."id" = "folders_resources"."resource_id" WHERE "folders_resources"."folder_id" = $1[0m  [["folder_id", 13]]
+  ↳ app/controllers/folders_controller.rb:28:in `update'
+  [1m[36mFolder::HABTM_Resources Destroy (0.8ms)[0m  [1m[31mDELETE FROM "folders_resources" WHERE "folders_resources"."folder_id" = $1 AND "folders_resources"."resource_id" IN ($2, $3)[0m  [["folder_id", 13], ["resource_id", 7], ["resource_id", 7]]
+  ↳ app/controllers/folders_controller.rb:28:in `update'
+  [1m[36mFolder::HABTM_Resources Create (1.6ms)[0m  [1m[32mINSERT INTO "folders_resources" ("folder_id", "resource_id") VALUES ($1, $2)[0m  [["folder_id", 13], ["resource_id", 8]]
+  ↳ app/controllers/folders_controller.rb:28:in `update'
+  [1m[35m (0.7ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/folders_controller.rb:28:in `update'
+Redirected to http://localhost:3000/folders/13
+Completed 302 Found in 23ms (ActiveRecord: 5.3ms | Allocations: 7816)
+
+
+Started GET "/folders/13" for ::1 at 2019-11-08 11:40:03 +1100
+Processing by FoldersController#show as HTML
+  Parameters: {"id"=>"13"}
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 9], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:7:in `fetch_user'
+  [1m[36mFolder Load (0.6ms)[0m  [1m[34mSELECT "folders".* FROM "folders" WHERE "folders"."id" = $1 LIMIT $2[0m  [["id", 13], ["LIMIT", 1]]
+  ↳ app/controllers/folders_controller.rb:33:in `show'
+  Rendering folders/show.html.erb within layouts/application
+  [1m[36mResource Load (0.4ms)[0m  [1m[34mSELECT "resources".* FROM "resources" INNER JOIN "folders_resources" ON "resources"."id" = "folders_resources"."resource_id" WHERE "folders_resources"."folder_id" = $1[0m  [["folder_id", 13]]
+  ↳ app/views/folders/show.html.erb:6
+  Rendered folders/show.html.erb within layouts/application (Duration: 2.8ms | Allocations: 1055)
+Completed 200 OK in 21ms (Views: 15.4ms | ActiveRecord: 1.6ms | Allocations: 7240)
+
+
+Started GET "/folders/new" for ::1 at 2019-11-08 11:47:40 +1100
+Processing by FoldersController#new as HTML
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 9], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:7:in `fetch_user'
+  Rendering folders/new.html.erb within layouts/application
+  [1m[35m (5.7ms)[0m  [1m[34mSELECT "resources"."title", "resources"."id" FROM "resources"[0m
+  ↳ app/views/folders/_form.html.erb:6
+  Rendered folders/_form.html.erb (Duration: 21.6ms | Allocations: 8241)
+  Rendered folders/new.html.erb within layouts/application (Duration: 21.9ms | Allocations: 8311)
+Completed 200 OK in 121ms (Views: 28.8ms | ActiveRecord: 42.3ms | Allocations: 24004)
+
+
+Started POST "/folders" for ::1 at 2019-11-08 11:47:48 +1100
+Processing by FoldersController#create as HTML
+  Parameters: {"authenticity_token"=>"4aPFngczR+HYDuTVrip6kzl+PanuiSyFUao/mCJsJRlX8hg7YMEWj7c/XsyidUwOup0mSjZtVBofJQmXC0bYXg==", "folder"=>{"name"=>"amanda", "resource_ids"=>"5"}, "commit"=>"Create Folder"}
+  [1m[36mUser Load (5.7ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 9], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:7:in `fetch_user'
+  [1m[36mResource Load (0.5ms)[0m  [1m[34mSELECT "resources".* FROM "resources" WHERE "resources"."id" = $1[0m  [["id", 5]]
+  ↳ app/controllers/folders_controller.rb:15:in `create'
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/folders_controller.rb:16:in `create'
+  [1m[36mFolder Create (1.8ms)[0m  [1m[32mINSERT INTO "folders" ("name", "user_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["name", "amanda"], ["user_id", 9], ["created_at", "2019-11-08 00:47:48.683511"], ["updated_at", "2019-11-08 00:47:48.683511"]]
+  ↳ app/controllers/folders_controller.rb:16:in `create'
+  [1m[36mFolder::HABTM_Resources Create (2.0ms)[0m  [1m[32mINSERT INTO "folders_resources" ("folder_id", "resource_id") VALUES ($1, $2)[0m  [["folder_id", 14], ["resource_id", 5]]
+  ↳ app/controllers/folders_controller.rb:16:in `create'
+  [1m[35m (1.6ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/folders_controller.rb:16:in `create'
+  [1m[36mResource Load (0.4ms)[0m  [1m[34mSELECT "resources".* FROM "resources" WHERE "resources"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/folders_controller.rb:18:in `create'
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/folders_controller.rb:19:in `create'
+  [1m[36mFolder::HABTM_Resources Create (3.2ms)[0m  [1m[32mINSERT INTO "folders_resources" ("folder_id", "resource_id") VALUES ($1, $2)[0m  [["folder_id", 14], ["resource_id", 5]]
+  ↳ app/controllers/folders_controller.rb:19:in `create'
+  [1m[35m (4.9ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/folders_controller.rb:19:in `create'
+Redirected to http://localhost:3000/folders
+Completed 302 Found in 64ms (ActiveRecord: 27.8ms | Allocations: 16825)
+
+
+Started GET "/folders" for ::1 at 2019-11-08 11:47:48 +1100
+Processing by FoldersController#index as HTML
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 9], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:7:in `fetch_user'
+  Rendering folders/index.html.erb within layouts/application
+  [1m[36mFolder Load (0.6ms)[0m  [1m[34mSELECT "folders".* FROM "folders" WHERE "folders"."user_id" = $1[0m  [["user_id", 9]]
+  ↳ app/views/folders/index.html.erb:10
+  Rendered folders/index.html.erb within layouts/application (Duration: 4.5ms | Allocations: 1176)
+Completed 200 OK in 21ms (Views: 17.7ms | ActiveRecord: 1.1ms | Allocations: 6805)
+
+
+Started GET "/folders/14" for ::1 at 2019-11-08 11:47:51 +1100
+Processing by FoldersController#show as HTML
+  Parameters: {"id"=>"14"}
+  [1m[36mUser Load (2.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 9], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:7:in `fetch_user'
+  [1m[36mFolder Load (7.1ms)[0m  [1m[34mSELECT "folders".* FROM "folders" WHERE "folders"."id" = $1 LIMIT $2[0m  [["id", 14], ["LIMIT", 1]]
+  ↳ app/controllers/folders_controller.rb:35:in `show'
+  Rendering folders/show.html.erb within layouts/application
+  [1m[36mResource Load (1.8ms)[0m  [1m[34mSELECT "resources".* FROM "resources" INNER JOIN "folders_resources" ON "resources"."id" = "folders_resources"."resource_id" WHERE "folders_resources"."folder_id" = $1[0m  [["folder_id", 14]]
+  ↳ app/views/folders/show.html.erb:6
+  Rendered folders/show.html.erb within layouts/application (Duration: 6.5ms | Allocations: 1378)
+Completed 200 OK in 33ms (Views: 16.9ms | ActiveRecord: 11.3ms | Allocations: 7662)
+
+
+Started GET "/folders/14/edit" for ::1 at 2019-11-08 11:48:09 +1100
+Processing by FoldersController#edit as HTML
+  Parameters: {"id"=>"14"}
+  [1m[36mUser Load (14.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 9], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:7:in `fetch_user'
+  [1m[36mFolder Load (13.8ms)[0m  [1m[34mSELECT "folders".* FROM "folders" WHERE "folders"."id" = $1 LIMIT $2[0m  [["id", 14], ["LIMIT", 1]]
+  ↳ app/controllers/folders_controller.rb:25:in `edit'
+  Rendering folders/edit.html.erb within layouts/application
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT "resources"."title", "resources"."id" FROM "resources"[0m
+  ↳ app/views/folders/_form.html.erb:6
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT "resources"."id" FROM "resources" INNER JOIN "folders_resources" ON "resources"."id" = "folders_resources"."resource_id" WHERE "folders_resources"."folder_id" = $1[0m  [["folder_id", 14]]
+  ↳ app/views/folders/_form.html.erb:6
+  Rendered folders/_form.html.erb (Duration: 11.9ms | Allocations: 2383)
+  Rendered folders/edit.html.erb within layouts/application (Duration: 12.4ms | Allocations: 2453)
+Completed 200 OK in 56ms (Views: 22.3ms | ActiveRecord: 29.6ms | Allocations: 8648)
+
+
+Started PATCH "/folders/14" for ::1 at 2019-11-08 11:48:13 +1100
+Processing by FoldersController#update as HTML
+  Parameters: {"authenticity_token"=>"0aVfufIc1hVhtsRBAZJlmLnNJKuUG1e+1gHm8gpqiikhfCEg0Qjn/8RcC6Wjv8ovWYpSRi+84Zl3r3X8MlPY5Q==", "folder"=>{"name"=>"amanda", "resource_ids"=>"7"}, "commit"=>"Update Folder", "id"=>"14"}
+  [1m[36mUser Load (6.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 9], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:7:in `fetch_user'
+  [1m[36mFolder Load (1.9ms)[0m  [1m[34mSELECT "folders".* FROM "folders" WHERE "folders"."id" = $1 LIMIT $2[0m  [["id", 14], ["LIMIT", 1]]
+  ↳ app/controllers/folders_controller.rb:29:in `update'
+  [1m[35m (0.5ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/folders_controller.rb:30:in `update'
+  [1m[36mResource Load (0.5ms)[0m  [1m[34mSELECT "resources".* FROM "resources" WHERE "resources"."id" = $1[0m  [["id", 7]]
+  ↳ app/controllers/folders_controller.rb:30:in `update'
+  [1m[36mResource Load (0.5ms)[0m  [1m[34mSELECT "resources".* FROM "resources" INNER JOIN "folders_resources" ON "resources"."id" = "folders_resources"."resource_id" WHERE "folders_resources"."folder_id" = $1[0m  [["folder_id", 14]]
+  ↳ app/controllers/folders_controller.rb:30:in `update'
+  [1m[36mFolder::HABTM_Resources Destroy (2.7ms)[0m  [1m[31mDELETE FROM "folders_resources" WHERE "folders_resources"."folder_id" = $1 AND "folders_resources"."resource_id" IN ($2, $3)[0m  [["folder_id", 14], ["resource_id", 5], ["resource_id", 5]]
+  ↳ app/controllers/folders_controller.rb:30:in `update'
+  [1m[36mFolder::HABTM_Resources Create (0.4ms)[0m  [1m[32mINSERT INTO "folders_resources" ("folder_id", "resource_id") VALUES ($1, $2)[0m  [["folder_id", 14], ["resource_id", 7]]
+  ↳ app/controllers/folders_controller.rb:30:in `update'
+  [1m[35m (1.0ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/folders_controller.rb:30:in `update'
+Redirected to http://localhost:3000/folders/14
+Completed 302 Found in 61ms (ActiveRecord: 13.8ms | Allocations: 7790)
+
+
+Started GET "/folders/14" for ::1 at 2019-11-08 11:48:13 +1100
+Processing by FoldersController#show as HTML
+  Parameters: {"id"=>"14"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 9], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:7:in `fetch_user'
+  [1m[36mFolder Load (0.6ms)[0m  [1m[34mSELECT "folders".* FROM "folders" WHERE "folders"."id" = $1 LIMIT $2[0m  [["id", 14], ["LIMIT", 1]]
+  ↳ app/controllers/folders_controller.rb:35:in `show'
+  Rendering folders/show.html.erb within layouts/application
+  [1m[36mResource Load (1.6ms)[0m  [1m[34mSELECT "resources".* FROM "resources" INNER JOIN "folders_resources" ON "resources"."id" = "folders_resources"."resource_id" WHERE "folders_resources"."folder_id" = $1[0m  [["folder_id", 14]]
+  ↳ app/views/folders/show.html.erb:6
+  Rendered folders/show.html.erb within layouts/application (Duration: 4.2ms | Allocations: 1052)
+Completed 200 OK in 24ms (Views: 18.4ms | ActiveRecord: 2.5ms | Allocations: 7245)
+
+
+Started GET "/folders/14" for ::1 at 2019-11-08 11:48:56 +1100
+Processing by FoldersController#show as HTML
+  Parameters: {"id"=>"14"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 9], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:7:in `fetch_user'
+  [1m[36mFolder Load (0.6ms)[0m  [1m[34mSELECT "folders".* FROM "folders" WHERE "folders"."id" = $1 LIMIT $2[0m  [["id", 14], ["LIMIT", 1]]
+  ↳ app/controllers/folders_controller.rb:37:in `show'
+  Rendering folders/show.html.erb within layouts/application
+  [1m[36mResource Load (0.5ms)[0m  [1m[34mSELECT "resources".* FROM "resources" INNER JOIN "folders_resources" ON "resources"."id" = "folders_resources"."resource_id" WHERE "folders_resources"."folder_id" = $1[0m  [["folder_id", 14]]
+  ↳ app/views/folders/show.html.erb:6
+  Rendered folders/show.html.erb within layouts/application (Duration: 36.1ms | Allocations: 12186)
+Completed 200 OK in 211ms (Views: 39.7ms | ActiveRecord: 114.1ms | Allocations: 28883)
+
+
+Started GET "/folders/new" for ::1 at 2019-11-08 11:48:59 +1100
+Processing by FoldersController#new as HTML
+  [1m[36mUser Load (11.9ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 9], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:7:in `fetch_user'
+  Rendering folders/new.html.erb within layouts/application
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT "resources"."title", "resources"."id" FROM "resources"[0m
+  ↳ app/views/folders/_form.html.erb:6
+  Rendered folders/_form.html.erb (Duration: 5.2ms | Allocations: 1670)
+  Rendered folders/new.html.erb within layouts/application (Duration: 5.6ms | Allocations: 1740)
+Completed 200 OK in 33ms (Views: 17.3ms | ActiveRecord: 12.5ms | Allocations: 7379)
+
+
+Started POST "/folders" for ::1 at 2019-11-08 11:49:04 +1100
+Processing by FoldersController#create as HTML
+  Parameters: {"authenticity_token"=>"0KDEKl51RVLh0CS8PmWlPR37bs6idd8RnnbrV3cUtCJm8RmPOYcUPI7hnqUyOpOgnhh1LXqRp47Q+d1YXj5JZQ==", "folder"=>{"name"=>"hrj", "resource_ids"=>"7"}, "commit"=>"Create Folder"}
+  [1m[36mUser Load (5.8ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 9], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:7:in `fetch_user'
+  [1m[36mResource Load (9.0ms)[0m  [1m[34mSELECT "resources".* FROM "resources" WHERE "resources"."id" = $1[0m  [["id", 7]]
+  ↳ app/controllers/folders_controller.rb:15:in `create'
+  [1m[35m (1.0ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/folders_controller.rb:16:in `create'
+  [1m[36mFolder Create (0.5ms)[0m  [1m[32mINSERT INTO "folders" ("name", "user_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["name", "hrj"], ["user_id", 9], ["created_at", "2019-11-08 00:49:04.811073"], ["updated_at", "2019-11-08 00:49:04.811073"]]
+  ↳ app/controllers/folders_controller.rb:16:in `create'
+  [1m[36mFolder::HABTM_Resources Create (0.3ms)[0m  [1m[32mINSERT INTO "folders_resources" ("folder_id", "resource_id") VALUES ($1, $2)[0m  [["folder_id", 15], ["resource_id", 7]]
+  ↳ app/controllers/folders_controller.rb:16:in `create'
+  [1m[35m (1.7ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/folders_controller.rb:16:in `create'
+  [1m[36mResource Load (0.4ms)[0m  [1m[34mSELECT "resources".* FROM "resources" WHERE "resources"."id" = $1 LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/controllers/folders_controller.rb:18:in `create'
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/folders_controller.rb:19:in `create'
+  [1m[36mFolder::HABTM_Resources Create (0.6ms)[0m  [1m[32mINSERT INTO "folders_resources" ("folder_id", "resource_id") VALUES ($1, $2)[0m  [["folder_id", 15], ["resource_id", 7]]
+  ↳ app/controllers/folders_controller.rb:19:in `create'
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/folders_controller.rb:19:in `create'
+Completed 500 Internal Server Error in 53ms (ActiveRecord: 23.6ms | Allocations: 12652)
+
+
+  
+RuntimeError (hell):
+  
+app/controllers/folders_controller.rb:21:in `create'
+Started PUT "/__web_console/repl_sessions/29f273305beb9223f6586ec89fb22ac5" for ::1 at 2019-11-08 11:49:09 +1100
+Started PUT "/__web_console/repl_sessions/29f273305beb9223f6586ec89fb22ac5" for ::1 at 2019-11-08 11:49:11 +1100
+Started POST "/folders" for ::1 at 2019-11-08 11:50:25 +1100
+Processing by FoldersController#create as HTML
+  Parameters: {"authenticity_token"=>"0KDEKl51RVLh0CS8PmWlPR37bs6idd8RnnbrV3cUtCJm8RmPOYcUPI7hnqUyOpOgnhh1LXqRp47Q+d1YXj5JZQ==", "folder"=>{"name"=>"hrj", "resource_ids"=>"7"}, "commit"=>"Create Folder"}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 9], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:7:in `fetch_user'
+  [1m[36mResource Load (4.1ms)[0m  [1m[34mSELECT "resources".* FROM "resources" WHERE "resources"."id" = $1[0m  [["id", 7]]
+  ↳ app/controllers/folders_controller.rb:15:in `create'
+Completed 500 Internal Server Error in 766ms (ActiveRecord: 187.7ms | Allocations: 112370)
+
+
+  
+NameError (undefined local variable or method `folder' for #<FoldersController:0x00007f99aad5b6a0>
+Did you mean?  @folder):
+  
+app/controllers/folders_controller.rb:16:in `create'
+Started GET "/folders/new" for ::1 at 2019-11-08 11:50:28 +1100
+Processing by FoldersController#new as HTML
+  [1m[36mUser Load (14.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 9], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:7:in `fetch_user'
+  Rendering folders/new.html.erb within layouts/application
+  [1m[35m (8.3ms)[0m  [1m[34mSELECT "resources"."title", "resources"."id" FROM "resources"[0m
+  ↳ app/views/folders/_form.html.erb:6
+  Rendered folders/_form.html.erb (Duration: 13.4ms | Allocations: 1748)
+  Rendered folders/new.html.erb within layouts/application (Duration: 13.9ms | Allocations: 1818)
+Completed 200 OK in 43ms (Views: 17.0ms | ActiveRecord: 22.9ms | Allocations: 7621)
+
+
+Started POST "/folders" for ::1 at 2019-11-08 11:50:35 +1100
+Processing by FoldersController#create as HTML
+  Parameters: {"authenticity_token"=>"FdWDmrQgbqv4Tssczvl1EWQVG4PpI4VXAzWIrxpRM0ajhF4/09I/xZd/cQXCpkOM5/YAYDHH/chNur6gM3vOAQ==", "folder"=>{"name"=>"h", "resource_ids"=>"8"}, "commit"=>"Create Folder"}
+  [1m[36mUser Load (8.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 9], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:7:in `fetch_user'
+  [1m[36mResource Load (4.1ms)[0m  [1m[34mSELECT "resources".* FROM "resources" WHERE "resources"."id" = $1[0m  [["id", 8]]
+  ↳ app/controllers/folders_controller.rb:15:in `create'
+Completed 500 Internal Server Error in 340ms (ActiveRecord: 12.6ms | Allocations: 89939)
+
+
+  
+NameError (undefined local variable or method `folder' for #<FoldersController:0x00007f99aad49180>
+Did you mean?  @folder):
+  
+app/controllers/folders_controller.rb:16:in `create'
+Started PUT "/__web_console/repl_sessions/5011a288edb4102e1bb254bc0994c2a8" for ::1 at 2019-11-08 11:50:44 +1100
+Started PUT "/__web_console/repl_sessions/5011a288edb4102e1bb254bc0994c2a8" for ::1 at 2019-11-08 11:50:46 +1100
+Started GET "/folders/new" for ::1 at 2019-11-08 11:51:11 +1100
+Processing by FoldersController#new as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 9], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:7:in `fetch_user'
+  Rendering folders/new.html.erb within layouts/application
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "resources"."title", "resources"."id" FROM "resources"[0m
+  ↳ app/views/folders/_form.html.erb:6
+  Rendered folders/_form.html.erb (Duration: 33.4ms | Allocations: 8603)
+  Rendered folders/new.html.erb within layouts/application (Duration: 33.8ms | Allocations: 8673)
+Completed 200 OK in 198ms (Views: 31.5ms | ActiveRecord: 122.3ms | Allocations: 24667)
+
+
+Started POST "/folders" for ::1 at 2019-11-08 11:51:17 +1100
+Processing by FoldersController#create as HTML
+  Parameters: {"authenticity_token"=>"5TGtoFjO5D7X04EeiWr4wW/mKEgwbwleSipOt1ayUlMo2CKFjz4SzTRyeAnzQPVlG3oQujBi71y9bNmLal2DSw==", "folder"=>{"name"=>"s", "resource_ids"=>"7"}, "commit"=>"Create Folder"}
+  [1m[36mUser Load (2.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 9], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:7:in `fetch_user'
+  [1m[36mResource Load (3.0ms)[0m  [1m[34mSELECT "resources".* FROM "resources" WHERE "resources"."id" = $1[0m  [["id", 7]]
+  ↳ app/controllers/folders_controller.rb:15:in `create'
+  [1m[35m (0.4ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/folders_controller.rb:16:in `create'
+  [1m[36mFolder Create (0.6ms)[0m  [1m[32mINSERT INTO "folders" ("name", "user_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["name", "s"], ["user_id", 9], ["created_at", "2019-11-08 00:51:17.692617"], ["updated_at", "2019-11-08 00:51:17.692617"]]
+  ↳ app/controllers/folders_controller.rb:16:in `create'
+  [1m[36mFolder::HABTM_Resources Create (0.4ms)[0m  [1m[32mINSERT INTO "folders_resources" ("folder_id", "resource_id") VALUES ($1, $2)[0m  [["folder_id", 16], ["resource_id", 7]]
+  ↳ app/controllers/folders_controller.rb:16:in `create'
+  [1m[35m (3.0ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/folders_controller.rb:16:in `create'
+  [1m[36mResource Load (4.1ms)[0m  [1m[34mSELECT "resources".* FROM "resources" WHERE "resources"."id" = $1 LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/controllers/folders_controller.rb:18:in `create'
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/folders_controller.rb:19:in `create'
+  [1m[36mFolder::HABTM_Resources Create (0.4ms)[0m  [1m[32mINSERT INTO "folders_resources" ("folder_id", "resource_id") VALUES ($1, $2)[0m  [["folder_id", 16], ["resource_id", 7]]
+  ↳ app/controllers/folders_controller.rb:19:in `create'
+  [1m[35m (0.7ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/folders_controller.rb:19:in `create'
+Completed 500 Internal Server Error in 79ms (ActiveRecord: 16.8ms | Allocations: 16987)
+
+
+  
+RuntimeError (hell):
+  
+app/controllers/folders_controller.rb:21:in `create'
+Started PUT "/__web_console/repl_sessions/30bb4a81e52722cd6e940c984fa27a24" for ::1 at 2019-11-08 11:51:26 +1100
+Started PUT "/__web_console/repl_sessions/30bb4a81e52722cd6e940c984fa27a24" for ::1 at 2019-11-08 11:51:32 +1100
+Started PUT "/__web_console/repl_sessions/30bb4a81e52722cd6e940c984fa27a24" for ::1 at 2019-11-08 11:51:41 +1100
+Started PUT "/__web_console/repl_sessions/30bb4a81e52722cd6e940c984fa27a24" for ::1 at 2019-11-08 11:51:52 +1100
+Started PUT "/__web_console/repl_sessions/30bb4a81e52722cd6e940c984fa27a24" for ::1 at 2019-11-08 11:51:57 +1100
+Started PUT "/__web_console/repl_sessions/30bb4a81e52722cd6e940c984fa27a24" for ::1 at 2019-11-08 11:51:59 +1100
+Started PUT "/__web_console/repl_sessions/30bb4a81e52722cd6e940c984fa27a24" for ::1 at 2019-11-08 11:52:02 +1100
+Started POST "/folders" for ::1 at 2019-11-08 11:52:59 +1100
+Processing by FoldersController#create as HTML
+  Parameters: {"authenticity_token"=>"5TGtoFjO5D7X04EeiWr4wW/mKEgwbwleSipOt1ayUlMo2CKFjz4SzTRyeAnzQPVlG3oQujBi71y9bNmLal2DSw==", "folder"=>{"name"=>"test123", "resource_ids"=>"8"}, "commit"=>"Create Folder"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 9], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:7:in `fetch_user'
+  [1m[36mResource Load (1.6ms)[0m  [1m[34mSELECT "resources".* FROM "resources" WHERE "resources"."id" = $1[0m  [["id", 8]]
+  ↳ app/controllers/folders_controller.rb:15:in `create'
+  [1m[35m (0.4ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/folders_controller.rb:16:in `create'
+  [1m[36mFolder Create (0.5ms)[0m  [1m[32mINSERT INTO "folders" ("name", "user_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["name", "test123"], ["user_id", 9], ["created_at", "2019-11-08 00:52:59.588407"], ["updated_at", "2019-11-08 00:52:59.588407"]]
+  ↳ app/controllers/folders_controller.rb:16:in `create'
+  [1m[36mFolder::HABTM_Resources Create (0.7ms)[0m  [1m[32mINSERT INTO "folders_resources" ("folder_id", "resource_id") VALUES ($1, $2)[0m  [["folder_id", 17], ["resource_id", 8]]
+  ↳ app/controllers/folders_controller.rb:16:in `create'
+  [1m[35m (2.1ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/folders_controller.rb:16:in `create'
+Completed 500 Internal Server Error in 585ms (ActiveRecord: 136.5ms | Allocations: 116934)
+
+
+  
+NameError (undefined local variable or method `resource' for #<FoldersController:0x00007f99aaf004b0>
+Did you mean?  resource_url):
+  
+app/controllers/folders_controller.rb:19:in `create'
+Started POST "/folders" for ::1 at 2019-11-08 11:53:18 +1100
+Processing by FoldersController#create as HTML
+  Parameters: {"authenticity_token"=>"5TGtoFjO5D7X04EeiWr4wW/mKEgwbwleSipOt1ayUlMo2CKFjz4SzTRyeAnzQPVlG3oQujBi71y9bNmLal2DSw==", "folder"=>{"name"=>"test123", "resource_ids"=>"8"}, "commit"=>"Create Folder"}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 9], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:7:in `fetch_user'
+  [1m[36mResource Load (0.3ms)[0m  [1m[34mSELECT "resources".* FROM "resources" WHERE "resources"."id" = $1[0m  [["id", 8]]
+  ↳ app/controllers/folders_controller.rb:15:in `create'
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/folders_controller.rb:16:in `create'
+  [1m[36mFolder Create (0.5ms)[0m  [1m[32mINSERT INTO "folders" ("name", "user_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["name", "test123"], ["user_id", 9], ["created_at", "2019-11-08 00:53:18.797095"], ["updated_at", "2019-11-08 00:53:18.797095"]]
+  ↳ app/controllers/folders_controller.rb:16:in `create'
+  [1m[36mFolder::HABTM_Resources Create (0.3ms)[0m  [1m[32mINSERT INTO "folders_resources" ("folder_id", "resource_id") VALUES ($1, $2)[0m  [["folder_id", 18], ["resource_id", 8]]
+  ↳ app/controllers/folders_controller.rb:16:in `create'
+  [1m[35m (1.7ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/folders_controller.rb:16:in `create'
+Completed 500 Internal Server Error in 181ms (ActiveRecord: 114.8ms | Allocations: 29837)
+
+
+  
+RuntimeError (hell):
+  
+app/controllers/folders_controller.rb:21:in `create'
+Started POST "/folders" for ::1 at 2019-11-08 11:53:29 +1100
+Processing by FoldersController#create as HTML
+  Parameters: {"authenticity_token"=>"5TGtoFjO5D7X04EeiWr4wW/mKEgwbwleSipOt1ayUlMo2CKFjz4SzTRyeAnzQPVlG3oQujBi71y9bNmLal2DSw==", "folder"=>{"name"=>"test123", "resource_ids"=>"6"}, "commit"=>"Create Folder"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 9], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:7:in `fetch_user'
+  [1m[36mResource Load (0.3ms)[0m  [1m[34mSELECT "resources".* FROM "resources" WHERE "resources"."id" = $1[0m  [["id", 6]]
+  ↳ app/controllers/folders_controller.rb:15:in `create'
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/folders_controller.rb:16:in `create'
+  [1m[36mFolder Create (1.6ms)[0m  [1m[32mINSERT INTO "folders" ("name", "user_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["name", "test123"], ["user_id", 9], ["created_at", "2019-11-08 00:53:29.741908"], ["updated_at", "2019-11-08 00:53:29.741908"]]
+  ↳ app/controllers/folders_controller.rb:16:in `create'
+  [1m[36mFolder::HABTM_Resources Create (2.8ms)[0m  [1m[32mINSERT INTO "folders_resources" ("folder_id", "resource_id") VALUES ($1, $2)[0m  [["folder_id", 19], ["resource_id", 6]]
+  ↳ app/controllers/folders_controller.rb:16:in `create'
+  [1m[35m (1.6ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/folders_controller.rb:16:in `create'
+Redirected to http://localhost:3000/folders
+Completed 302 Found in 210ms (ActiveRecord: 54.4ms | Allocations: 29652)
+
+
+Started GET "/folders" for ::1 at 2019-11-08 11:53:29 +1100
+Processing by FoldersController#index as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 9], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:7:in `fetch_user'
+  Rendering folders/index.html.erb within layouts/application
+  [1m[36mFolder Load (32.5ms)[0m  [1m[34mSELECT "folders".* FROM "folders" WHERE "folders"."user_id" = $1[0m  [["user_id", 9]]
+  ↳ app/views/folders/index.html.erb:10
+  Rendered folders/index.html.erb within layouts/application (Duration: 65.0ms | Allocations: 5517)
+Completed 200 OK in 122ms (Views: 29.9ms | ActiveRecord: 62.8ms | Allocations: 18524)
+
+
+Started GET "/folders/19" for ::1 at 2019-11-08 11:53:32 +1100
+Processing by FoldersController#show as HTML
+  Parameters: {"id"=>"19"}
+  [1m[36mUser Load (16.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 9], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:7:in `fetch_user'
+  [1m[36mFolder Load (1.0ms)[0m  [1m[34mSELECT "folders".* FROM "folders" WHERE "folders"."id" = $1 LIMIT $2[0m  [["id", 19], ["LIMIT", 1]]
+  ↳ app/controllers/folders_controller.rb:36:in `show'
+  Rendering folders/show.html.erb within layouts/application
+  [1m[36mResource Load (0.9ms)[0m  [1m[34mSELECT "resources".* FROM "resources" INNER JOIN "folders_resources" ON "resources"."id" = "folders_resources"."resource_id" WHERE "folders_resources"."folder_id" = $1[0m  [["folder_id", 19]]
+  ↳ app/views/folders/show.html.erb:6
+  Rendered folders/show.html.erb within layouts/application (Duration: 52.7ms | Allocations: 14833)
+Completed 200 OK in 87ms (Views: 52.3ms | ActiveRecord: 29.7ms | Allocations: 21025)
+
+
+Started GET "/resources/6" for ::1 at 2019-11-08 11:54:02 +1100
+Processing by ResourcesController#show as HTML
+  Parameters: {"id"=>"6"}
+  [1m[36mUser Load (16.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 9], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:7:in `fetch_user'
+  [1m[36mResource Load (0.7ms)[0m  [1m[34mSELECT "resources".* FROM "resources" WHERE "resources"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/resources_controller.rb:44:in `show'
+  Rendering resources/show.html.erb within layouts/application
+  Rendered resources/show.html.erb within layouts/application (Duration: 0.9ms | Allocations: 211)
+Completed 200 OK in 37ms (Views: 14.4ms | ActiveRecord: 17.3ms | Allocations: 6718)
+
+
+Started GET "/folders/new" for ::1 at 2019-11-08 11:54:56 +1100
+Processing by FoldersController#new as HTML
+  [1m[36mUser Load (2.8ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 9], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:7:in `fetch_user'
+  Rendering folders/new.html.erb within layouts/application
+  [1m[35m (0.9ms)[0m  [1m[34mSELECT "resources"."title", "resources"."id" FROM "resources"[0m
+  ↳ app/views/folders/_form.html.erb:6
+  Rendered folders/_form.html.erb (Duration: 61.6ms | Allocations: 8600)
+  Rendered folders/new.html.erb within layouts/application (Duration: 61.9ms | Allocations: 8670)
+Completed 200 OK in 219ms (Views: 64.4ms | ActiveRecord: 52.8ms | Allocations: 24639)
+
+
+Started POST "/folders" for ::1 at 2019-11-08 11:55:04 +1100
+Processing by FoldersController#create as HTML
+  Parameters: {"authenticity_token"=>"CbWLLb51WoWaLs/l/N6nLq7cnBBPQYp/JUvk1SaLzN6/5FaI2YcL6/UfdfzwgZGzLT+H85el8uBrxNLaD6ExmQ==", "folder"=>{"name"=>"finish", "resource_ids"=>"5"}, "commit"=>"Create Folder"}
+  [1m[36mUser Load (12.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 9], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:7:in `fetch_user'
+  [1m[36mResource Load (0.4ms)[0m  [1m[34mSELECT "resources".* FROM "resources" WHERE "resources"."id" = $1[0m  [["id", 5]]
+  ↳ app/controllers/folders_controller.rb:14:in `create'
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/folders_controller.rb:15:in `create'
+  [1m[36mFolder Create (0.6ms)[0m  [1m[32mINSERT INTO "folders" ("name", "user_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["name", "finish"], ["user_id", 9], ["created_at", "2019-11-08 00:55:04.628000"], ["updated_at", "2019-11-08 00:55:04.628000"]]
+  ↳ app/controllers/folders_controller.rb:15:in `create'
+  [1m[36mFolder::HABTM_Resources Create (0.6ms)[0m  [1m[32mINSERT INTO "folders_resources" ("folder_id", "resource_id") VALUES ($1, $2)[0m  [["folder_id", 20], ["resource_id", 5]]
+  ↳ app/controllers/folders_controller.rb:15:in `create'
+  [1m[35m (2.0ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/folders_controller.rb:15:in `create'
+Redirected to http://localhost:3000/folders
+Completed 302 Found in 47ms (ActiveRecord: 17.7ms | Allocations: 13313)
+
+
+Started GET "/folders" for ::1 at 2019-11-08 11:55:04 +1100
+Processing by FoldersController#index as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 9], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:7:in `fetch_user'
+  Rendering folders/index.html.erb within layouts/application
+  [1m[36mFolder Load (0.8ms)[0m  [1m[34mSELECT "folders".* FROM "folders" WHERE "folders"."user_id" = $1[0m  [["user_id", 9]]
+  ↳ app/views/folders/index.html.erb:10
+  Rendered folders/index.html.erb within layouts/application (Duration: 4.9ms | Allocations: 1456)
+Completed 200 OK in 18ms (Views: 14.5ms | ActiveRecord: 1.1ms | Allocations: 7103)
+
+
+Started GET "/folders/20" for ::1 at 2019-11-08 11:55:06 +1100
+Processing by FoldersController#show as HTML
+  Parameters: {"id"=>"20"}
+  [1m[36mUser Load (10.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 9], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:7:in `fetch_user'
+  [1m[36mFolder Load (1.0ms)[0m  [1m[34mSELECT "folders".* FROM "folders" WHERE "folders"."id" = $1 LIMIT $2[0m  [["id", 20], ["LIMIT", 1]]
+  ↳ app/controllers/folders_controller.rb:32:in `show'
+  Rendering folders/show.html.erb within layouts/application
+  [1m[36mResource Load (1.3ms)[0m  [1m[34mSELECT "resources".* FROM "resources" INNER JOIN "folders_resources" ON "resources"."id" = "folders_resources"."resource_id" WHERE "folders_resources"."folder_id" = $1[0m  [["folder_id", 20]]
+  ↳ app/views/folders/show.html.erb:6
+  Rendered folders/show.html.erb within layouts/application (Duration: 5.0ms | Allocations: 1340)
+Completed 200 OK in 34ms (Views: 15.8ms | ActiveRecord: 12.6ms | Allocations: 7624)
+
+
+Started GET "/resources/5" for ::1 at 2019-11-08 11:55:07 +1100
+Processing by ResourcesController#show as HTML
+  Parameters: {"id"=>"5"}
+  [1m[36mUser Load (5.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 9], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:7:in `fetch_user'
+  [1m[36mResource Load (0.4ms)[0m  [1m[34mSELECT "resources".* FROM "resources" WHERE "resources"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/resources_controller.rb:44:in `show'
+  Rendering resources/show.html.erb within layouts/application
+  Rendered resources/show.html.erb within layouts/application (Duration: 0.5ms | Allocations: 108)
+Completed 200 OK in 25ms (Views: 15.4ms | ActiveRecord: 5.5ms | Allocations: 6617)
+
+
+  [1m[35m (1.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Destroy (0.6ms)[0m  [1m[31mDELETE FROM "users" WHERE "users"."id" = $1[0m  [["id", 6]]
+  [1m[35m (2.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Destroy (0.4ms)[0m  [1m[31mDELETE FROM "users" WHERE "users"."id" = $1[0m  [["id", 7]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Destroy (0.3ms)[0m  [1m[31mDELETE FROM "users" WHERE "users"."id" = $1[0m  [["id", 8]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Destroy (0.3ms)[0m  [1m[31mDELETE FROM "users" WHERE "users"."id" = $1[0m  [["id", 9]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Exists? (0.6ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "jonesy@ga.co"], ["LIMIT", 1]]
+  [1m[36mUser Create (0.9ms)[0m  [1m[32mINSERT INTO "users" ("email", "password_digest", "teacher", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["email", "jonesy@ga.co"], ["password_digest", "$2a$12$s2O85TMzuU5F3sn.00BWG.SSykC/PfjJb98chkMp54KCWnmbcXgOm"], ["teacher", true], ["created_at", "2019-11-08 00:55:44.229002"], ["updated_at", "2019-11-08 00:55:44.229002"]]
+  [1m[35m (1.7ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Exists? (0.4ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "sia@ga.co"], ["LIMIT", 1]]
+  [1m[36mUser Create (0.5ms)[0m  [1m[32mINSERT INTO "users" ("email", "password_digest", "teacher", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["email", "sia@ga.co"], ["password_digest", "$2a$12$BbkP2Qbz5c4ngEtDCK1yyeQH7GmE5YLM2Xo8ONSiIKEu8GG29YmlS"], ["teacher", true], ["created_at", "2019-11-08 00:55:44.497126"], ["updated_at", "2019-11-08 00:55:44.497126"]]
+  [1m[35m (1.8ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.5ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Exists? (1.1ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "craigsy@ga.co"], ["LIMIT", 1]]
+  [1m[36mUser Create (0.5ms)[0m  [1m[32mINSERT INTO "users" ("email", "password_digest", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["email", "craigsy@ga.co"], ["password_digest", "$2a$12$/TV1I96Q61gbqXsDG.3a/ehUMQ5yqycxrMRGPsKLGVjzd1wbA5IpS"], ["created_at", "2019-11-08 00:55:44.769773"], ["updated_at", "2019-11-08 00:55:44.769773"]]
+  [1m[35m (1.8ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Exists? (0.5ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "liz@ga.co"], ["LIMIT", 1]]
+  [1m[36mUser Create (0.7ms)[0m  [1m[32mINSERT INTO "users" ("email", "password_digest", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["email", "liz@ga.co"], ["password_digest", "$2a$12$gA1SOXQlYrn.Qb0RaaUO4u.172kEdVAfEPqRjzs2K7C4H8Tjefrgm"], ["created_at", "2019-11-08 00:55:45.028884"], ["updated_at", "2019-11-08 00:55:45.028884"]]
+  [1m[35m (1.8ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.8ms)[0m  [1m[34mSELECT COUNT(*) FROM "users"[0m
+  [1m[36mResource Load (1.0ms)[0m  [1m[34mSELECT "resources".* FROM "resources"[0m
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mResource::HABTM_Topics Destroy (1.2ms)[0m  [1m[31mDELETE FROM "resources_topics" WHERE "resources_topics"."resource_id" = $1[0m  [["resource_id", 5]]
+  [1m[36mResource::HABTM_Folders Destroy (0.6ms)[0m  [1m[31mDELETE FROM "folders_resources" WHERE "folders_resources"."resource_id" = $1[0m  [["resource_id", 5]]
+  [1m[36mResource Destroy (0.5ms)[0m  [1m[31mDELETE FROM "resources" WHERE "resources"."id" = $1[0m  [["id", 5]]
+  [1m[35m (0.6ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mResource::HABTM_Topics Destroy (0.5ms)[0m  [1m[31mDELETE FROM "resources_topics" WHERE "resources_topics"."resource_id" = $1[0m  [["resource_id", 7]]
+  [1m[36mResource::HABTM_Folders Destroy (0.4ms)[0m  [1m[31mDELETE FROM "folders_resources" WHERE "folders_resources"."resource_id" = $1[0m  [["resource_id", 7]]
+  [1m[36mResource Destroy (0.4ms)[0m  [1m[31mDELETE FROM "resources" WHERE "resources"."id" = $1[0m  [["id", 7]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mResource::HABTM_Topics Destroy (0.4ms)[0m  [1m[31mDELETE FROM "resources_topics" WHERE "resources_topics"."resource_id" = $1[0m  [["resource_id", 8]]
+  [1m[36mResource::HABTM_Folders Destroy (0.3ms)[0m  [1m[31mDELETE FROM "folders_resources" WHERE "folders_resources"."resource_id" = $1[0m  [["resource_id", 8]]
+  [1m[36mResource Destroy (0.3ms)[0m  [1m[31mDELETE FROM "resources" WHERE "resources"."id" = $1[0m  [["id", 8]]
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mResource::HABTM_Topics Destroy (0.5ms)[0m  [1m[31mDELETE FROM "resources_topics" WHERE "resources_topics"."resource_id" = $1[0m  [["resource_id", 6]]
+  [1m[36mResource::HABTM_Folders Destroy (0.3ms)[0m  [1m[31mDELETE FROM "folders_resources" WHERE "folders_resources"."resource_id" = $1[0m  [["resource_id", 6]]
+  [1m[36mResource Destroy (0.3ms)[0m  [1m[31mDELETE FROM "resources" WHERE "resources"."id" = $1[0m  [["id", 6]]
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.4ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mResource Create (1.0ms)[0m  [1m[32mINSERT INTO "resources" ("title", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["title", "Maths Sheet"], ["created_at", "2019-11-08 00:55:45.170431"], ["updated_at", "2019-11-08 00:55:45.170431"]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mResource Create (0.5ms)[0m  [1m[32mINSERT INTO "resources" ("title", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["title", "English Essay"], ["created_at", "2019-11-08 00:55:45.175900"], ["updated_at", "2019-11-08 00:55:45.175900"]]
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mResource Create (0.5ms)[0m  [1m[32mINSERT INTO "resources" ("title", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["title", "Maths Puzzle"], ["created_at", "2019-11-08 00:55:45.180908"], ["updated_at", "2019-11-08 00:55:45.180908"]]
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mResource Create (0.5ms)[0m  [1m[32mINSERT INTO "resources" ("title", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["title", "English Poem"], ["created_at", "2019-11-08 00:55:45.186775"], ["updated_at", "2019-11-08 00:55:45.186775"]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT COUNT(*) FROM "resources"[0m
+  [1m[36mSubject Load (0.9ms)[0m  [1m[34mSELECT "subjects".* FROM "subjects"[0m
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mSubject Destroy (0.5ms)[0m  [1m[31mDELETE FROM "subjects" WHERE "subjects"."id" = $1[0m  [["id", 3]]
+  [1m[35m (0.7ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mSubject Destroy (0.4ms)[0m  [1m[31mDELETE FROM "subjects" WHERE "subjects"."id" = $1[0m  [["id", 4]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mSubject Create (0.6ms)[0m  [1m[32mINSERT INTO "subjects" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", "Maths"], ["created_at", "2019-11-08 00:55:45.219263"], ["updated_at", "2019-11-08 00:55:45.219263"]]
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mSubject Create (0.5ms)[0m  [1m[32mINSERT INTO "subjects" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", "English"], ["created_at", "2019-11-08 00:55:45.224468"], ["updated_at", "2019-11-08 00:55:45.224468"]]
+  [1m[35m (0.9ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT COUNT(*) FROM "subjects"[0m
+  [1m[36mTopic Load (0.8ms)[0m  [1m[34mSELECT "topics".* FROM "topics"[0m
+  [1m[35m (0.4ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mTopic::HABTM_Resources Destroy (0.3ms)[0m  [1m[31mDELETE FROM "resources_topics" WHERE "resources_topics"."topic_id" = $1[0m  [["topic_id", 9]]
+  [1m[36mTopic Destroy (0.4ms)[0m  [1m[31mDELETE FROM "topics" WHERE "topics"."id" = $1[0m  [["id", 9]]
+  [1m[35m (0.7ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mTopic::HABTM_Resources Destroy (0.5ms)[0m  [1m[31mDELETE FROM "resources_topics" WHERE "resources_topics"."topic_id" = $1[0m  [["topic_id", 10]]
+  [1m[36mTopic Destroy (0.6ms)[0m  [1m[31mDELETE FROM "topics" WHERE "topics"."id" = $1[0m  [["id", 10]]
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mTopic::HABTM_Resources Destroy (0.4ms)[0m  [1m[31mDELETE FROM "resources_topics" WHERE "resources_topics"."topic_id" = $1[0m  [["topic_id", 11]]
+  [1m[36mTopic Destroy (0.6ms)[0m  [1m[31mDELETE FROM "topics" WHERE "topics"."id" = $1[0m  [["id", 11]]
+  [1m[35m (0.8ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mTopic::HABTM_Resources Destroy (0.3ms)[0m  [1m[31mDELETE FROM "resources_topics" WHERE "resources_topics"."topic_id" = $1[0m  [["topic_id", 12]]
+  [1m[36mTopic Destroy (0.5ms)[0m  [1m[31mDELETE FROM "topics" WHERE "topics"."id" = $1[0m  [["id", 12]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mTopic::HABTM_Resources Destroy (0.7ms)[0m  [1m[31mDELETE FROM "resources_topics" WHERE "resources_topics"."topic_id" = $1[0m  [["topic_id", 13]]
+  [1m[36mTopic Destroy (0.4ms)[0m  [1m[31mDELETE FROM "topics" WHERE "topics"."id" = $1[0m  [["id", 13]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mTopic::HABTM_Resources Destroy (0.5ms)[0m  [1m[31mDELETE FROM "resources_topics" WHERE "resources_topics"."topic_id" = $1[0m  [["topic_id", 14]]
+  [1m[36mTopic Destroy (0.6ms)[0m  [1m[31mDELETE FROM "topics" WHERE "topics"."id" = $1[0m  [["id", 14]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mTopic::HABTM_Resources Destroy (0.3ms)[0m  [1m[31mDELETE FROM "resources_topics" WHERE "resources_topics"."topic_id" = $1[0m  [["topic_id", 15]]
+  [1m[36mTopic Destroy (0.3ms)[0m  [1m[31mDELETE FROM "topics" WHERE "topics"."id" = $1[0m  [["id", 15]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mTopic::HABTM_Resources Destroy (0.3ms)[0m  [1m[31mDELETE FROM "resources_topics" WHERE "resources_topics"."topic_id" = $1[0m  [["topic_id", 16]]
+  [1m[36mTopic Destroy (0.3ms)[0m  [1m[31mDELETE FROM "topics" WHERE "topics"."id" = $1[0m  [["id", 16]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mTopic Create (0.6ms)[0m  [1m[32mINSERT INTO "topics" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", "Algebra"], ["created_at", "2019-11-08 00:55:45.320016"], ["updated_at", "2019-11-08 00:55:45.320016"]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mTopic Create (0.6ms)[0m  [1m[32mINSERT INTO "topics" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", "Fractions"], ["created_at", "2019-11-08 00:55:45.325044"], ["updated_at", "2019-11-08 00:55:45.325044"]]
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mTopic Create (0.6ms)[0m  [1m[32mINSERT INTO "topics" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", "Geometry"], ["created_at", "2019-11-08 00:55:45.330465"], ["updated_at", "2019-11-08 00:55:45.330465"]]
+  [1m[35m (0.9ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.4ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mTopic Create (0.4ms)[0m  [1m[32mINSERT INTO "topics" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", "Trigonometry"], ["created_at", "2019-11-08 00:55:45.335988"], ["updated_at", "2019-11-08 00:55:45.335988"]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mTopic Create (0.4ms)[0m  [1m[32mINSERT INTO "topics" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", "Primitives"], ["created_at", "2019-11-08 00:55:45.341352"], ["updated_at", "2019-11-08 00:55:45.341352"]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mTopic Create (0.4ms)[0m  [1m[32mINSERT INTO "topics" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", "Derivatives"], ["created_at", "2019-11-08 00:55:45.346424"], ["updated_at", "2019-11-08 00:55:45.346424"]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mTopic Create (0.4ms)[0m  [1m[32mINSERT INTO "topics" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", "Othello"], ["created_at", "2019-11-08 00:55:45.351201"], ["updated_at", "2019-11-08 00:55:45.351201"]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mTopic Create (0.4ms)[0m  [1m[32mINSERT INTO "topics" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", "Robert Frost"], ["created_at", "2019-11-08 00:55:45.356267"], ["updated_at", "2019-11-08 00:55:45.356267"]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT COUNT(*) FROM "topics"[0m
+  [1m[36mFolder Load (0.9ms)[0m  [1m[34mSELECT "folders".* FROM "folders"[0m
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mFolder::HABTM_Resources Destroy (0.7ms)[0m  [1m[31mDELETE FROM "folders_resources" WHERE "folders_resources"."folder_id" = $1[0m  [["folder_id", 7]]
+  [1m[36mFolder Destroy (0.8ms)[0m  [1m[31mDELETE FROM "folders" WHERE "folders"."id" = $1[0m  [["id", 7]]
+  [1m[35m (1.0ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mFolder::HABTM_Resources Destroy (0.3ms)[0m  [1m[31mDELETE FROM "folders_resources" WHERE "folders_resources"."folder_id" = $1[0m  [["folder_id", 8]]
+  [1m[36mFolder Destroy (0.4ms)[0m  [1m[31mDELETE FROM "folders" WHERE "folders"."id" = $1[0m  [["id", 8]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mFolder::HABTM_Resources Destroy (0.3ms)[0m  [1m[31mDELETE FROM "folders_resources" WHERE "folders_resources"."folder_id" = $1[0m  [["folder_id", 9]]
+  [1m[36mFolder Destroy (0.3ms)[0m  [1m[31mDELETE FROM "folders" WHERE "folders"."id" = $1[0m  [["id", 9]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mFolder::HABTM_Resources Destroy (0.3ms)[0m  [1m[31mDELETE FROM "folders_resources" WHERE "folders_resources"."folder_id" = $1[0m  [["folder_id", 10]]
+  [1m[36mFolder Destroy (0.4ms)[0m  [1m[31mDELETE FROM "folders" WHERE "folders"."id" = $1[0m  [["id", 10]]
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mFolder::HABTM_Resources Destroy (0.5ms)[0m  [1m[31mDELETE FROM "folders_resources" WHERE "folders_resources"."folder_id" = $1[0m  [["folder_id", 11]]
+  [1m[36mFolder Destroy (0.6ms)[0m  [1m[31mDELETE FROM "folders" WHERE "folders"."id" = $1[0m  [["id", 11]]
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mFolder::HABTM_Resources Destroy (0.5ms)[0m  [1m[31mDELETE FROM "folders_resources" WHERE "folders_resources"."folder_id" = $1[0m  [["folder_id", 12]]
+  [1m[36mFolder Destroy (0.4ms)[0m  [1m[31mDELETE FROM "folders" WHERE "folders"."id" = $1[0m  [["id", 12]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mFolder::HABTM_Resources Destroy (0.3ms)[0m  [1m[31mDELETE FROM "folders_resources" WHERE "folders_resources"."folder_id" = $1[0m  [["folder_id", 13]]
+  [1m[36mFolder Destroy (0.4ms)[0m  [1m[31mDELETE FROM "folders" WHERE "folders"."id" = $1[0m  [["id", 13]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mFolder::HABTM_Resources Destroy (0.4ms)[0m  [1m[31mDELETE FROM "folders_resources" WHERE "folders_resources"."folder_id" = $1[0m  [["folder_id", 14]]
+  [1m[36mFolder Destroy (0.3ms)[0m  [1m[31mDELETE FROM "folders" WHERE "folders"."id" = $1[0m  [["id", 14]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mFolder::HABTM_Resources Destroy (0.3ms)[0m  [1m[31mDELETE FROM "folders_resources" WHERE "folders_resources"."folder_id" = $1[0m  [["folder_id", 15]]
+  [1m[36mFolder Destroy (0.3ms)[0m  [1m[31mDELETE FROM "folders" WHERE "folders"."id" = $1[0m  [["id", 15]]
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mFolder::HABTM_Resources Destroy (0.3ms)[0m  [1m[31mDELETE FROM "folders_resources" WHERE "folders_resources"."folder_id" = $1[0m  [["folder_id", 16]]
+  [1m[36mFolder Destroy (0.3ms)[0m  [1m[31mDELETE FROM "folders" WHERE "folders"."id" = $1[0m  [["id", 16]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mFolder::HABTM_Resources Destroy (0.3ms)[0m  [1m[31mDELETE FROM "folders_resources" WHERE "folders_resources"."folder_id" = $1[0m  [["folder_id", 17]]
+  [1m[36mFolder Destroy (0.4ms)[0m  [1m[31mDELETE FROM "folders" WHERE "folders"."id" = $1[0m  [["id", 17]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mFolder::HABTM_Resources Destroy (0.3ms)[0m  [1m[31mDELETE FROM "folders_resources" WHERE "folders_resources"."folder_id" = $1[0m  [["folder_id", 18]]
+  [1m[36mFolder Destroy (0.3ms)[0m  [1m[31mDELETE FROM "folders" WHERE "folders"."id" = $1[0m  [["id", 18]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mFolder::HABTM_Resources Destroy (0.4ms)[0m  [1m[31mDELETE FROM "folders_resources" WHERE "folders_resources"."folder_id" = $1[0m  [["folder_id", 19]]
+  [1m[36mFolder Destroy (0.4ms)[0m  [1m[31mDELETE FROM "folders" WHERE "folders"."id" = $1[0m  [["id", 19]]
+  [1m[35m (0.6ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mFolder::HABTM_Resources Destroy (0.4ms)[0m  [1m[31mDELETE FROM "folders_resources" WHERE "folders_resources"."folder_id" = $1[0m  [["folder_id", 20]]
+  [1m[36mFolder Destroy (0.4ms)[0m  [1m[31mDELETE FROM "folders" WHERE "folders"."id" = $1[0m  [["id", 20]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mFolder Create (0.5ms)[0m  [1m[32mINSERT INTO "folders" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", "Craigsy Algebra"], ["created_at", "2019-11-08 00:55:45.486516"], ["updated_at", "2019-11-08 00:55:45.486516"]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mFolder Create (0.4ms)[0m  [1m[32mINSERT INTO "folders" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", "Craigsy Fractions"], ["created_at", "2019-11-08 00:55:45.491928"], ["updated_at", "2019-11-08 00:55:45.491928"]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mFolder Create (0.4ms)[0m  [1m[32mINSERT INTO "folders" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", "Lizzys Poems"], ["created_at", "2019-11-08 00:55:45.508772"], ["updated_at", "2019-11-08 00:55:45.508772"]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mFolder Create (0.4ms)[0m  [1m[32mINSERT INTO "folders" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", "Lizzys Misc"], ["created_at", "2019-11-08 00:55:45.514026"], ["updated_at", "2019-11-08 00:55:45.514026"]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT COUNT(*) FROM "folders"[0m
+  [1m[35m (0.4ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mResource Update (0.9ms)[0m  [1m[33mUPDATE "resources" SET "subject_id" = $1, "updated_at" = $2 WHERE "resources"."id" = $3[0m  [["subject_id", 5], ["updated_at", "2019-11-08 00:55:45.523622"], ["id", 9]]
+  [1m[35m (0.6ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.6ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mResource Update (0.5ms)[0m  [1m[33mUPDATE "resources" SET "subject_id" = $1, "updated_at" = $2 WHERE "resources"."id" = $3[0m  [["subject_id", 5], ["updated_at", "2019-11-08 00:55:45.531269"], ["id", 11]]
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.4ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mResource Update (0.7ms)[0m  [1m[33mUPDATE "resources" SET "subject_id" = $1, "updated_at" = $2 WHERE "resources"."id" = $3[0m  [["subject_id", 6], ["updated_at", "2019-11-08 00:55:45.538336"], ["id", 10]]
+  [1m[35m (0.6ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mResource Update (0.9ms)[0m  [1m[33mUPDATE "resources" SET "subject_id" = $1, "updated_at" = $2 WHERE "resources"."id" = $3[0m  [["subject_id", 6], ["updated_at", "2019-11-08 00:55:45.544957"], ["id", 12]]
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mResource::HABTM_Topics Create (0.5ms)[0m  [1m[32mINSERT INTO "resources_topics" ("topic_id", "resource_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4)[0m  [["topic_id", 17], ["resource_id", 9], ["created_at", "2019-11-08 00:55:45.557289"], ["updated_at", "2019-11-08 00:55:45.557289"]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mResource::HABTM_Topics Create (0.4ms)[0m  [1m[32mINSERT INTO "resources_topics" ("topic_id", "resource_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4)[0m  [["topic_id", 23], ["resource_id", 10], ["created_at", "2019-11-08 00:55:45.564824"], ["updated_at", "2019-11-08 00:55:45.564824"]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mResource::HABTM_Topics Create (0.4ms)[0m  [1m[32mINSERT INTO "resources_topics" ("topic_id", "resource_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4)[0m  [["topic_id", 20], ["resource_id", 11], ["created_at", "2019-11-08 00:55:45.571448"], ["updated_at", "2019-11-08 00:55:45.571448"]]
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mResource::HABTM_Topics Create (0.5ms)[0m  [1m[32mINSERT INTO "resources_topics" ("topic_id", "resource_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4)[0m  [["topic_id", 20], ["resource_id", 11], ["created_at", "2019-11-08 00:55:45.577793"], ["updated_at", "2019-11-08 00:55:45.577793"]]
+  [1m[35m (0.6ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mResource::HABTM_Topics Create (0.4ms)[0m  [1m[32mINSERT INTO "resources_topics" ("topic_id", "resource_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4)[0m  [["topic_id", 24], ["resource_id", 12], ["created_at", "2019-11-08 00:55:45.585053"], ["updated_at", "2019-11-08 00:55:45.585053"]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mFolder::HABTM_Resources Create (0.6ms)[0m  [1m[32mINSERT INTO "folders_resources" ("folder_id", "resource_id") VALUES ($1, $2)[0m  [["folder_id", 21], ["resource_id", 9]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mFolder::HABTM_Resources Create (0.3ms)[0m  [1m[32mINSERT INTO "folders_resources" ("folder_id", "resource_id") VALUES ($1, $2)[0m  [["folder_id", 21], ["resource_id", 11]]
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.4ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mFolder::HABTM_Resources Create (0.4ms)[0m  [1m[32mINSERT INTO "folders_resources" ("folder_id", "resource_id") VALUES ($1, $2)[0m  [["folder_id", 22], ["resource_id", 11]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.7ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mFolder::HABTM_Resources Create (0.3ms)[0m  [1m[32mINSERT INTO "folders_resources" ("folder_id", "resource_id") VALUES ($1, $2)[0m  [["folder_id", 23], ["resource_id", 12]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mFolder::HABTM_Resources Create (0.4ms)[0m  [1m[32mINSERT INTO "folders_resources" ("folder_id", "resource_id") VALUES ($1, $2)[0m  [["folder_id", 24], ["resource_id", 12]]
+  [1m[35m (0.6ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mFolder::HABTM_Resources Create (0.5ms)[0m  [1m[32mINSERT INTO "folders_resources" ("folder_id", "resource_id") VALUES ($1, $2)[0m  [["folder_id", 24], ["resource_id", 11]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mFolder::HABTM_Resources Create (0.3ms)[0m  [1m[32mINSERT INTO "folders_resources" ("folder_id", "resource_id") VALUES ($1, $2)[0m  [["folder_id", 24], ["resource_id", 10]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mFolder::HABTM_Resources Create (0.3ms)[0m  [1m[32mINSERT INTO "folders_resources" ("folder_id", "resource_id") VALUES ($1, $2)[0m  [["folder_id", 24], ["resource_id", 9]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mFolder Update (0.6ms)[0m  [1m[33mUPDATE "folders" SET "user_id" = $1, "updated_at" = $2 WHERE "folders"."id" = $3[0m  [["user_id", 12], ["updated_at", "2019-11-08 00:55:45.653523"], ["id", 21]]
+  [1m[35m (0.8ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mFolder Update (0.9ms)[0m  [1m[33mUPDATE "folders" SET "user_id" = $1, "updated_at" = $2 WHERE "folders"."id" = $3[0m  [["user_id", 12], ["updated_at", "2019-11-08 00:55:45.661182"], ["id", 22]]
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mFolder Update (0.5ms)[0m  [1m[33mUPDATE "folders" SET "user_id" = $1, "updated_at" = $2 WHERE "folders"."id" = $3[0m  [["user_id", 13], ["updated_at", "2019-11-08 00:55:45.667054"], ["id", 23]]
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mFolder Update (0.5ms)[0m  [1m[33mUPDATE "folders" SET "user_id" = $1, "updated_at" = $2 WHERE "folders"."id" = $3[0m  [["user_id", 13], ["updated_at", "2019-11-08 00:55:45.672904"], ["id", 24]]
+  [1m[35m (0.6ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT pg_try_advisory_lock(5870676503668667565)[0m
+  [1m[35m (1.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.8ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT pg_advisory_unlock(5870676503668667565)[0m
+  [1m[35m (1.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (1.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mUser Load (1.7ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Destroy (0.9ms)[0m  [1m[31mDELETE FROM "users" WHERE "users"."id" = $1[0m  [["id", 10]]
+  [1m[35m (2.0ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Destroy (0.5ms)[0m  [1m[31mDELETE FROM "users" WHERE "users"."id" = $1[0m  [["id", 11]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Destroy (0.4ms)[0m  [1m[31mDELETE FROM "users" WHERE "users"."id" = $1[0m  [["id", 12]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Destroy (0.5ms)[0m  [1m[31mDELETE FROM "users" WHERE "users"."id" = $1[0m  [["id", 13]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Exists? (0.6ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "jonesy@ga.co"], ["LIMIT", 1]]
+  [1m[36mUser Create (0.8ms)[0m  [1m[32mINSERT INTO "users" ("email", "password_digest", "teacher", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["email", "jonesy@ga.co"], ["password_digest", "$2a$12$hezVHBe4JTnDhwK9VFVlPu3nAj.l0tvTN1IfkyuU/jv4EEbw3I1ou"], ["teacher", true], ["created_at", "2019-11-08 00:56:48.948322"], ["updated_at", "2019-11-08 00:56:48.948322"]]
+  [1m[35m (2.0ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Exists? (0.4ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "sia@ga.co"], ["LIMIT", 1]]
+  [1m[36mUser Create (0.4ms)[0m  [1m[32mINSERT INTO "users" ("email", "password_digest", "teacher", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["email", "sia@ga.co"], ["password_digest", "$2a$12$3hH0AygYeBPGC3.NyYGVzubQe3XVT2GcDX31mFxIkFMe111xJCJBm"], ["teacher", true], ["created_at", "2019-11-08 00:56:49.203983"], ["updated_at", "2019-11-08 00:56:49.203983"]]
+  [1m[35m (1.8ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.5ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Exists? (0.5ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "craigsy@ga.co"], ["LIMIT", 1]]
+  [1m[36mUser Create (0.6ms)[0m  [1m[32mINSERT INTO "users" ("email", "password_digest", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["email", "craigsy@ga.co"], ["password_digest", "$2a$12$.ks1fKtnpHUTDdd6TljgUu.Bgai29TqmLb5ATNIKZ4AKnhprmGITS"], ["created_at", "2019-11-08 00:56:49.460015"], ["updated_at", "2019-11-08 00:56:49.460015"]]
+  [1m[35m (1.7ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Exists? (0.4ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "liz@ga.co"], ["LIMIT", 1]]
+  [1m[36mUser Create (0.4ms)[0m  [1m[32mINSERT INTO "users" ("email", "password_digest", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["email", "liz@ga.co"], ["password_digest", "$2a$12$EkQiBTtvFuZdLfacRrABd.8NY8QeVE4fzORUjQQLjIm/hYIbF2lkq"], ["created_at", "2019-11-08 00:56:49.710685"], ["updated_at", "2019-11-08 00:56:49.710685"]]
+  [1m[35m (1.7ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT COUNT(*) FROM "users"[0m
+  [1m[36mResource Load (0.9ms)[0m  [1m[34mSELECT "resources".* FROM "resources"[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mResource::HABTM_Topics Destroy (0.5ms)[0m  [1m[31mDELETE FROM "resources_topics" WHERE "resources_topics"."resource_id" = $1[0m  [["resource_id", 9]]
+  [1m[36mResource::HABTM_Folders Destroy (0.7ms)[0m  [1m[31mDELETE FROM "folders_resources" WHERE "folders_resources"."resource_id" = $1[0m  [["resource_id", 9]]
+  [1m[36mResource Destroy (0.4ms)[0m  [1m[31mDELETE FROM "resources" WHERE "resources"."id" = $1[0m  [["id", 9]]
+  [1m[35m (0.6ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mResource::HABTM_Topics Destroy (0.5ms)[0m  [1m[31mDELETE FROM "resources_topics" WHERE "resources_topics"."resource_id" = $1[0m  [["resource_id", 11]]
+  [1m[36mResource::HABTM_Folders Destroy (0.4ms)[0m  [1m[31mDELETE FROM "folders_resources" WHERE "folders_resources"."resource_id" = $1[0m  [["resource_id", 11]]
+  [1m[36mResource Destroy (0.5ms)[0m  [1m[31mDELETE FROM "resources" WHERE "resources"."id" = $1[0m  [["id", 11]]
+  [1m[35m (1.0ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mResource::HABTM_Topics Destroy (0.5ms)[0m  [1m[31mDELETE FROM "resources_topics" WHERE "resources_topics"."resource_id" = $1[0m  [["resource_id", 10]]
+  [1m[36mResource::HABTM_Folders Destroy (0.7ms)[0m  [1m[31mDELETE FROM "folders_resources" WHERE "folders_resources"."resource_id" = $1[0m  [["resource_id", 10]]
+  [1m[36mResource Destroy (0.6ms)[0m  [1m[31mDELETE FROM "resources" WHERE "resources"."id" = $1[0m  [["id", 10]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mResource::HABTM_Topics Destroy (0.3ms)[0m  [1m[31mDELETE FROM "resources_topics" WHERE "resources_topics"."resource_id" = $1[0m  [["resource_id", 12]]
+  [1m[36mResource::HABTM_Folders Destroy (0.8ms)[0m  [1m[31mDELETE FROM "folders_resources" WHERE "folders_resources"."resource_id" = $1[0m  [["resource_id", 12]]
+  [1m[36mResource Destroy (0.5ms)[0m  [1m[31mDELETE FROM "resources" WHERE "resources"."id" = $1[0m  [["id", 12]]
+  [1m[35m (0.6ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.4ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mResource Create (0.6ms)[0m  [1m[32mINSERT INTO "resources" ("title", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["title", "Maths Sheet"], ["created_at", "2019-11-08 00:56:49.812115"], ["updated_at", "2019-11-08 00:56:49.812115"]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mResource Create (0.5ms)[0m  [1m[32mINSERT INTO "resources" ("title", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["title", "English Essay"], ["created_at", "2019-11-08 00:56:49.817519"], ["updated_at", "2019-11-08 00:56:49.817519"]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mResource Create (0.8ms)[0m  [1m[32mINSERT INTO "resources" ("title", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["title", "Maths Puzzle"], ["created_at", "2019-11-08 00:56:49.822052"], ["updated_at", "2019-11-08 00:56:49.822052"]]
+  [1m[35m (0.6ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mResource Create (0.7ms)[0m  [1m[32mINSERT INTO "resources" ("title", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["title", "English Poem"], ["created_at", "2019-11-08 00:56:49.827974"], ["updated_at", "2019-11-08 00:56:49.827974"]]
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (1.8ms)[0m  [1m[34mSELECT COUNT(*) FROM "resources"[0m
+  [1m[36mSubject Load (0.7ms)[0m  [1m[34mSELECT "subjects".* FROM "subjects"[0m
+  [1m[35m (0.5ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mSubject Destroy (2.4ms)[0m  [1m[31mDELETE FROM "subjects" WHERE "subjects"."id" = $1[0m  [["id", 5]]
+  [1m[35m (0.7ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mSubject Destroy (0.5ms)[0m  [1m[31mDELETE FROM "subjects" WHERE "subjects"."id" = $1[0m  [["id", 6]]
+  [1m[35m (0.6ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mSubject Create (0.5ms)[0m  [1m[32mINSERT INTO "subjects" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", "Maths"], ["created_at", "2019-11-08 00:56:49.864385"], ["updated_at", "2019-11-08 00:56:49.864385"]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mSubject Create (0.4ms)[0m  [1m[32mINSERT INTO "subjects" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", "English"], ["created_at", "2019-11-08 00:56:49.869053"], ["updated_at", "2019-11-08 00:56:49.869053"]]
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT COUNT(*) FROM "subjects"[0m
+  [1m[36mTopic Load (0.9ms)[0m  [1m[34mSELECT "topics".* FROM "topics"[0m
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mTopic::HABTM_Resources Destroy (0.4ms)[0m  [1m[31mDELETE FROM "resources_topics" WHERE "resources_topics"."topic_id" = $1[0m  [["topic_id", 17]]
+  [1m[36mTopic Destroy (0.5ms)[0m  [1m[31mDELETE FROM "topics" WHERE "topics"."id" = $1[0m  [["id", 17]]
+  [1m[35m (0.6ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mTopic::HABTM_Resources Destroy (0.3ms)[0m  [1m[31mDELETE FROM "resources_topics" WHERE "resources_topics"."topic_id" = $1[0m  [["topic_id", 18]]
+  [1m[36mTopic Destroy (0.3ms)[0m  [1m[31mDELETE FROM "topics" WHERE "topics"."id" = $1[0m  [["id", 18]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mTopic::HABTM_Resources Destroy (0.5ms)[0m  [1m[31mDELETE FROM "resources_topics" WHERE "resources_topics"."topic_id" = $1[0m  [["topic_id", 19]]
+  [1m[36mTopic Destroy (0.4ms)[0m  [1m[31mDELETE FROM "topics" WHERE "topics"."id" = $1[0m  [["id", 19]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mTopic::HABTM_Resources Destroy (0.3ms)[0m  [1m[31mDELETE FROM "resources_topics" WHERE "resources_topics"."topic_id" = $1[0m  [["topic_id", 20]]
+  [1m[36mTopic Destroy (0.6ms)[0m  [1m[31mDELETE FROM "topics" WHERE "topics"."id" = $1[0m  [["id", 20]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mTopic::HABTM_Resources Destroy (0.3ms)[0m  [1m[31mDELETE FROM "resources_topics" WHERE "resources_topics"."topic_id" = $1[0m  [["topic_id", 21]]
+  [1m[36mTopic Destroy (0.4ms)[0m  [1m[31mDELETE FROM "topics" WHERE "topics"."id" = $1[0m  [["id", 21]]
+  [1m[35m (0.6ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mTopic::HABTM_Resources Destroy (0.9ms)[0m  [1m[31mDELETE FROM "resources_topics" WHERE "resources_topics"."topic_id" = $1[0m  [["topic_id", 22]]
+  [1m[36mTopic Destroy (0.4ms)[0m  [1m[31mDELETE FROM "topics" WHERE "topics"."id" = $1[0m  [["id", 22]]
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mTopic::HABTM_Resources Destroy (0.5ms)[0m  [1m[31mDELETE FROM "resources_topics" WHERE "resources_topics"."topic_id" = $1[0m  [["topic_id", 23]]
+  [1m[36mTopic Destroy (0.6ms)[0m  [1m[31mDELETE FROM "topics" WHERE "topics"."id" = $1[0m  [["id", 23]]
+  [1m[35m (0.6ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mTopic::HABTM_Resources Destroy (0.3ms)[0m  [1m[31mDELETE FROM "resources_topics" WHERE "resources_topics"."topic_id" = $1[0m  [["topic_id", 24]]
+  [1m[36mTopic Destroy (0.3ms)[0m  [1m[31mDELETE FROM "topics" WHERE "topics"."id" = $1[0m  [["id", 24]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mTopic Create (0.9ms)[0m  [1m[32mINSERT INTO "topics" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", "Algebra"], ["created_at", "2019-11-08 00:56:49.945099"], ["updated_at", "2019-11-08 00:56:49.945099"]]
+  [1m[35m (0.6ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mTopic Create (1.2ms)[0m  [1m[32mINSERT INTO "topics" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", "Fractions"], ["created_at", "2019-11-08 00:56:49.950628"], ["updated_at", "2019-11-08 00:56:49.950628"]]
+  [1m[35m (0.7ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mTopic Create (0.6ms)[0m  [1m[32mINSERT INTO "topics" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", "Geometry"], ["created_at", "2019-11-08 00:56:49.957185"], ["updated_at", "2019-11-08 00:56:49.957185"]]
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mTopic Create (0.4ms)[0m  [1m[32mINSERT INTO "topics" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", "Trigonometry"], ["created_at", "2019-11-08 00:56:49.962465"], ["updated_at", "2019-11-08 00:56:49.962465"]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mTopic Create (0.5ms)[0m  [1m[32mINSERT INTO "topics" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", "Primitives"], ["created_at", "2019-11-08 00:56:49.984415"], ["updated_at", "2019-11-08 00:56:49.984415"]]
+  [1m[35m (0.6ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mTopic Create (0.3ms)[0m  [1m[32mINSERT INTO "topics" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", "Derivatives"], ["created_at", "2019-11-08 00:56:49.989843"], ["updated_at", "2019-11-08 00:56:49.989843"]]
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mTopic Create (0.5ms)[0m  [1m[32mINSERT INTO "topics" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", "Othello"], ["created_at", "2019-11-08 00:56:49.993728"], ["updated_at", "2019-11-08 00:56:49.993728"]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mTopic Create (0.4ms)[0m  [1m[32mINSERT INTO "topics" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", "Robert Frost"], ["created_at", "2019-11-08 00:56:49.997885"], ["updated_at", "2019-11-08 00:56:49.997885"]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT COUNT(*) FROM "topics"[0m
+  [1m[36mFolder Load (0.7ms)[0m  [1m[34mSELECT "folders".* FROM "folders"[0m
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mFolder::HABTM_Resources Destroy (1.2ms)[0m  [1m[31mDELETE FROM "folders_resources" WHERE "folders_resources"."folder_id" = $1[0m  [["folder_id", 21]]
+  [1m[36mFolder Destroy (0.8ms)[0m  [1m[31mDELETE FROM "folders" WHERE "folders"."id" = $1[0m  [["id", 21]]
+  [1m[35m (1.6ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mFolder::HABTM_Resources Destroy (0.6ms)[0m  [1m[31mDELETE FROM "folders_resources" WHERE "folders_resources"."folder_id" = $1[0m  [["folder_id", 22]]
+  [1m[36mFolder Destroy (0.5ms)[0m  [1m[31mDELETE FROM "folders" WHERE "folders"."id" = $1[0m  [["id", 22]]
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mFolder::HABTM_Resources Destroy (0.5ms)[0m  [1m[31mDELETE FROM "folders_resources" WHERE "folders_resources"."folder_id" = $1[0m  [["folder_id", 23]]
+  [1m[36mFolder Destroy (0.5ms)[0m  [1m[31mDELETE FROM "folders" WHERE "folders"."id" = $1[0m  [["id", 23]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mFolder::HABTM_Resources Destroy (0.3ms)[0m  [1m[31mDELETE FROM "folders_resources" WHERE "folders_resources"."folder_id" = $1[0m  [["folder_id", 24]]
+  [1m[36mFolder Destroy (0.3ms)[0m  [1m[31mDELETE FROM "folders" WHERE "folders"."id" = $1[0m  [["id", 24]]
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mFolder Create (0.5ms)[0m  [1m[32mINSERT INTO "folders" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", "Craigsy Algebra"], ["created_at", "2019-11-08 00:56:50.046381"], ["updated_at", "2019-11-08 00:56:50.046381"]]
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mFolder Create (0.4ms)[0m  [1m[32mINSERT INTO "folders" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", "Craigsy Fractions"], ["created_at", "2019-11-08 00:56:50.050655"], ["updated_at", "2019-11-08 00:56:50.050655"]]
+  [1m[35m (0.8ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mFolder Create (0.5ms)[0m  [1m[32mINSERT INTO "folders" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", "Lizzys Poems"], ["created_at", "2019-11-08 00:56:50.055058"], ["updated_at", "2019-11-08 00:56:50.055058"]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mFolder Create (0.4ms)[0m  [1m[32mINSERT INTO "folders" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", "Lizzys Misc"], ["created_at", "2019-11-08 00:56:50.059484"], ["updated_at", "2019-11-08 00:56:50.059484"]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "folders"[0m
+  [1m[35m (0.4ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mResource Update (0.8ms)[0m  [1m[33mUPDATE "resources" SET "subject_id" = $1, "updated_at" = $2 WHERE "resources"."id" = $3[0m  [["subject_id", 7], ["updated_at", "2019-11-08 00:56:50.067148"], ["id", 13]]
+  [1m[35m (1.9ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.4ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mResource Update (0.7ms)[0m  [1m[33mUPDATE "resources" SET "subject_id" = $1, "updated_at" = $2 WHERE "resources"."id" = $3[0m  [["subject_id", 7], ["updated_at", "2019-11-08 00:56:50.076365"], ["id", 15]]
+  [1m[35m (1.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.6ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mResource Update (0.9ms)[0m  [1m[33mUPDATE "resources" SET "subject_id" = $1, "updated_at" = $2 WHERE "resources"."id" = $3[0m  [["subject_id", 8], ["updated_at", "2019-11-08 00:56:50.085740"], ["id", 14]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mResource Update (0.7ms)[0m  [1m[33mUPDATE "resources" SET "subject_id" = $1, "updated_at" = $2 WHERE "resources"."id" = $3[0m  [["subject_id", 8], ["updated_at", "2019-11-08 00:56:50.092398"], ["id", 16]]
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mResource::HABTM_Topics Create (0.8ms)[0m  [1m[32mINSERT INTO "resources_topics" ("topic_id", "resource_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4)[0m  [["topic_id", 25], ["resource_id", 13], ["created_at", "2019-11-08 00:56:50.101364"], ["updated_at", "2019-11-08 00:56:50.101364"]]
+  [1m[35m (0.6ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.5ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mResource::HABTM_Topics Create (0.4ms)[0m  [1m[32mINSERT INTO "resources_topics" ("topic_id", "resource_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4)[0m  [["topic_id", 31], ["resource_id", 14], ["created_at", "2019-11-08 00:56:50.109000"], ["updated_at", "2019-11-08 00:56:50.109000"]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mResource::HABTM_Topics Create (0.3ms)[0m  [1m[32mINSERT INTO "resources_topics" ("topic_id", "resource_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4)[0m  [["topic_id", 28], ["resource_id", 15], ["created_at", "2019-11-08 00:56:50.115619"], ["updated_at", "2019-11-08 00:56:50.115619"]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mResource::HABTM_Topics Create (0.5ms)[0m  [1m[32mINSERT INTO "resources_topics" ("topic_id", "resource_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4)[0m  [["topic_id", 28], ["resource_id", 15], ["created_at", "2019-11-08 00:56:50.120995"], ["updated_at", "2019-11-08 00:56:50.120995"]]
+  [1m[35m (0.8ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mResource::HABTM_Topics Create (0.5ms)[0m  [1m[32mINSERT INTO "resources_topics" ("topic_id", "resource_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4)[0m  [["topic_id", 32], ["resource_id", 16], ["created_at", "2019-11-08 00:56:50.143761"], ["updated_at", "2019-11-08 00:56:50.143761"]]
+  [1m[35m (0.6ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (2.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mFolder::HABTM_Resources Create (0.6ms)[0m  [1m[32mINSERT INTO "folders_resources" ("folder_id", "resource_id") VALUES ($1, $2)[0m  [["folder_id", 25], ["resource_id", 13]]
+  [1m[35m (0.6ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mFolder::HABTM_Resources Create (0.3ms)[0m  [1m[32mINSERT INTO "folders_resources" ("folder_id", "resource_id") VALUES ($1, $2)[0m  [["folder_id", 25], ["resource_id", 15]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mFolder::HABTM_Resources Create (0.3ms)[0m  [1m[32mINSERT INTO "folders_resources" ("folder_id", "resource_id") VALUES ($1, $2)[0m  [["folder_id", 26], ["resource_id", 15]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mFolder::HABTM_Resources Create (0.3ms)[0m  [1m[32mINSERT INTO "folders_resources" ("folder_id", "resource_id") VALUES ($1, $2)[0m  [["folder_id", 27], ["resource_id", 16]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (1.5ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mFolder::HABTM_Resources Create (0.3ms)[0m  [1m[32mINSERT INTO "folders_resources" ("folder_id", "resource_id") VALUES ($1, $2)[0m  [["folder_id", 28], ["resource_id", 16]]
+  [1m[35m (0.6ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mFolder::HABTM_Resources Create (0.3ms)[0m  [1m[32mINSERT INTO "folders_resources" ("folder_id", "resource_id") VALUES ($1, $2)[0m  [["folder_id", 28], ["resource_id", 15]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mFolder::HABTM_Resources Create (0.3ms)[0m  [1m[32mINSERT INTO "folders_resources" ("folder_id", "resource_id") VALUES ($1, $2)[0m  [["folder_id", 28], ["resource_id", 14]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mFolder::HABTM_Resources Create (0.3ms)[0m  [1m[32mINSERT INTO "folders_resources" ("folder_id", "resource_id") VALUES ($1, $2)[0m  [["folder_id", 28], ["resource_id", 13]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mFolder Update (0.5ms)[0m  [1m[33mUPDATE "folders" SET "user_id" = $1, "updated_at" = $2 WHERE "folders"."id" = $3[0m  [["user_id", 16], ["updated_at", "2019-11-08 00:56:50.208483"], ["id", 25]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mFolder Update (0.4ms)[0m  [1m[33mUPDATE "folders" SET "user_id" = $1, "updated_at" = $2 WHERE "folders"."id" = $3[0m  [["user_id", 16], ["updated_at", "2019-11-08 00:56:50.213658"], ["id", 26]]
+  [1m[35m (1.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mFolder Update (1.3ms)[0m  [1m[33mUPDATE "folders" SET "user_id" = $1, "updated_at" = $2 WHERE "folders"."id" = $3[0m  [["user_id", 17], ["updated_at", "2019-11-08 00:56:50.221180"], ["id", 27]]
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.6ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mFolder Update (0.6ms)[0m  [1m[33mUPDATE "folders" SET "user_id" = $1, "updated_at" = $2 WHERE "folders"."id" = $3[0m  [["user_id", 17], ["updated_at", "2019-11-08 00:56:50.231432"], ["id", 28]]
+  [1m[35m (0.7ms)[0m  [1m[35mCOMMIT[0m

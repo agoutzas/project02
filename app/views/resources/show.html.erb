@@ -5,6 +5,7 @@
   <li>Name: <%= @resource.title %></li>
 </ul>
 
+<% if @current_user.teacher? %>
 <h2>Students using these folders</h2>
 <ul>
   <% if @resource.folders.present? %>
@@ -13,7 +14,7 @@
     <% end %>
   <% end %>
 </ul>
-
+<% end %>
 
 <% if @current_user.teacher? %>
   <div class="controls">

@@ -11,11 +11,10 @@ class FoldersController < ApplicationController
   end
 
   def create
-    folderdata = folder_params
-    folder = Folder.create folderdata
-    resource = Resource.find_by :id => folderdata[:resource_ids]
-    folder.resources << resource
+    folder = Folder.new folder_params
     @current_user.folders << folder
+    folder.save
+
     redirect_to folders_path
   end
 
